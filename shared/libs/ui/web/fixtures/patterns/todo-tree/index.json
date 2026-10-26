@@ -1,0 +1,936 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "todo-tree",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12,
+     "className": "w-[720px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "start"
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "control--list-draggable-handle",
+         "aria-label": "Drag to move"
+        },
+        "children": [
+         {
+          "type": "Icon",
+          "props": {
+           "name": "grip",
+           "size": "sm"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Checkbox",
+        "props": {
+         "scale": "sm",
+         "checked": false,
+         "data-testid": "todo-tree-1-check"
+        }
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "align": "baseline"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-extra-small",
+             "emphasis": "quiet",
+             "children": "1"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body",
+             "children": "Foundations"
+            }
+           },
+           {
+            "type": "Badge",
+            "props": {
+             "scale": "sm",
+             "emphasis": "quiet",
+             "children": "1/3"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": "The slices of the product and what each owns."
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 4,
+         "align": "center"
+        },
+        "children": [
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "add",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Add inside",
+           "data-testid": "todo-tree-1-add-btn"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "edit",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Edit",
+           "data-testid": "todo-tree-1-edit-btn"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "chevronUp",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Collapse",
+           "data-testid": "todo-tree-1-toggle-btn"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 8,
+       "className": "pl-8"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "start"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "control--list-draggable-handle",
+           "aria-label": "Drag to move"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "grip",
+             "size": "sm"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Checkbox",
+          "props": {
+           "scale": "sm",
+           "checked": false,
+           "data-testid": "todo-tree-1-1-check"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 2
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "baseline"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "1.1"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "children": "Slice separation"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 4,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "add",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Add inside",
+             "data-testid": "todo-tree-1-1-add-btn"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "edit",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Edit",
+             "data-testid": "todo-tree-1-1-edit-btn"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "start"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "control--list-draggable-handle",
+           "aria-label": "Drag to move"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "grip",
+             "size": "sm"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Checkbox",
+          "props": {
+           "scale": "sm",
+           "checked": false,
+           "data-testid": "todo-tree-1-2-check"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 2
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "baseline"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "1.2"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "children": "Owner of every page and entity type"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 4,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "add",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Add inside",
+             "data-testid": "todo-tree-1-2-add-btn"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "edit",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Edit",
+             "data-testid": "todo-tree-1-2-edit-btn"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "start"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "control--list-draggable-handle",
+           "aria-label": "Drag to move"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "grip",
+             "size": "sm"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Checkbox",
+          "props": {
+           "scale": "sm",
+           "checked": true,
+           "data-testid": "todo-tree-1-3-check"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 2
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "baseline"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "1.3"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "children": "ERD per slice"
+              }
+             }
+            ]
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-extra-small",
+             "emphasis": "quiet",
+             "children": "With the foreign keys that cross slices."
+            }
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 4,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "add",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Add inside",
+             "data-testid": "todo-tree-1-3-add-btn"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "edit",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Edit",
+             "data-testid": "todo-tree-1-3-edit-btn"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "start"
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "control--list-draggable-handle",
+         "aria-label": "Drag to move"
+        },
+        "children": [
+         {
+          "type": "Icon",
+          "props": {
+           "name": "grip",
+           "size": "sm"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Checkbox",
+        "props": {
+         "scale": "sm",
+         "checked": false,
+         "data-testid": "todo-tree-2-check"
+        }
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "align": "baseline"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-extra-small",
+             "emphasis": "quiet",
+             "children": "2"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body",
+             "children": "Versioning"
+            }
+           },
+           {
+            "type": "Badge",
+            "props": {
+             "scale": "sm",
+             "emphasis": "quiet",
+             "children": "0/2"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": "Every artifact is versioned when a user or an agent changes it."
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 4,
+         "align": "center"
+        },
+        "children": [
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "add",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Add inside",
+           "data-testid": "todo-tree-2-add-btn"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "edit",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Edit",
+           "data-testid": "todo-tree-2-edit-btn"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "chevronUp",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Collapse",
+           "data-testid": "todo-tree-2-toggle-btn"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 8,
+       "className": "pl-8"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "start"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "control--list-draggable-handle",
+           "aria-label": "Drag to move"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "grip",
+             "size": "sm"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Checkbox",
+          "props": {
+           "scale": "sm",
+           "checked": false,
+           "data-testid": "todo-tree-2-1-check"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 2
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "baseline"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "2.1"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "children": "What is versioned"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 4,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "add",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Add inside",
+             "data-testid": "todo-tree-2-1-add-btn"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "edit",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Edit",
+             "data-testid": "todo-tree-2-1-edit-btn"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "start"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "control--list-draggable-handle",
+           "aria-label": "Drag to move"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "grip",
+             "size": "sm"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Checkbox",
+          "props": {
+           "scale": "sm",
+           "checked": false,
+           "data-testid": "todo-tree-2-2-check"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 2
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "baseline"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "2.2"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "children": "History and restore"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 4,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "add",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Add inside",
+             "data-testid": "todo-tree-2-2-add-btn"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "buttonType": "icon",
+             "startIcon": "edit",
+             "emphasis": "quiet",
+             "scale": "xs",
+             "aria-label": "Edit",
+             "data-testid": "todo-tree-2-2-edit-btn"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "start"
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "control--list-draggable-handle",
+         "aria-label": "Drag to move"
+        },
+        "children": [
+         {
+          "type": "Icon",
+          "props": {
+           "name": "grip",
+           "size": "sm"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Checkbox",
+        "props": {
+         "scale": "sm",
+         "checked": false,
+         "data-testid": "todo-tree-3-check"
+        }
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "align": "baseline"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-extra-small",
+             "emphasis": "quiet",
+             "children": "3"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body",
+             "children": "Storage"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 4,
+         "align": "center"
+        },
+        "children": [
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "add",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Add inside",
+           "data-testid": "todo-tree-3-add-btn"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "buttonType": "icon",
+           "startIcon": "edit",
+           "emphasis": "quiet",
+           "scale": "xs",
+           "aria-label": "Edit",
+           "data-testid": "todo-tree-3-edit-btn"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

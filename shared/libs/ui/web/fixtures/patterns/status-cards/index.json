@@ -1,0 +1,2320 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "status-cards",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "A · the whole Card is in the state — Card status=… (as #25): icon + title · body · time"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "status": "info",
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "info",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "New version available"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "v2.4 adds the Stack primitive and the tile theme block."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "Just now"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "success",
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "success",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Payment received"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "12 min ago"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "warning",
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "warning",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Storage almost full"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "92% of 50 GB used — uploads pause at 100%."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "1 h ago"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "error",
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "error",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Sync failed"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Connection timed out after 30 s; 3 changes were not saved."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "2 h ago"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "B · a status CardHeader band over neutral content; the footer holds time + action"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardHeader",
+            "props": {
+             "status": "info"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "info",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "New version available"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "v2.4 adds the Stack primitive and the tile theme block."
+              }
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Just now"
+                }
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "scale": "sm",
+                 "children": "See what's new"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardHeader",
+            "props": {
+             "status": "success"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "success",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Payment received"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+              }
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "12 min ago"
+                }
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "scale": "sm",
+                 "children": "View invoice"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardHeader",
+            "props": {
+             "status": "warning"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "warning",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Storage almost full"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "92% of 50 GB used — uploads pause at 100%."
+              }
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "1 h ago"
+                }
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "scale": "sm",
+                 "children": "Manage storage"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardHeader",
+            "props": {
+             "status": "error"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "error",
+                 "size": "sm"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Sync failed"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Connection timed out after 30 s; 3 changes were not saved."
+              }
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "2 h ago"
+                }
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "scale": "sm",
+                 "children": "Retry"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "C · neutral Card; the title row (type--heading4 status=…) and a quiet Badge carry the state"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "status": "info"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "info",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " New version available"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "info",
+                 "scale": "xs",
+                 "children": "Info"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "v2.4 adds the Stack primitive and the tile theme block."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "Just now"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "status": "success"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "success",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Payment received"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "success",
+                 "scale": "xs",
+                 "children": "Success"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "12 min ago"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "status": "warning"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "warning",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Storage almost full"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "warning",
+                 "scale": "xs",
+                 "children": "Warning"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "92% of 50 GB used — uploads pause at 100%."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "1 h ago"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 6
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "status": "error"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "error",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Sync failed"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "error",
+                 "scale": "xs",
+                 "children": "Error"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Connection timed out after 30 s; 3 changes were not saved."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "2 h ago"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "D · a status icon Tile as the leading cell; content neutral"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "start"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "info",
+               "className": "flex-none p-2"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "info",
+                 "size": "sm"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "New version available"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "v2.4 adds the Stack primitive and the tile theme block."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Just now"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "start"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "success",
+               "className": "flex-none p-2"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "success",
+                 "size": "sm"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Payment received"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "12 min ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "start"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "warning",
+               "className": "flex-none p-2"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "warning",
+                 "size": "sm"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Storage almost full"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "92% of 50 GB used — uploads pause at 100%."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "1 h ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "start"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "error",
+               "className": "flex-none p-2"
+              },
+              "children": [
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "error",
+                 "size": "sm"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Sync failed"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Connection timed out after 30 s; 3 changes were not saved."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "2 h ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "E · a status Tile column on the leading edge — the accent-bar idea as a surface cell; its width is the theme's tile padding"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "stretch"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "info",
+               "className": "flex-none"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "New version available"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "v2.4 adds the Stack primitive and the tile theme block."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Just now"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "stretch"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "success",
+               "className": "flex-none"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Payment received"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "12 min ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "stretch"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "warning",
+               "className": "flex-none"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Storage almost full"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "92% of 50 GB used — uploads pause at 100%."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "1 h ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "stretch"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "status": "error",
+               "className": "flex-none"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Sync failed"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Connection timed out after 30 s; 3 changes were not saved."
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "2 h ago"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "F · an Alert — a message about a state, with a status action and Dismiss"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Alert",
+          "props": {
+           "status": "info",
+           "icon": {
+            "type": "Icon",
+            "props": {
+             "name": "info"
+            }
+           },
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "AlertTitle",
+            "props": {
+             "children": "New version available"
+            }
+           },
+           {
+            "type": "AlertDescription",
+            "props": {
+             "children": "v2.4 adds the Stack primitive and the tile theme block."
+            }
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "status": "info",
+               "scale": "sm",
+               "children": "See what's new"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "scale": "sm",
+               "children": "Dismiss"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Alert",
+          "props": {
+           "status": "success",
+           "icon": {
+            "type": "Icon",
+            "props": {
+             "name": "success"
+            }
+           },
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "AlertTitle",
+            "props": {
+             "children": "Payment received"
+            }
+           },
+           {
+            "type": "AlertDescription",
+            "props": {
+             "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+            }
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "status": "success",
+               "scale": "sm",
+               "children": "View invoice"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "scale": "sm",
+               "children": "Dismiss"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Alert",
+          "props": {
+           "status": "warning",
+           "icon": {
+            "type": "Icon",
+            "props": {
+             "name": "warning"
+            }
+           },
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "AlertTitle",
+            "props": {
+             "children": "Storage almost full"
+            }
+           },
+           {
+            "type": "AlertDescription",
+            "props": {
+             "children": "92% of 50 GB used — uploads pause at 100%."
+            }
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "status": "warning",
+               "scale": "sm",
+               "children": "Manage storage"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "scale": "sm",
+               "children": "Dismiss"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Alert",
+          "props": {
+           "status": "error",
+           "icon": {
+            "type": "Icon",
+            "props": {
+             "name": "error"
+            }
+           },
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "AlertTitle",
+            "props": {
+             "children": "Sync failed"
+            }
+           },
+           {
+            "type": "AlertDescription",
+            "props": {
+             "children": "Connection timed out after 30 s; 3 changes were not saved."
+            }
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "status": "error",
+               "scale": "sm",
+               "children": "Retry"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "scale": "sm",
+               "children": "Dismiss"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "G · content first; a status CardFooter carries the state line and the action"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 12,
+         "align": "stretch",
+         "wrap": true,
+         "className": "w-full max-w-5xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "New version available"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "v2.4 adds the Stack primitive and the tile theme block."
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "status": "info",
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "info",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Info · Just now"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "info",
+                 "scale": "sm",
+                 "children": "See what's new"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Payment received"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "€4,800.00 from Altar Design Systems for INV-2026-0142."
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "status": "success",
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "success",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Success · 12 min ago"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "success",
+                 "scale": "sm",
+                 "children": "View invoice"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Storage almost full"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "92% of 50 GB used — uploads pause at 100%."
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "status": "warning",
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "warning",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Warning · 1 h ago"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "warning",
+                 "scale": "sm",
+                 "children": "Manage storage"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-56"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Sync failed"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Connection timed out after 30 s; 3 changes were not saved."
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {
+             "status": "error",
+             "className": "w-full"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center",
+               "justify": "between",
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "error",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Error · 2 h ago"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "error",
+                 "scale": "sm",
+                 "children": "Retry"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

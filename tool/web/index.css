@@ -1,0 +1,11 @@
+/* one theme is bundled so tailwind emits the utilities; the active theme is linked at runtime */
+@import "@theme-fonts";
+@import "tailwindcss";
+@import "@theme";
+
+@source "../../shared/libs/ui/web/components/src";
+@source "../../shared/libs/ui/web/fixtures";
+@source ".";
+
+html, body, #root { height: 100%; margin: 0; }
+a[element="type--link"] { text-decoration: underline; text-underline-offset: 2px; }

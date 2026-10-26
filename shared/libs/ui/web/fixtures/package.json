@@ -1,0 +1,19 @@
+{
+  "name": "@libs/ui-fixtures",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Renderable fixtures of the UI library — foundations, elements, layouts, patterns, pages. Tooling only, never bundled into a product.",
+  "type": "module",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@libs/web-components": "workspace:*",
+    "react-hook-form": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0 || ^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}

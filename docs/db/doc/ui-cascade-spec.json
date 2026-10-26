@@ -1,0 +1,171 @@
+{
+  "id": "doc/ui-cascade-spec",
+  "kind": "doc",
+  "title": "Cascade Specification",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui",
+    "contributor"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "Technical details of how the theme cascade translates to CSS. For the conceptual model, see Architecture (`architecture.md`).",
+  "docId": "ui-cascade-spec",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "Technical details of how the theme cascade translates to CSS. For the conceptual model, see Architecture (`architecture.md`)."
+    },
+    "reference": [
+      {
+        "topic": "Selector Model",
+        "claims": [],
+        "statement": "Two attributes, never on the same node:",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "<div element=\"surface--card\">        element = {family}--{element}\n<div layout=\"left-sidebar\">          layout = bare name (no prefix)",
+                "caption": "html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Selector Model › Part attribute",
+        "claims": [
+          {
+            "text": "Rules: only emit CSS for `part` values **explicitly declared** in the theme under that surface's `parts` field. An undeclared `part` is inert — zero CSS emitted. This prevents developers from using `part` as a free styling escape hatch. `part` is never used on the same node as `element` or `layout`."
+          },
+          {
+            "text": "Selector emitted: `[element=\"surface--card\"] [part=\"body\"] { ... }`"
+          }
+        ],
+        "statement": "`part=\"name\"` marks a structural sub-region of a themed ancestor. Use it on plain divs that a designer needs to control (padding, gap, background) without giving the div a full element identity.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "<div element=\"surface--card\">\n  <div part=\"body\">      ← designer controls interior here\n  <div part=\"actions\">   ← designer controls gap here",
+                "caption": "html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Selector Model › Family prefixes (for element attribute)",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Family key              | Prefix          |\n|-------------------------|-----------------|\n| surfaceContainer        | `surface`       |\n| elevatedOverlay         | `overlay`       |\n| interactiveControl      | `control`       |\n| interactiveControlGroup | `control-group` |\n| field                   | `field`         |\n| listContainer           | `list`          |\n| shape                   | `shape`         |\n| media                   | `media`         |"
+          }
+        ],
+        "statement": "Layout uses `layout=\"value\"` directly — no family prefix."
+      },
+      {
+        "topic": "Selector Model › Axis attributes (bare, no data- prefix)",
+        "claims": [],
+        "statement": "`emphasis`, `status`, `state`, `scale`, `concept`"
+      },
+      {
+        "topic": "CSS Specificity",
+        "claims": [],
+        "statement": "CSS source order + specificity handles cascade priority. No variable chains or bridge systems. The engine emits rules in this order:",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "[element^=\"surface--\"]                                  L2 family (lowest)\n[element=\"surface--card\"]                               L3 element\n[element=\"surface--card\"][emphasis=\"primary\"]            axis (emphasis first)\n[element=\"surface--card\"][status=\"error\"]                axis (status later = wins)\n[element=\"surface--card\"]:hover                         pseudo-class (highest)\n[element=\"surface--card\"][emphasis=\"primary\"]:hover      compound (most specific)\n[concept=\"X\"] [element=\"surface--card\"]                 concept (2 selectors)\n[element=\"A\"] [element=\"B\"]                             contextual (2 selectors)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Composition Variables",
+        "claims": [
+          {
+            "text": "Everything else is plain CSS. Padding, radius, shadow, cursor, transition, typography — set directly, no variables."
+          }
+        ],
+        "statement": "5 CSS custom properties handle cross-property composition:",
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Variable | Why it exists |\n|----------|---------------|\n| `--bg` | Tint mixes into background via `color-mix()` |\n| `--fg` | `smart-bw` computes foreground from background |\n| `--tint` | One color modifies both background and border |\n| `--border-color` | Tint mixes into border via `color-mix()` |\n| `--bg-alpha` | Alpha composites with transparent |"
+          }
+        ]
+      },
+      {
+        "topic": "Composition Variables › Property application (on [element] and [layout])",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "[element] {\n  background: color-mix(in srgb,\n    color-mix(in srgb, var(--tint, var(--bg, transparent)) 20%, var(--bg, transparent))\n    var(--bg-alpha, 100%),\n    transparent\n  );\n  color: var(--fg, inherit);\n  border-color: color-mix(in srgb,\n    var(--tint, var(--border-color, transparent)) 30%,\n    var(--border-color, transparent)\n  );\n}",
+                "caption": "css"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Output Principles",
+        "claims": [
+          {
+            "text": "**Zero theme = zero cascade lines.** Only structural plumbing remains."
+          },
+          {
+            "text": "**Only emit what the theme defines.** No defaults copied to elements."
+          },
+          {
+            "text": "**Deltas only.** Elements don't repeat family values."
+          },
+          {
+            "text": "**One file, all modes.** Default on `:root`, others on `[data-mode]`."
+          },
+          {
+            "text": "**Readable in devtools.** Each rule shows what it does."
+          }
+        ]
+      },
+      {
+        "topic": "Smart Bleed CSS",
+        "claims": [
+          {
+            "text": "Inner radius = outer radius - border-width (child sits inside parent border). For `border` mode, child extends over the border, so outer radius is used. For `rounded` mode, interior edges also get radius."
+          }
+        ],
+        "statement": "Resolved at build time. The engine computes the parent's padding, radius, and border-width from the cascade, then emits:",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "/* Horizontal bleed into parent padding */\n[selector] {\n  margin-left: calc(-1 * <parent-px>);\n  margin-right: calc(-1 * <parent-px>);\n  padding-left: <parent-px>;\n  padding-right: <parent-px>;\n}\n\n/* First child: bleed top + inherit parent top corners */\n[selector]:first-child {\n  margin-top: calc(-1 * <parent-py>);\n  padding-top: <parent-py>;\n  border-top-left-radius: calc(<parent-radius-tl> - <parent-border-width>);\n  border-top-right-radius: calc(<parent-radius-tr> - <parent-border-width>);\n  border-bottom-left-radius: 0;   /* straight interior edge (normal mode) */\n  border-bottom-right-radius: 0;\n}\n\n/* Last child: bleed bottom + inherit parent bottom corners */\n[selector]:last-child { ... }",
+                "caption": "css"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

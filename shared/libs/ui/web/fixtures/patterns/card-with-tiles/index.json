@@ -1,0 +1,516 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "card-with-tiles",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "a row of tiles — four metrics, each tile fills an equal share"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Card",
+        "props": {
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 12,
+           "pad": 12
+          },
+          "children": [
+           {
+            "type": "Tile",
+            "props": {
+             "className": "flex-1 min-w-0"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Compliance rate"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "baseline",
+                 "gap": 8
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-large",
+                   "children": "98%"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "success",
+                   "children": "+8.3%"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Tile",
+            "props": {
+             "className": "flex-1 min-w-0"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Sent"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "baseline",
+                 "gap": 8
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-large",
+                   "children": "1,204"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Tile",
+            "props": {
+             "className": "flex-1 min-w-0"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Opened"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "baseline",
+                 "gap": 8
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-large",
+                   "children": "867"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "error",
+                   "children": "−1.4%"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Tile",
+            "props": {
+             "className": "flex-1 min-w-0"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Bounced"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "baseline",
+                 "gap": 8
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-large",
+                   "children": "2.1%"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "error",
+                   "children": "+0.3%"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "a 2×2 of tiles — the first is emphasis='hero'; the theme decides what hero means"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Card",
+        "props": {
+         "className": "w-96"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 12,
+           "pad": 12
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "emphasis": "hero",
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 6
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "Revenue"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "baseline",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers-large",
+                     "children": "$48.2k"
+                    }
+                   },
+                   {
+                    "type": "Badge",
+                    "props": {
+                     "status": "success",
+                     "children": "+12%"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 6
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "Orders"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "baseline",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers-large",
+                     "children": "1,092"
+                    }
+                   },
+                   {
+                    "type": "Badge",
+                    "props": {
+                     "status": "success",
+                     "children": "+4%"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 6
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "Avg. order"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "baseline",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers-large",
+                     "children": "$44.10"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 6
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "Refunds"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "baseline",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers-large",
+                     "children": "1.8%"
+                    }
+                   },
+                   {
+                    "type": "Badge",
+                    "props": {
+                     "status": "error",
+                     "children": "+0.2%"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

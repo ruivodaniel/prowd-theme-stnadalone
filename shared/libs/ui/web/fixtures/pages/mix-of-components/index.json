@@ -1,0 +1,152 @@
+{
+ "kind": "page",
+ "schemaVersion": 1,
+ "name": "mix-of-components",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Page",
+  "props": {
+   "className": "flex min-h-screen w-full flex-col"
+  },
+  "children": [
+   {
+    "type": "PageHeader",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "align": "center",
+       "justify": "between",
+       "className": "w-full px-6 py-3"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "children": "Pattern gallery",
+           "element": "type--h4"
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "children": "Every approved pattern on one page",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 8
+        },
+        "children": [
+         {
+          "type": "Button",
+          "props": {
+           "emphasis": "secondary",
+           "children": "Export",
+           "data-testid": "page-export-button"
+          }
+         },
+         {
+          "type": "Button",
+          "props": {
+           "emphasis": "primary",
+           "children": "New item",
+           "data-testid": "page-new-item-button"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "PageBody",
+    "props": {
+     "className": "flex flex-1 flex-col"
+    },
+    "children": [
+     {
+      "type": "Main",
+      "props": {
+       "className": "flex flex-1 flex-col"
+      },
+      "children": [
+       {
+        "type": "MainContent",
+        "props": {
+         "className": "flex flex-1 flex-col"
+        },
+        "children": [
+         {
+          "type": "MainBody",
+          "props": {
+           "className": "flex flex-1 flex-col"
+          },
+          "children": [
+           {
+            "type": "Container",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 40,
+               "pad": 24
+              },
+              "children": [
+               {
+                "use": {
+                 "component": "FormsData",
+                 "version": "latest"
+                },
+                "args": {}
+               },
+               {
+                "use": {
+                 "component": "CardsStats",
+                 "version": "latest"
+                },
+                "args": {}
+               },
+               {
+                "use": {
+                 "component": "NavLists",
+                 "version": "latest"
+                },
+                "args": {}
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

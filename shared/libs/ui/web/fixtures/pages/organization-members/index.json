@@ -1,0 +1,1566 @@
+{
+  "kind": "page",
+  "schemaVersion": 1,
+  "name": "organization-members",
+  "version": 1,
+  "surface": "web",
+  "root": {
+    "type": "ShellSideNav",
+    "props": {
+      "className": "flex h-screen w-full overflow-hidden"
+    },
+    "children": [
+      {
+        "type": "ShellNav",
+        "props": {
+          "className": "flex h-full flex-col"
+        },
+        "children": [
+          {
+            "type": "SidebarProvider",
+            "props": {
+              "open": true,
+              "className": "h-full"
+            },
+            "children": [
+              {
+                "type": "Sidebar",
+                "props": {
+                  "collapsible": "icon"
+                },
+                "children": [
+                  {
+                    "type": "SidebarHeader",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarMenuButton",
+                        "props": {
+                          "emphasis": "primary",
+                          "concept": "org-switcher",
+                          "tooltip": "Northwind Logistics"
+                        },
+                        "children": [
+                          {
+                            "type": "Avatar",
+                            "props": {
+                              "scale": "sm"
+                            },
+                            "children": [
+                              {
+                                "type": "AvatarFallback",
+                                "props": {
+                                  "children": "NL"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Text",
+                            "props": {
+                              "as": "span",
+                              "element": "type--body",
+                              "className": "flex-1 truncate",
+                              "children": "Northwind Logistics"
+                            }
+                          },
+                          {
+                            "type": "Icon",
+                            "props": {
+                              "name": "chevronDown",
+                              "size": "sm"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SidebarContent",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarGroup",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "SidebarMenu",
+                            "props": {},
+                            "children": [
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Home"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "home",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Home"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Organizations",
+                                      "isActive": true
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "users",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Organizations"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Badge",
+                                    "props": {
+                                      "scale": "xs",
+                                      "children": "3"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Legal documents"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "fileText",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Legal documents"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Settings"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "settings",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Settings"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SidebarFooter",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarMenu",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "SidebarMenuItem",
+                            "props": {},
+                            "children": [
+                              {
+                                "type": "SidebarMenuButton",
+                                "props": {
+                                  "emphasis": "primary",
+                                  "tooltip": "Samantha Reyes"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Avatar",
+                                    "props": {
+                                      "scale": "sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "AvatarFallback",
+                                        "props": {
+                                          "children": "SR"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body",
+                                      "className": "flex-1 truncate",
+                                      "children": "Samantha Reyes"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Page",
+        "props": {
+          "className": "flex flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "type": "PageHeader",
+            "props": {},
+            "children": [
+              {
+                "type": "Stack",
+                "props": {
+                  "dir": "row",
+                  "gap": 8,
+                  "align": "center",
+                  "pad": 16
+                },
+                "children": [
+                  {
+                    "type": "Icon",
+                    "props": {
+                      "name": "users",
+                      "size": "md"
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "as": "span",
+                      "element": "type--heading3",
+                      "children": "Organizations"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PageBody",
+            "props": {
+              "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+              {
+                "type": "Text",
+                "props": {
+                  "as": "nav",
+                  "element": "control-group--sidebar",
+                  "data-testid": "org-section-nav"
+                },
+                "children": [
+                  {
+                    "type": "Stack",
+                    "props": {
+                      "dir": "col",
+                      "gap": 4,
+                      "pad": 16
+                    },
+                    "children": [
+                      {
+                        "type": "Text",
+                        "props": {
+                          "as": "a",
+                          "element": "control--sidebar-item",
+                          "href": "#",
+                          "data-testid": "org-nav-info-link"
+                        },
+                        "children": [
+                          {
+                            "type": "Icon",
+                            "props": {
+                              "name": "building",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "type": "Text",
+                            "props": {
+                              "as": "span",
+                              "children": "Info"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Text",
+                        "props": {
+                          "as": "a",
+                          "element": "control--sidebar-item",
+                          "href": "#",
+                          "data-testid": "org-nav-members-link",
+                          "state": "selected",
+                          "aria-current": "page"
+                        },
+                        "children": [
+                          {
+                            "type": "Icon",
+                            "props": {
+                              "name": "users",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "type": "Text",
+                            "props": {
+                              "as": "span",
+                              "children": "Members"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Main",
+                "props": {
+                  "className": "flex flex-1 flex-col overflow-hidden"
+                },
+                "children": [
+                  {
+                    "type": "MainBody",
+                    "props": {
+                      "className": "flex flex-1 flex-col overflow-y-auto"
+                    },
+                    "children": [
+                      {
+                        "type": "Container",
+                        "props": {
+                          "scale": "lg",
+                          "align": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "Stack",
+                            "props": {
+                              "dir": "col",
+                              "size": "fill",
+                              "pad": 24
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "col",
+                                  "gap": 24,
+                                  "size": "fill",
+                                  "data-testid": "org-members-page"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "emphasis": "quiet",
+                                      "children": "The organization's members and their roles, and its open invitations. Search by name, switch the view to invitations, or invite someone."
+                                    }
+                                  },
+                                  {
+                                    "type": "Card",
+                                    "props": {
+                                      "className": "flex max-h-[32rem] flex-col overflow-hidden"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "CardHeader",
+                                        "props": {},
+                                        "children": [
+                                          {
+                                            "type": "Stack",
+                                            "props": {
+                                              "dir": "row",
+                                              "gap": 12,
+                                              "align": "center",
+                                              "justify": "between",
+                                              "wrap": true
+                                            },
+                                            "children": [
+                                              {
+                                                "type": "Stack",
+                                                "props": {
+                                                  "dir": "row",
+                                                  "gap": 12,
+                                                  "align": "center"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "type": "Input",
+                                                    "props": {
+                                                      "value": "",
+                                                      "placeholder": "Search by name",
+                                                      "position": "w-md",
+                                                      "data-testid": "members-search-input"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "InputSelect",
+                                                    "props": {
+                                                      "position": "w-sm",
+                                                      "clearable": false,
+                                                      "value": "members",
+                                                      "options": [
+                                                        {
+                                                          "obj": {
+                                                            "value": "members",
+                                                            "label": "Members"
+                                                          }
+                                                        },
+                                                        {
+                                                          "obj": {
+                                                            "value": "invitations",
+                                                            "label": "Invitations"
+                                                          }
+                                                        }
+                                                      ],
+                                                      "data-testid": "members-filter-select"
+                                                    }
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "type": "Button",
+                                                "props": {
+                                                  "buttonType": "icon-text",
+                                                  "startIcon": "add",
+                                                  "data-testid": "members-invite-btn",
+                                                  "children": "Invite member",
+                                                  "type": "button"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "CardContent",
+                                        "props": {
+                                          "className": "min-h-0 flex-1 overflow-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "type": "Table",
+                                            "props": {
+                                              "data-testid": "members-table"
+                                            },
+                                            "children": [
+                                              {
+                                                "type": "TableHeader",
+                                                "props": {},
+                                                "children": [
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {},
+                                                    "children": [
+                                                      {
+                                                        "type": "TableHead",
+                                                        "props": {
+                                                          "children": "Member"
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "TableHead",
+                                                        "props": {
+                                                          "children": "Roles"
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "TableHead",
+                                                        "props": {}
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "type": "TableBody",
+                                                "props": {},
+                                                "children": [
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u1"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "MS"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Marta Silveira"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "marta.silveira@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u1-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Owner"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Admin"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u1-edit-btn",
+                                                                  "aria-label": "Edit Marta Silveira",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "TB"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Tomas Berger"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "tomas.berger@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u2-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Admin"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u2-edit-btn",
+                                                                  "aria-label": "Edit Tomas Berger",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u3"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "AK"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Aisha Khan"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "aisha.khan@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u3-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Dispatcher"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Billing"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u3-edit-btn",
+                                                                  "aria-label": "Edit Aisha Khan",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u4"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "JP"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Joao Pereira"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "joao.pereira@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u4-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Dispatcher"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u4-edit-btn",
+                                                                  "aria-label": "Edit Joao Pereira",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "LH"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Lena Hoffmann"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "lena.hoffmann@partner-carrier.de"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u5-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Carrier"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u5-edit-btn",
+                                                                  "aria-label": "Edit Lena Hoffmann",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u6"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "RM"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Ravi Menon"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "ravi.menon@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u6-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Auditor"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Viewer"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u6-edit-btn",
+                                                                  "aria-label": "Edit Ravi Menon",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u7"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "CD"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Chloe Dubois"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "chloe.dubois@northwind.io"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u7-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Viewer"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u7-edit-btn",
+                                                                  "aria-label": "Edit Chloe Dubois",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "TableRow",
+                                                    "props": {
+                                                      "data-testid": "member-u8"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 10,
+                                                              "align": "center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Avatar",
+                                                                "props": {
+                                                                  "scale": "sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "AvatarFallback",
+                                                                    "props": {
+                                                                      "children": "IC"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "type": "Stack",
+                                                                "props": {
+                                                                  "dir": "col",
+                                                                  "gap": 2
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body",
+                                                                      "children": "Ines Carvalho"
+                                                                    }
+                                                                  },
+                                                                  {
+                                                                    "type": "Text",
+                                                                    "props": {
+                                                                      "as": "span",
+                                                                      "element": "type--body-extra-small",
+                                                                      "emphasis": "quiet",
+                                                                      "children": "+351 912 345 678"
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "gap": 4,
+                                                              "align": "center",
+                                                              "wrap": true,
+                                                              "data-testid": "member-u8-roles"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Dispatcher"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Badge",
+                                                                "props": {
+                                                                  "emphasis": "quiet",
+                                                                  "children": "Carrier"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "TableCell",
+                                                        "props": {},
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "row",
+                                                              "justify": "end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Button",
+                                                                "props": {
+                                                                  "buttonType": "icon",
+                                                                  "startIcon": "edit",
+                                                                  "emphasis": "quiet",
+                                                                  "scale": "sm",
+                                                                  "data-testid": "member-u8-edit-btn",
+                                                                  "aria-label": "Edit Ines Carvalho",
+                                                                  "type": "button"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "CardFooter",
+                                        "props": {},
+                                        "children": [
+                                          {
+                                            "type": "ListPagination",
+                                            "props": {
+                                              "total": 8,
+                                              "data-testid": "members-pagination",
+                                              "query": {
+                                                "page": 1,
+                                                "pageSize": 20
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

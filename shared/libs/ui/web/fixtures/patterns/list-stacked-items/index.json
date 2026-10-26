@@ -1,0 +1,806 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "list-stacked-items",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "contacts — 8 rows: Avatar with presence · name + role Badge over email over last-active · two actions; one row selected, invites carry status"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "0",
+           "name": "Daniel Ruivo",
+           "initials": "DR",
+           "role": "Owner",
+           "email": "daniel@altar.io",
+           "last": "Active now",
+           "presence": 1,
+           "invited": false,
+           "selected": true
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "1",
+           "name": "Inês Carvalho",
+           "initials": "IC",
+           "role": "Admin",
+           "email": "ines@altar.io",
+           "last": "12 min ago",
+           "presence": 1,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "2",
+           "name": "Tomás Ferreira",
+           "initials": "TF",
+           "role": "Designer",
+           "email": "tomas@altar.io",
+           "last": "2 h ago",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "3",
+           "name": "Marta Silva",
+           "initials": "MS",
+           "role": "Engineer",
+           "email": "marta@altar.io",
+           "last": "Yesterday",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "4",
+           "name": "Rui Almeida",
+           "initials": "RA",
+           "role": "Engineer",
+           "email": "rui@altar.io",
+           "last": "Invite pending",
+           "presence": 2,
+           "invited": true,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "5",
+           "name": "Sofia Mendes",
+           "initials": "SM",
+           "role": "Product",
+           "email": "sofia@altar.io",
+           "last": "3 days ago",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "6",
+           "name": "João Costa",
+           "initials": "JC",
+           "role": "Viewer",
+           "email": "joao@altar.io",
+           "last": "Last week",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "7",
+           "name": "Beatriz Lopes",
+           "initials": "BL",
+           "role": "Viewer",
+           "email": "beatriz@altar.io",
+           "last": "Invite pending",
+           "presence": 2,
+           "invited": true,
+           "selected": false
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "inbox — 7 rows: sender + time on one line · subject · preview; unread rows carry a Badge, attachments an icon"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "IC",
+           "from": "Inês Carvalho",
+           "time": "09:12",
+           "subject": "Q3 roadmap review",
+           "preview": "Attaching the deck we discussed — the sequencing on slide 4 changed."
+          },
+          "slots": {
+           "badge": [
+            {
+             "type": "Badge",
+             "props": {
+              "status": "info",
+              "scale": "xs",
+              "children": "New"
+             }
+            }
+           ],
+           "action": [
+            {
+             "type": "ListItemAction",
+             "props": {},
+             "children": [
+              {
+               "type": "Text",
+               "props": {
+                "as": "span",
+                "element": "type--body-small",
+                "emphasis": "quiet"
+               },
+               "children": [
+                {
+                 "type": "Icon",
+                 "props": {
+                  "name": "file",
+                  "size": "sm"
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "S",
+           "from": "Stripe",
+           "time": "08:40",
+           "subject": "Your invoice INV-2026-0142 is paid",
+           "preview": "€4,800.00 was received for Altar Design Systems. No action needed."
+          },
+          "slots": {
+           "badge": [
+            {
+             "type": "Badge",
+             "props": {
+              "status": "info",
+              "scale": "xs",
+              "children": "New"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "TF",
+           "from": "Tomás Ferreira",
+           "time": "Yesterday",
+           "subject": "Re: catalog patterns",
+           "preview": "The tile seam question — I think the theme owns it, agreed. Two more…"
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "G",
+           "from": "GitHub",
+           "time": "Yesterday",
+           "subject": "[OmniChord-26] 3 pull requests await your review",
+           "preview": "stack primitive · card-with-tiles · pattern fixtures"
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "MS",
+           "from": "Marta Silva",
+           "time": "Mon",
+           "subject": "Onboarding flow — copy pass",
+           "preview": "Rewrote the empty states; the terms line is still too long for mobile."
+          },
+          "slots": {
+           "action": [
+            {
+             "type": "ListItemAction",
+             "props": {},
+             "children": [
+              {
+               "type": "Text",
+               "props": {
+                "as": "span",
+                "element": "type--body-small",
+                "emphasis": "quiet"
+               },
+               "children": [
+                {
+                 "type": "Icon",
+                 "props": {
+                  "name": "file",
+                  "size": "sm"
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "L",
+           "from": "Linear",
+           "time": "Mon",
+           "subject": "Weekly digest",
+           "preview": "14 issues closed, 6 created. Cycle 32 ends Friday."
+          }
+         },
+         {
+          "use": {
+           "component": "MailRow",
+           "version": "latest"
+          },
+          "args": {
+           "initials": "SM",
+           "from": "Sofia Mendes",
+           "time": "Sun",
+           "subject": "Persona anchors",
+           "preview": "Ruled: personas anchor on the org, not the role. Doc updated."
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "orders — 8 dense rows of four stacked cells: id over date · customer over email · items over channel · amount over status Badge"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10482",
+           "date": "13 Sep, 09:41",
+           "customer": "Helm Works",
+           "email": "ops@helm.works",
+           "items": "3 items",
+           "channel": "Web",
+           "amount": "€1,240.00",
+           "statusText": "Paid"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10481",
+           "date": "13 Sep, 08:15",
+           "customer": "Blueway Logistics",
+           "email": "billing@blueway.io",
+           "items": "12 items",
+           "channel": "API",
+           "amount": "€6,380.00",
+           "statusText": "Shipped"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10480",
+           "date": "12 Sep, 22:03",
+           "customer": "Ana Ribeiro",
+           "email": "ana.r@gmail.com",
+           "items": "1 item",
+           "channel": "Web",
+           "amount": "€89.00",
+           "statusText": "Pending"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10479",
+           "date": "12 Sep, 18:47",
+           "customer": "Nordic Compliance AB",
+           "email": "finance@nordic.se",
+           "items": "6 items",
+           "channel": "Sales",
+           "amount": "€3,150.00",
+           "statusText": "Paid"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10478",
+           "date": "12 Sep, 16:20",
+           "customer": "Pedro Nunes",
+           "email": "pedro.n@proton.me",
+           "items": "2 items",
+           "channel": "Web",
+           "amount": "€178.00",
+           "statusText": "Refunded"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10477",
+           "date": "12 Sep, 11:02",
+           "customer": "Clerk Studio",
+           "email": "hello@clerk.studio",
+           "items": "4 items",
+           "channel": "API",
+           "amount": "€920.00",
+           "statusText": "Shipped"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10476",
+           "date": "11 Sep, 19:35",
+           "customer": "Loan Plans Ltd",
+           "email": "ap@loanplans.co",
+           "items": "8 items",
+           "channel": "Sales",
+           "amount": "€4,410.00",
+           "statusText": "Paid"
+          }
+         },
+         {
+          "use": {
+           "component": "OrderRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "ORD-10475",
+           "date": "11 Sep, 14:12",
+           "customer": "Rita Gomes",
+           "email": "rita.g@outlook.com",
+           "items": "1 item",
+           "channel": "Web",
+           "amount": "€45.00",
+           "statusText": "Pending"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "activity — 8 rows: a typed icon Tile · actor + verb over the object over the time; the row's status is the event's"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Daniel Ruivo",
+           "action": "merged",
+           "object": "stack: the auto-layout primitive as a library component",
+           "time": "2 min ago",
+           "tone": 1
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "gitMerge",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "CI",
+           "action": "failed",
+           "object": "theme:build · wireframe-stroke v1",
+           "time": "9 min ago",
+           "tone": 4
+          },
+          "slots": {
+           "action": [
+            {
+             "type": "ListItemAction",
+             "props": {},
+             "children": [
+              {
+               "type": "Chip",
+               "props": {
+                "emphasis": "tertiary",
+                "scale": "sm",
+                "closable": false,
+                "children": "Retry",
+                "data-testid": "activity-1-retry-btn"
+               }
+              }
+             ]
+            }
+           ],
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "error",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Inês Carvalho",
+           "action": "commented on",
+           "object": "card-with-tiles — the seam belongs to the theme",
+           "time": "24 min ago",
+           "tone": 0
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "message",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Tomás Ferreira",
+           "action": "uploaded",
+           "object": "32 images to Component-examples",
+           "time": "1 h ago",
+           "tone": 0
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "upload",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Marta Silva",
+           "action": "opened",
+           "object": "PR #418 · Tile emits surface--tile",
+           "time": "2 h ago",
+           "tone": 3
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "gitBranch",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Rui Almeida",
+           "action": "was invited to",
+           "object": "Altar Design Systems",
+           "time": "3 h ago",
+           "tone": 0
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "userPlus",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Deploy",
+           "action": "promoted",
+           "object": "catalog → staging",
+           "time": "5 h ago",
+           "tone": 1
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "package",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         },
+         {
+          "use": {
+           "component": "ActivityRow",
+           "version": "latest"
+          },
+          "args": {
+           "actor": "Sofia Mendes",
+           "action": "archived",
+           "object": "explorations/OLD (9 items)",
+           "time": "Yesterday",
+           "tone": 2
+          },
+          "slots": {
+           "icon": [
+            {
+             "type": "Icon",
+             "props": {
+              "name": "archive",
+              "size": "sm"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

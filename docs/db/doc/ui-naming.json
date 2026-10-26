@@ -1,0 +1,70 @@
+{
+  "id": "doc/ui-naming",
+  "kind": "doc",
+  "title": "Naming",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui",
+    "consumer"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "How application components, and their files, are named. This covers the components an app or a slice writes. The library's own elements (`alert-dialog`, `dat…",
+  "docId": "ui-naming",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "How application components, and their files, are named. This covers the components an app or a slice writes. The library's own elements (`alert-dialog`, `date-picker`) keep the names of the elements table."
+    },
+    "reference": [
+      {
+        "topic": "The rule",
+        "claims": [
+          {
+            "text": "The file has the component's name: `SidebarShell.tsx` holds `SidebarShell`. One component per file."
+          }
+        ],
+        "statement": "Not every component has a suffix. A component that is one of the roles below takes that role as its last word, as **Subject + Role** in PascalCase (`OrgMembersPage`, `TwoFactorCard`). A component that is none of the roles has a plain name with no suffix (`Avatar`, `Badge`, `OrgSwitcher`)."
+      },
+      {
+        "topic": "The roles",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Role | What it is | Example |\n|---|---|---|\n| `Page` | a route's screen | `OrgMembersPage` |\n| `Shell` | the outermost frame the app owns. There are two: `SidebarShell` (`shell-side-nav`) and `NoNavShell` (`shell-none`) | `SidebarShell` |\n| `Layout` | the structure of a page inside a shell: the header, an optional left panel, the main column | `SettingsLayout` |\n| `Sheet` | a side overlay | `EditMemberSheet` |\n| `Modal` | a centered overlay | `RemoveMemberModal` |\n| `Toast` | a transient message | `Toast` |\n| `Form` | inputs and a submit | `ProfileDataForm` |\n| `List` | a vertical collection | `InvitationsList` |\n| `Table` | a table | `MembersTable` |\n| `Card` | a self-contained surface | `TwoFactorCard` |\n| `Tile` | a small, clickable summary block in a grid | `OrganizationTile` |\n| `Header` | the top band of a page, card or section | `TitleHeader` |\n| `Footer` | the bottom band of a page, card or section | `CardFooter` |\n| `Panel` | a bounded region beside or within the main content | `FilterPanel` |"
+          }
+        ],
+        "statement": "A word that is not in the table is not a role. Add the role here first, then use it."
+      },
+      {
+        "topic": "Shell and Layout",
+        "claims": [
+          {
+            "text": "A `Layout` sits inside a shell and builds the page region tree (`Page › PageHeader + PageBody › [LeftSidebar] + Main › Container`). It is that tree with the header and the left panel as its slots. A page does not build its own layout."
+          }
+        ],
+        "statement": "`layouts.md` defines a shell as the outermost viewport frame, with three variants (`shell-side-nav`, `shell-top-nav`, `shell-none`). A product uses the variants it needs; ours uses `shell-side-nav` and `shell-none`, so it has `SidebarShell` and `NoNavShell` and nothing else is called a shell."
+      },
+      {
+        "topic": "Where components live",
+        "claims": [],
+        "statement": "A component several slices use is an app component, in `apps/main/shared/web/src/components/`. A slice does not import it: the app injects it at mount, as it injects `toast` and the router (`scaffolding-and-import-boundaries`)."
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

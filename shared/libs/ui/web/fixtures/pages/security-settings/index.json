@@ -1,0 +1,968 @@
+{
+  "kind": "page",
+  "schemaVersion": 1,
+  "name": "security-settings",
+  "version": 1,
+  "surface": "web",
+  "root": {
+    "type": "ShellSideNav",
+    "children": [
+      {
+        "type": "ShellNav",
+        "props": {
+          "className": "flex h-full flex-col"
+        },
+        "children": [
+          {
+            "type": "SidebarProvider",
+            "props": {
+              "open": true,
+              "className": "h-full"
+            },
+            "children": [
+              {
+                "type": "Sidebar",
+                "props": {
+                  "collapsible": "icon"
+                },
+                "children": [
+                  {
+                    "type": "SidebarHeader",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarMenuButton",
+                        "props": {
+                          "emphasis": "primary",
+                          "concept": "org-switcher",
+                          "tooltip": "Northwind Logistics"
+                        },
+                        "children": [
+                          {
+                            "type": "Avatar",
+                            "props": {
+                              "scale": "sm"
+                            },
+                            "children": [
+                              {
+                                "type": "AvatarFallback",
+                                "props": {
+                                  "children": "NL"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Text",
+                            "props": {
+                              "as": "span",
+                              "element": "type--body",
+                              "className": "flex-1 truncate",
+                              "children": "Northwind Logistics"
+                            }
+                          },
+                          {
+                            "type": "Icon",
+                            "props": {
+                              "name": "chevronDown",
+                              "size": "sm"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SidebarContent",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarGroup",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "SidebarMenu",
+                            "props": {},
+                            "children": [
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Home"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "home",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Home"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Organizations"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "users",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Organizations"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Badge",
+                                    "props": {
+                                      "scale": "xs",
+                                      "children": "3"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Legal documents"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "fileText",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Legal documents"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "SidebarMenuItem",
+                                "props": {},
+                                "children": [
+                                  {
+                                    "type": "SidebarMenuButton",
+                                    "props": {
+                                      "emphasis": "primary",
+                                      "concept": "main-nav-item",
+                                      "tooltip": "Settings",
+                                      "isActive": true
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Icon",
+                                        "props": {
+                                          "name": "settings",
+                                          "size": "sm"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body",
+                                          "className": "flex-1 truncate",
+                                          "children": "Settings"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SidebarFooter",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "SidebarMenu",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "SidebarMenuItem",
+                            "props": {},
+                            "children": [
+                              {
+                                "type": "SidebarMenuButton",
+                                "props": {
+                                  "emphasis": "primary",
+                                  "tooltip": "Samantha Reyes"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Avatar",
+                                    "props": {
+                                      "scale": "sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "AvatarFallback",
+                                        "props": {
+                                          "children": "SR"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body",
+                                      "className": "flex-1 truncate",
+                                      "children": "Samantha Reyes"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Page",
+        "children": [
+          {
+            "type": "PageHeader",
+            "props": {},
+            "children": [
+              {
+                "type": "Stack",
+                "props": {
+                  "dir": "row",
+                  "gap": 8,
+                  "align": "center",
+                  "pad": 16
+                },
+                "children": [
+                  {
+                    "type": "Icon",
+                    "props": {
+                      "name": "settings",
+                      "size": "md"
+                    }
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "as": "span",
+                      "element": "type--heading3",
+                      "children": "Settings"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PageBody",
+            "children": [
+              {
+                "type": "LeftSidebar",
+                "children": [
+                  {
+                    "type": "Stack",
+                    "props": {
+                      "dir": "col",
+                      "data-testid": "settings-nav"
+                    },
+                    "children": [
+                      {
+                        "type": "Stack",
+                        "props": {
+                          "dir": "col",
+                          "gap": 4,
+                          "pad": 16
+                        },
+                        "children": [
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-account-link",
+                              "emphasis": "tertiary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "mail"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Account"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-profile-link",
+                              "emphasis": "tertiary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "user"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Profile"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-security-link",
+                              "emphasis": "secondary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "lock"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Security"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-legal-link",
+                              "emphasis": "tertiary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "bookOpen"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Legal agreements"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-preferences-link",
+                              "emphasis": "tertiary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "settings"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Preferences"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Button",
+                            "props": {
+                              "data-testid": "settings-nav-notifications-link",
+                              "emphasis": "tertiary",
+                              "type": "button",
+                              "position": "fill"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "row",
+                                  "gap": 8,
+                                  "align": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Icon",
+                                    "props": {
+                                      "name": "bell"
+                                    }
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small",
+                                      "children": "Notifications"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Main",
+                "children": [
+                  {
+                    "type": "MainContent",
+                    "children": [
+                      {
+                        "type": "MainBody",
+                        "children": [
+                          {
+                            "type": "Container",
+                            "props": {
+                              "scale": "sm",
+                              "align": "left"
+                            },
+                            "children": [
+                              {
+                                "type": "Stack",
+                                "props": {
+                                  "dir": "col",
+                                  "gap": 24,
+                                  "data-testid": "security-page"
+                                },
+                                "children": [
+                                  {
+                                    "type": "Stack",
+                                    "props": {
+                                      "dir": "col",
+                                      "gap": 4
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "h2",
+                                          "element": "type--heading3",
+                                          "children": "Security"
+                                        }
+                                      },
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "span",
+                                          "element": "type--body-small",
+                                          "children": "Two-factor authentication for your account, and the devices signed in to it.",
+                                          "emphasis": "quiet"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Card",
+                                    "children": [
+                                      {
+                                        "type": "CardContent",
+                                        "children": [
+                                          {
+                                            "type": "Stack",
+                                            "props": {
+                                              "dir": "col",
+                                              "gap": 24
+                                            },
+                                            "children": [
+                                              {
+                                                "type": "Stack",
+                                                "props": {
+                                                  "dir": "col",
+                                                  "gap": 12
+                                                },
+                                                "children": [
+                                                  {
+                                                    "type": "Text",
+                                                    "props": {
+                                                      "as": "h2",
+                                                      "element": "type--heading4",
+                                                      "children": "Two-factor authentication"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "Text",
+                                                    "props": {
+                                                      "as": "p",
+                                                      "element": "type--body-small",
+                                                      "data-testid": "security-2fa-on"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "Text",
+                                                        "props": {
+                                                          "as": "span",
+                                                          "element": "type--body-small",
+                                                          "children": "Two-factor authentication is "
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "Text",
+                                                        "props": {
+                                                          "as": "strong",
+                                                          "children": "on"
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "Text",
+                                                        "props": {
+                                                          "as": "span",
+                                                          "element": "type--body-small",
+                                                          "children": ". Protected areas ask each session for a code from your authenticator app."
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "Stack",
+                                                    "props": {
+                                                      "dir": "row",
+                                                      "gap": 8
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "Button",
+                                                        "props": {
+                                                          "type": "button",
+                                                          "data-testid": "security-regenerate-btn",
+                                                          "children": "Regenerate backup codes",
+                                                          "emphasis": "secondary"
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "Button",
+                                                        "props": {
+                                                          "type": "button",
+                                                          "data-testid": "security-disable-btn",
+                                                          "children": "Turn off",
+                                                          "emphasis": "secondary",
+                                                          "status": "destructive"
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "type": "Stack",
+                                                "props": {
+                                                  "dir": "col",
+                                                  "gap": 12
+                                                },
+                                                "children": [
+                                                  {
+                                                    "type": "Text",
+                                                    "props": {
+                                                      "as": "h2",
+                                                      "element": "type--heading4",
+                                                      "children": "Signed-in devices"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "Stack",
+                                                    "props": {
+                                                      "dir": "col",
+                                                      "gap": 12
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "Stack",
+                                                        "props": {
+                                                          "dir": "row",
+                                                          "gap": 12,
+                                                          "align": "center",
+                                                          "justify": "between",
+                                                          "data-testid": "security-device-macbook"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "col",
+                                                              "gap": 4
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body",
+                                                                  "children": "MacBook Pro, Chrome"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body-small",
+                                                                  "children": "Lisbon, Portugal - active now",
+                                                                  "emphasis": "quiet"
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "type": "Badge",
+                                                            "props": {
+                                                              "scale": "xs",
+                                                              "children": "This device"
+                                                            }
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "Stack",
+                                                        "props": {
+                                                          "dir": "row",
+                                                          "gap": 12,
+                                                          "align": "center",
+                                                          "justify": "between",
+                                                          "data-testid": "security-device-iphone"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "col",
+                                                              "gap": 4
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body",
+                                                                  "children": "iPhone 15, Safari"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body-small",
+                                                                  "children": "Lisbon, Portugal - 2 hours ago",
+                                                                  "emphasis": "quiet"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "Stack",
+                                                        "props": {
+                                                          "dir": "row",
+                                                          "gap": 12,
+                                                          "align": "center",
+                                                          "justify": "between",
+                                                          "data-testid": "security-device-ipad"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "col",
+                                                              "gap": 4
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body",
+                                                                  "children": "iPad Air, Safari"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body-small",
+                                                                  "children": "Porto, Portugal - 3 days ago",
+                                                                  "emphasis": "quiet"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "Stack",
+                                                        "props": {
+                                                          "dir": "row",
+                                                          "gap": 12,
+                                                          "align": "center",
+                                                          "justify": "between",
+                                                          "data-testid": "security-device-windows"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "type": "Stack",
+                                                            "props": {
+                                                              "dir": "col",
+                                                              "gap": 4
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body",
+                                                                  "children": "Windows desktop, Firefox"
+                                                                }
+                                                              },
+                                                              {
+                                                                "type": "Text",
+                                                                "props": {
+                                                                  "as": "span",
+                                                                  "element": "type--body-small",
+                                                                  "children": "Madrid, Spain - 12 days ago",
+                                                                  "emphasis": "quiet"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "Stack",
+                                                    "props": {
+                                                      "dir": "col",
+                                                      "gap": 12
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "type": "Text",
+                                                        "props": {
+                                                          "as": "p",
+                                                          "element": "type--body-small",
+                                                          "children": "See something you don't recognize? Sign out everywhere else — this device stays signed in."
+                                                        }
+                                                      },
+                                                      {
+                                                        "type": "Stack",
+                                                        "props": {
+                                                          "dir": "row",
+                                                          "gap": 8
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "type": "Button",
+                                                            "props": {
+                                                              "type": "button",
+                                                              "data-testid": "security-sign-out-others-btn",
+                                                              "children": "Sign out of all other devices",
+                                                              "emphasis": "secondary"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "Text",
+                                    "props": {
+                                      "as": "span",
+                                      "element": "type--body-small"
+                                    },
+                                    "children": [
+                                      {
+                                        "type": "Text",
+                                        "props": {
+                                          "as": "a",
+                                          "href": "/my/settings/profile",
+                                          "element": "type--link",
+                                          "data-testid": "security-profile-link",
+                                          "children": "Profile →"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "props": {
+              "className": "flex flex-1 overflow-hidden"
+            }
+          }
+        ],
+        "props": {
+          "className": "flex flex-1 flex-col overflow-hidden"
+        }
+      }
+    ],
+    "props": {
+      "className": "flex h-screen w-full overflow-hidden"
+    }
+  }
+}

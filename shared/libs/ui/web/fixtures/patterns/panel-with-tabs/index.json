@@ -1,0 +1,296 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "panel-with-tabs",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Sheet",
+      "props": {},
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "emphasis": "secondary",
+         "children": "Open panel"
+        }
+       },
+       {
+        "type": "SheetContent",
+        "props": {},
+        "children": [
+         {
+          "type": "Tabs",
+          "props": {
+           "defaultValue": "tab1",
+           "className": "flex flex-1 min-h-0 flex-col"
+          },
+          "children": [
+           {
+            "type": "SheetHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "SheetTitle",
+                "props": {
+                 "children": "Panel title"
+                }
+               },
+               {
+                "type": "TabsList",
+                "props": {},
+                "children": [
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab1",
+                   "children": "Tab 1"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab2",
+                   "children": "Tab 2"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab3",
+                   "children": "Tab 3"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Separator",
+            "props": {}
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab1",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab2",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab3",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Separator",
+          "props": {}
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "justify": "between",
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "children": "Cancel"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "primary",
+             "children": "Save"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

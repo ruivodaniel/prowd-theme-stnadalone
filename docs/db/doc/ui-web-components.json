@@ -1,0 +1,319 @@
+{
+  "id": "doc/ui-web-components",
+  "kind": "doc",
+  "title": "@libs/web-components",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "Shared UI components following the Content Modularity architecture.",
+  "docId": "ui-web-components",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "Shared UI components following the Content Modularity architecture."
+    },
+    "reference": [
+      {
+        "topic": "Component Hierarchy",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "Primitive (pure UI, no data awareness)\n    ↓\nAtom (field-level, data-aware)\n    ├── Previewer (read-only)\n    └── Editor (editable)\n    ↓\nCell (entity-level, data-aware)\n    ├── Content Cell (knowledge entities)\n    └── Entity Cell (system entities)\n    ↓\nWrapper (container + contextual interaction)\n    ↓\nPattern (assembled layout)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Component Hierarchy › When to Use Each Level",
+        "claims": [
+          {
+            "text": "A field/property of something → **Atom**"
+          },
+          {
+            "text": "A complete thing → **Cell**"
+          },
+          {
+            "text": "A container holding things → **Wrapper**"
+          },
+          {
+            "text": "An assembled layout → **Pattern**"
+          }
+        ],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Level | Use When | Examples |\n|-------|----------|----------|\n| **Primitive** | Pure UI with no data awareness | Button, Input, Icon, Card |\n| **Atom** | Displaying/editing a single field | VersionBadge, BranchSelector |\n| **Cell** | Displaying/editing a complete entity | TermPreview, UserCard |\n| **Wrapper** | Container that adds interaction to cells | RichTextWrapper, ListWrapper |\n| **Pattern** | Assembled page section | KnowledgeHeader, SettingsPanel |"
+          }
+        ],
+        "statement": "**Rule: Ask \"what does the USER see?\"**"
+      },
+      {
+        "topic": "Folder Structure",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "src/\n├── index.ts\n├── primitives/           # Base UI controls\n│   ├── index.ts\n│   └── icons/            # Theme-aware icons\n├── atoms/                # Field-level components\n│   ├── previewers/\n│   └── editors/\n├── cells/                # Entity-level components\n│   ├── content/          # Content entities (Term, Note, etc.)\n│   │   ├── previewers/\n│   │   └── editors/\n│   └── entity/           # System entities (User, Org, etc.)\n│       ├── previewers/\n│       └── editors/\n├── wrappers/             # Containers (each gets own folder)\n├── patterns/             # Assembled layouts\n├── hooks/\n├── lib/\n└── shadcn/               # Base shadcn components (primitives)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules",
+        "claims": [],
+        "statement": "**All components MUST be theme-agnostic.** Components never hardcode colors or styles."
+      },
+      {
+        "topic": "Theming Rules › 1. Use CSS Variables (Not Hardcoded Colors)",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - uses CSS variables via Tailwind\n<div className=\"bg-primary text-primary-foreground\">\n\n// ❌ WRONG - hardcoded color\n<div className=\"bg-blue-500 text-white\">",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › 2. Use Semantic Tokens (Not Primitive Tokens)",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - semantic token\n<div className=\"bg-muted text-muted-foreground\">\n\n// ❌ AVOID - primitive token (unless intentional)\n<div className=\"bg-gray-100 text-gray-600\">",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › Available Semantic Tokens",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Token | Purpose |\n|-------|---------|\n| `background` / `foreground` | Page background and text |\n| `primary` / `primary-foreground` | Primary actions |\n| `secondary` / `secondary-foreground` | Secondary actions |\n| `muted` / `muted-foreground` | Subtle backgrounds and text |\n| `accent` / `accent-foreground` | Accented elements |\n| `destructive` / `destructive-foreground` | Destructive actions |\n| `card` / `card-foreground` | Card surfaces |\n| `popover` / `popover-foreground` | Popover surfaces |\n| `border` | Borders |\n| `input` | Input borders |\n| `ring` | Focus rings |"
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › 3. Use Component Token Classes",
+        "claims": [],
+        "statement": "For structural properties that vary by theme, use component token classes:",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - uses component token class\n<button className=\"btn-themed\">Click me</button>\n<div className=\"card-themed\">...</div>\n\n// Component tokens set: radius, shadow, padding, gap",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › Available Component Token Classes",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Class | Properties Set |\n|-------|----------------|\n| `.btn-themed` | border-radius |\n| `.btn-themed-shadow` | box-shadow |\n| `.card-themed` | border-radius, box-shadow, padding, gap |\n| `.list-themed` | gap |\n| `.list-item-themed` | radius, shadow, padding, border |\n| `.input-themed` | radius, padding, border-width |\n| `.dialog-themed` | radius, shadow, padding |\n| `.badge-themed` | radius, padding |\n| `.table-themed th/td` | padding, border-width |\n| `.tabs-list-themed` | gap |\n| `.tabs-trigger-themed` | radius, padding |\n| `.tooltip-themed` | radius, padding, shadow |\n| `.alert-themed` | radius, padding |"
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › 4. Use Icon Component (Not Direct Imports)",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - uses Icon abstraction\nimport { Icon } from \"@libs/web-components/primitives\";\n<Icon name=\"chevronRight\" size=\"sm\" />\n\n// ❌ WRONG - direct lucide import\nimport { ChevronRight } from \"lucide-react\";\n<ChevronRight className=\"h-4 w-4\" />",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › Icon Sizes",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Size | Class |\n|------|-------|\n| `xs` | `h-3 w-3` |\n| `sm` | `h-4 w-4` |\n| `md` | `h-5 w-5` |\n| `lg` | `h-6 w-6` |\n| `xl` | `h-8 w-8` |"
+          }
+        ]
+      },
+      {
+        "topic": "Theming Rules › 5. Use Radius Variables",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - uses radius variable\n<div className=\"rounded-lg\">  // Uses --radius-lg\n\n// ❌ WRONG - hardcoded radius\n<div style={{ borderRadius: '12px' }}>",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Tailwind Classes › Safe to Use",
+        "claims": [
+          {
+            "text": "All semantic color classes: `bg-primary`, `text-muted-foreground`, `border-border`"
+          },
+          {
+            "text": "All radius classes: `rounded-sm`, `rounded-md`, `rounded-lg`, `rounded-full`"
+          },
+          {
+            "text": "All shadow classes: `shadow-sm`, `shadow-md`, `shadow-lg`"
+          },
+          {
+            "text": "Layout utilities: `flex`, `grid`, `gap-*`, `p-*`, `m-*`"
+          },
+          {
+            "text": "Typography: `text-sm`, `font-medium`, `leading-tight`"
+          }
+        ]
+      },
+      {
+        "topic": "Tailwind Classes › Avoid",
+        "claims": [
+          {
+            "text": "Hardcoded colors: `bg-blue-500`, `text-gray-700`, `border-slate-200`"
+          },
+          {
+            "text": "Hardcoded shadows with colors: `shadow-blue-500/50`"
+          },
+          {
+            "text": "Arbitrary values that should be tokens: `[border-radius:12px]`"
+          }
+        ]
+      },
+      {
+        "topic": "Dark Mode",
+        "claims": [
+          {
+            "text": "The `data-theme=\"dark\"` attribute on `<html>` triggers dark mode. All semantic tokens automatically adjust."
+          },
+          {
+            "text": "**Do NOT use:**"
+          },
+          {
+            "text": "**DO use:**"
+          }
+        ],
+        "statement": "Dark mode is handled automatically via CSS variables. No special handling needed.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// ❌ WRONG - manual dark mode classes\n<div className=\"bg-white dark:bg-gray-900\">",
+                "caption": "tsx"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "// ✅ CORRECT - semantic tokens handle dark mode\n<div className=\"bg-background text-foreground\">",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Example Component",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "import { cn } from \"@libs/web-components/lib/utils\";\nimport { Icon } from \"@libs/web-components/primitives\";\n\ninterface ExampleCardProps {\n  title: string;\n  description?: string;\n  onClick?: () => void;\n  className?: string;\n}\n\nexport function ExampleCard({ \n  title, \n  description, \n  onClick, \n  className \n}: ExampleCardProps) {\n  return (\n    <div\n      className={cn(\n        // Use semantic tokens\n        \"bg-card text-card-foreground\",\n        \"border border-border\",\n        // Use component token class\n        \"card-themed\",\n        // Safe Tailwind utilities\n        \"flex flex-col\",\n        \"hover:bg-accent/50 transition-colors\",\n        onClick && \"cursor-pointer\",\n        className\n      )}\n      onClick={onClick}\n    >\n      <div className=\"flex items-center gap-2\">\n        {/* Use Icon component */}\n        <Icon name=\"file\" size=\"md\" className=\"text-muted-foreground\" />\n        <span className=\"font-medium\">{title}</span>\n      </div>\n      \n      {description && (\n        <p className=\"text-sm text-muted-foreground mt-2\">\n          {description}\n        </p>\n      )}\n    </div>\n  );\n}",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Checklist for New Components",
+        "claims": [
+          {
+            "text": "[ ] Uses CSS variables for colors (not hardcoded)"
+          },
+          {
+            "text": "[ ] Uses semantic tokens where appropriate"
+          },
+          {
+            "text": "[ ] Uses `<Icon>` component (not direct lucide imports)"
+          },
+          {
+            "text": "[ ] Uses component token classes for structural properties"
+          },
+          {
+            "text": "[ ] No manual dark mode handling (`dark:` prefix)"
+          },
+          {
+            "text": "[ ] Follows naming conventions"
+          },
+          {
+            "text": "[ ] Placed in correct folder (primitive/atom/cell/wrapper/pattern)"
+          },
+          {
+            "text": "[ ] Exported from appropriate `index.ts`"
+          }
+        ],
+        "statement": "Before submitting a component:"
+      },
+      {
+        "topic": "Related Documentation",
+        "claims": [
+          {
+            "text": "Component Cockpit: `/dev/cockpit`"
+          },
+          {
+            "text": "Theme Cockpit: `/dev/theme-test`"
+          },
+          {
+            "text": "Architecture: `COMPONENT-SCAFFOLDING-MIGRATION.md`"
+          },
+          {
+            "text": "Theming: `THEMING-ARCHITECTURE.md`"
+          }
+        ]
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

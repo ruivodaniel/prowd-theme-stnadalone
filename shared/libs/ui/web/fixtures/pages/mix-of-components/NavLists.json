@@ -1,0 +1,1758 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "NavLists",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 32
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Tabs",
+      "props": {
+       "defaultValue": "account",
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "TabsList",
+        "props": {},
+        "children": [
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "account",
+           "children": "Account"
+          }
+         },
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "security",
+           "children": "Security"
+          }
+         },
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "notifications",
+           "children": "Notifications"
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "account"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Manage your account settings and preferences."
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "security"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Update your password and security options."
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "notifications"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Configure your notification preferences."
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Accordion",
+      "props": {
+       "type": "single",
+       "collapsible": true,
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "AccordionItem",
+        "props": {
+         "value": "item-1"
+        },
+        "children": [
+         {
+          "type": "AccordionTrigger",
+          "props": {
+           "children": "Is it accessible?"
+          }
+         },
+         {
+          "type": "AccordionContent",
+          "props": {
+           "children": "Yes. It adheres to the WAI-ARIA design pattern."
+          }
+         }
+        ]
+       },
+       {
+        "type": "AccordionItem",
+        "props": {
+         "value": "item-2"
+        },
+        "children": [
+         {
+          "type": "AccordionTrigger",
+          "props": {
+           "children": "Is it styled?"
+          }
+         },
+         {
+          "type": "AccordionContent",
+          "props": {
+           "children": "Yes. It comes with default styles that match the other components."
+          }
+         }
+        ]
+       },
+       {
+        "type": "AccordionItem",
+        "props": {
+         "value": "item-3"
+        },
+        "children": [
+         {
+          "type": "AccordionTrigger",
+          "props": {
+           "children": "Is it animated?"
+          }
+         },
+         {
+          "type": "AccordionContent",
+          "props": {
+           "children": "Yes. It's animated by default, but you can disable it if you prefer."
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#13 · error Alert, Stack Trace collapsed — Alert · two secondary status=error Buttons · Collapsible"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Alert",
+        "props": {
+         "status": "error",
+         "icon": {
+          "type": "Icon",
+          "props": {
+           "name": "warning"
+          }
+         },
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "AlertTitle",
+          "props": {
+           "children": "Error"
+          }
+         },
+         {
+          "type": "AlertDescription",
+          "props": {
+           "children": "Cannot read properties of undefined (reading 'map')"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "wrap": true
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "refresh",
+             "children": "Try again"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "copy",
+             "children": "Copy error"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Collapsible",
+          "props": {
+           "open": false
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "status": "error",
+             "fill": true,
+             "buttonType": "text-icon",
+             "endIcon": "chevronDown",
+             "className": "justify-between",
+             "children": "Stack Trace"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#22 · event log — three Cards: status Badge + label · id, a type--code payload, a meta row; the failed one ends in an error Alert"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 16,
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "info",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Processing",
+                   "showIcon": false
+                  },
+                  "children": [
+                   {
+                    "type": "Spinner",
+                    "props": {
+                     "scale": "xs",
+                     "status": "info"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "info",
+                   "children": "Processing"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_abc1..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"userId\": \"user_123\", \"action\": \"send_email\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "calendar",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 16:15"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "refresh",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 1/3 retries"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "success",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Completed",
+                   "showIcon": true,
+                   "iconName": "check"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "success",
+                   "children": "Completed"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_xyz7..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"report\": \"daily_analytics\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "calendar",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 15:15"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 16:15"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "error",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Failed",
+                   "showIcon": true,
+                   "iconName": "close"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "error",
+                   "children": "Failed"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_fail..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"webhook\": \"https://api.example.com\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "refresh",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 3/3 retries"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Alert",
+              "props": {
+               "status": "error"
+              },
+              "children": [
+               {
+                "type": "AlertDescription",
+                "props": {
+                 "children": "Connection timeout after 30s"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "List",
+      "props": {
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "file"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Document.pdf"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "2.4 MB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "image"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Photo.jpg"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "1.2 MB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "folder"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Projects"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "12 items"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "fileText"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Notes.txt"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "4 KB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "contacts — 8 rows: Avatar with presence · name + role Badge over email over last-active · two actions; one row selected, invites carry status"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "0",
+           "name": "Daniel Ruivo",
+           "initials": "DR",
+           "role": "Owner",
+           "email": "daniel@altar.io",
+           "last": "Active now",
+           "presence": 1,
+           "invited": false,
+           "selected": true
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "1",
+           "name": "Inês Carvalho",
+           "initials": "IC",
+           "role": "Admin",
+           "email": "ines@altar.io",
+           "last": "12 min ago",
+           "presence": 1,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "2",
+           "name": "Tomás Ferreira",
+           "initials": "TF",
+           "role": "Designer",
+           "email": "tomas@altar.io",
+           "last": "2 h ago",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "3",
+           "name": "Marta Silva",
+           "initials": "MS",
+           "role": "Engineer",
+           "email": "marta@altar.io",
+           "last": "Yesterday",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "4",
+           "name": "Rui Almeida",
+           "initials": "RA",
+           "role": "Engineer",
+           "email": "rui@altar.io",
+           "last": "Invite pending",
+           "presence": 2,
+           "invited": true,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "5",
+           "name": "Sofia Mendes",
+           "initials": "SM",
+           "role": "Product",
+           "email": "sofia@altar.io",
+           "last": "3 days ago",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "6",
+           "name": "João Costa",
+           "initials": "JC",
+           "role": "Viewer",
+           "email": "joao@altar.io",
+           "last": "Last week",
+           "presence": 5,
+           "invited": false,
+           "selected": false
+          }
+         },
+         {
+          "use": {
+           "component": "ContactRow",
+           "version": "latest"
+          },
+          "args": {
+           "id": "7",
+           "name": "Beatriz Lopes",
+           "initials": "BL",
+           "role": "Viewer",
+           "email": "beatriz@altar.io",
+           "last": "Invite pending",
+           "presence": 2,
+           "invited": true,
+           "selected": false
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#1 · nav list with a status dot — a childless Badge (scale='3xs', status=result) leads each row; the theme decides the dot's size/shape"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "List",
+        "props": {
+         "className": "w-full max-w-md"
+        },
+        "children": [
+         {
+          "type": "ListItem",
+          "props": {
+           "className": "gap-3"
+          },
+          "children": [
+           {
+            "type": "Badge",
+            "props": {
+             "status": "success",
+             "scale": "3xs",
+             "aria-label": "pass"
+            }
+           },
+           {
+            "type": "ListItemContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Signature with an authorised role is accepted"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "ListItem",
+          "props": {
+           "className": "gap-3"
+          },
+          "children": [
+           {
+            "type": "Badge",
+            "props": {
+             "status": "error",
+             "scale": "3xs",
+             "aria-label": "fail"
+            }
+           },
+           {
+            "type": "ListItemContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Signature with an unauthorised role is rejected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "ListItem",
+          "props": {
+           "className": "gap-3"
+          },
+          "children": [
+           {
+            "type": "Badge",
+            "props": {
+             "status": "info",
+             "scale": "3xs",
+             "aria-label": "note"
+            }
+           },
+           {
+            "type": "ListItemContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Batch start records signature, user and timestamp"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "ListItem",
+          "props": {
+           "className": "gap-3"
+          },
+          "children": [
+           {
+            "type": "Badge",
+            "props": {
+             "status": "warning",
+             "scale": "3xs",
+             "aria-label": "flag"
+            }
+           },
+           {
+            "type": "ListItemContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Deviation raised requires review before continuing"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "ListItem",
+          "props": {
+           "className": "gap-3"
+          },
+          "children": [
+           {
+            "type": "Badge",
+            "props": {
+             "status": "neutral",
+             "scale": "3xs",
+             "aria-label": "not-run"
+            }
+           },
+           {
+            "type": "ListItemContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "Recipe selection loads the approved recipe"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#25 · agenda — three event Cards, status='info' | 'success' | 'error': title · time · place"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 12,
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "status": "info"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Team Standup"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "9:00 AM - 9:30 AM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Google Meet"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "success"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Product Review"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "2:00 PM - 3:00 PM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Conference Room A"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "error"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Client Call"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "4:00 PM - 5:00 PM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Zoom"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Sheet",
+      "props": {},
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "emphasis": "secondary",
+         "children": "Open panel"
+        }
+       },
+       {
+        "type": "SheetContent",
+        "props": {},
+        "children": [
+         {
+          "type": "Tabs",
+          "props": {
+           "defaultValue": "tab1",
+           "className": "flex flex-1 min-h-0 flex-col"
+          },
+          "children": [
+           {
+            "type": "SheetHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "SheetTitle",
+                "props": {
+                 "children": "Panel title"
+                }
+               },
+               {
+                "type": "TabsList",
+                "props": {},
+                "children": [
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab1",
+                   "children": "Tab 1"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab2",
+                   "children": "Tab 2"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "value": "tab3",
+                   "children": "Tab 3"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Separator",
+            "props": {}
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab1",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab2",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "tab3",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "ScrollArea",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 16,
+                 "pad": 16
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "p",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Separator",
+          "props": {}
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "justify": "between",
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "children": "Cancel"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "primary",
+             "children": "Save"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

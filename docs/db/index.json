@@ -1,0 +1,376 @@
+{
+ "entries": [
+  {
+   "id": "doc/ui-architecture",
+   "kind": "doc",
+   "title": "Architecture",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "contributor"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "Only the architect may modify this document.",
+   "docId": "ui-architecture",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-cascade-spec",
+   "kind": "doc",
+   "title": "Cascade Specification",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "contributor"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "Technical details of how the theme cascade translates to CSS. For the conceptual model, see Architecture (`architecture.md`).",
+   "docId": "ui-cascade-spec",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-engine",
+   "kind": "doc",
+   "title": "Theme Engine",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "contributor"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "How the CSS engine works. The engine compiles a Theme object into a single CSS file that owns all visual styling for the application.",
+   "docId": "ui-engine",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-layouts",
+   "kind": "doc",
+   "title": "Layouts",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "consumer"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "How to compose page structure using shared layout components and compositions.",
+   "docId": "ui-layouts",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-markup-dictionary",
+   "kind": "doc",
+   "title": "Markup Dictionary",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "consumer"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "Generated from docs/consumer/developer/markup-dictionary.md by scripts/markup-dictionary-elements.ts; the markdown stays until that script is ported.",
+   "docId": "ui-markup-dictionary",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-naming",
+   "kind": "doc",
+   "title": "Naming",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "consumer"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "How application components, and their files, are named. This covers the components an app or a slice writes. The library's own elements (`alert-dialog`, `dat…",
+   "docId": "ui-naming",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-theme-authoring",
+   "kind": "doc",
+   "title": "Theme Authoring",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui",
+    "consumer"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "How to write a theme object. A theme is a TypeScript object conforming to the `Theme` type (`shared/libs/ui/types/theme.ts`).",
+   "docId": "ui-theme-authoring",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-web-components",
+   "kind": "doc",
+   "title": "@libs/web-components",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "Shared UI components following the Content Modularity architecture.",
+   "docId": "ui-web-components",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "doc/ui-web-layouts",
+   "kind": "doc",
+   "title": "Layout components",
+   "status": "converted",
+   "subject": "ui",
+   "tags": [
+    "ui"
+   ],
+   "paths": [
+    "shared/libs/ui"
+   ],
+   "summary": "Structural scaffolding for page composition. Every component here renders one `layout=\"...\"` attribute and handles exactly one structural concern (scroll, ov…",
+   "docId": "ui-web-layouts",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "no axioms"
+    ]
+   }
+  },
+  {
+   "id": "standards/main",
+   "kind": "standards",
+   "title": "Standards — consumption tracker",
+   "status": "converted",
+   "subject": "main",
+   "tags": [
+    "main"
+   ],
+   "paths": [
+    "apps/main"
+   ],
+   "summary": "Temporary: which auto-generated rules were digested into canonical docs.",
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "a doc, decision or standard has exactly one known subject",
+     "the path apps/main does not exist",
+     "a standards file is not a MAPR artifact"
+    ]
+   }
+  },
+  {
+   "id": "term/composition",
+   "kind": "term",
+   "title": "composition",
+   "status": "approved",
+   "subjects": [
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [
+    "shared/libs/ui/web/layouts"
+   ],
+   "summary": "",
+   "term": {
+    "def": "A prebuilt slot wrapper from `@libs/web-layouts` — currently only `AuthPage`. Other pages assemble [[layout primitive|primitives]] via app-level section layouts (`PageFrame`, `SettingsLayout`).",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": true,
+    "issues": []
+   }
+  },
+  {
+   "id": "term/layout-primitive",
+   "kind": "term",
+   "title": "layout primitive",
+   "status": "approved",
+   "subjects": [
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [
+    "shared/libs/ui/web/layouts"
+   ],
+   "summary": "",
+   "term": {
+    "def": "A component from `@libs/web-layouts` emitting one `layout=\"…\"` region. Structural behaviour only — scroll, overflow, collapse, sticky, width — never visuals. Shell primitives are app-level only.",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": true,
+    "issues": []
+   }
+  },
+  {
+   "id": "term/page",
+   "kind": "term",
+   "title": "page",
+   "status": "approved",
+   "subjects": [
+    "main",
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [],
+   "summary": "",
+   "term": {
+    "def": "Everything inside the shell content area — `page-header` plus `page-body` (`left-sidebar`, `main`, `right-sidebar`).",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "a term needs one or more known subjects"
+    ]
+   }
+  },
+  {
+   "id": "term/section",
+   "kind": "term",
+   "title": "section",
+   "status": "approved",
+   "subjects": [
+    "main",
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [],
+   "summary": "",
+   "term": {
+    "def": "A [[page]] whose `left-sidebar` navigates its [[sub-page|sub-pages]] — Settings, for example.",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "a term needs one or more known subjects"
+    ]
+   }
+  },
+  {
+   "id": "term/shell",
+   "kind": "term",
+   "title": "shell",
+   "status": "approved",
+   "subjects": [
+    "main",
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [],
+   "summary": "",
+   "term": {
+    "def": "The outermost viewport frame: `shell-side-nav`, `shell-top-nav` or `shell-none`. It decides what chrome surrounds the [[page]]. The app picks one per route.",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "a term needs one or more known subjects"
+    ]
+   }
+  },
+  {
+   "id": "term/sub-page",
+   "kind": "term",
+   "title": "sub-page",
+   "status": "approved",
+   "subjects": [
+    "main",
+    "ui"
+   ],
+   "tags": [
+    "ui"
+   ],
+   "paths": [],
+   "summary": "",
+   "term": {
+    "def": "A page that fills `main` inside a [[section]], rather than the whole [[page]] region.",
+    "aliases": [],
+    "proposed": true
+   },
+   "compliance": {
+    "compliant": false,
+    "issues": [
+     "a term needs one or more known subjects"
+    ]
+   }
+  }
+ ]
+}

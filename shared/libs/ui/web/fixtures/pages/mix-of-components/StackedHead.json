@@ -1,0 +1,46 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "StackedHead",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "label",
+  "unit"
+ ],
+ "root": {
+  "type": "TableHead",
+  "props": {},
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 2
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "children": {
+        "bind": "label"
+       }
+      }
+     },
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": {
+        "bind": "unit"
+       }
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "panel-simple",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Sheet",
+      "props": {},
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "emphasis": "secondary",
+         "children": "Open panel"
+        }
+       },
+       {
+        "type": "SheetContent",
+        "props": {},
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 16,
+           "pad": 16
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "p",
+             "element": "type--body-small",
+             "emphasis": "quiet",
+             "children": "Panel content goes here…"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

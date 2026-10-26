@@ -1,0 +1,176 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "panel-header-footer",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Sheet",
+      "props": {},
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "data-testid": "panel-header-footer-open-btn",
+         "emphasis": "secondary",
+         "children": "Open panel"
+        }
+       },
+       {
+        "type": "SheetContent",
+        "props": {},
+        "children": [
+         {
+          "type": "SheetHeader",
+          "props": {},
+          "children": [
+           {
+            "type": "SheetTitle",
+            "props": {
+             "children": "Panel title"
+            }
+           },
+           {
+            "type": "SheetDescription",
+            "props": {
+             "children": "Optional description text goes here."
+            }
+           }
+          ]
+         },
+         {
+          "type": "Separator",
+          "props": {}
+         },
+         {
+          "type": "ScrollArea",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "p",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Separator",
+          "props": {}
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "align": "center",
+             "justify": "between"
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "data-testid": "panel-header-footer-cancel-btn",
+               "emphasis": "secondary",
+               "children": "Cancel"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "data-testid": "panel-header-footer-save-btn",
+               "emphasis": "primary",
+               "children": "Save"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

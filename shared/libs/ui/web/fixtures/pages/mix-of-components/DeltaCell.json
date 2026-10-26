@@ -1,0 +1,89 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "DeltaCell",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "value",
+  "delta",
+  "dir"
+ ],
+ "root": {
+  "type": "TableCell",
+  "props": {},
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 2
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--numbers-small",
+       "children": {
+        "bind": "value"
+       }
+      }
+     },
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "status": {
+        "if": [
+         {
+          "eq": [
+           {
+            "bind": "dir"
+           },
+           "up"
+          ]
+         },
+         "success",
+         "error"
+        ]
+       }
+      },
+      "children": [
+       {
+        "type": "Icon",
+        "props": {
+         "name": {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "dir"
+             },
+             "up"
+            ]
+           },
+           "arrowUp",
+           "arrowDown"
+          ]
+         },
+         "size": "xs"
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "children": {
+          "bind": "delta"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

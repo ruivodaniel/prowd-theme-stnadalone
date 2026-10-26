@@ -1,0 +1,87 @@
+{
+  "id": "doc/ui-web-layouts",
+  "kind": "doc",
+  "title": "Layout components",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "Structural scaffolding for page composition. Every component here renders one `layout=\"...\"` attribute and handles exactly one structural concern (scroll, ov…",
+  "docId": "ui-web-layouts",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "Structural scaffolding for page composition. Every component here renders one `layout=\"...\"` attribute and handles exactly one structural concern (scroll, overflow, collapse, sticky, width constraint). No visual CSS. No aesthetic opinions. The theme engine owns all visuals."
+    },
+    "reference": [
+      {
+        "topic": "Spec",
+        "claims": [],
+        "statement": "Full vocabulary, ownership rules, DOM examples, and the anatomy diagram: → `shared/libs/ui/docs/consumer/developer/layouts.md`"
+      },
+      {
+        "topic": "Rules that cannot be broken",
+        "claims": [
+          {
+            "text": "A div renders either `layout` or `element` — never both."
+          },
+          {
+            "text": "These components emit zero visual CSS. No colors, no borders, no shadows. Tailwind structural classes only: `flex`, `overflow-hidden`, `sticky`, `min-h-0`, `w-full`, `grid` — structural behavior only."
+          },
+          {
+            "text": "Props exposed are structural only: `width`, `align`, `sticky`, `collapsed`. No `variant`, no `color`, no `emphasis`."
+          },
+          {
+            "text": "The theme engine reads `layout=\"...\"` attributes and applies all visuals. Do not fight it."
+          }
+        ]
+      },
+      {
+        "topic": "Stack",
+        "claims": [
+          {
+            "text": "React + TypeScript"
+          },
+          {
+            "text": "Tailwind for structural classes only (flex, grid, overflow, positioning)"
+          },
+          {
+            "text": "No CSS modules, no inline style objects for visual properties"
+          },
+          {
+            "text": "No Radix, no headless UI — these are plain divs with layout logic"
+          }
+        ]
+      },
+      {
+        "topic": "Folder structure",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "web/layouts/\n├── components/\n│   ├── Shell/\n│   ├── Page/\n│   ├── Main/\n│   ├── Sidebars/\n│   └── Container/\n├── compositions/\n│   ├── StandardPage/\n│   ├── FullPage/\n│   ├── AuthPage/\n│   └── SplitPage/\n└── index.ts"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

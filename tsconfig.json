@@ -1,0 +1,86 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@libs/web-components": [
+        "shared/libs/ui/web/components/src/index.ts"
+      ],
+      "@libs/web-components-src/*": [
+        "shared/libs/ui/web/components/src/components/*"
+      ],
+      "@libs/web-layouts": [
+        "shared/libs/ui/web/layouts/src/index.ts"
+      ],
+      "@libs/value-types": [
+        "shared/libs/value-types/src/index.ts"
+      ],
+      "@libs/value-types/country": [
+        "shared/libs/value-types/src/country/index.ts"
+      ],
+      "@libs/list-query/client": [
+        "shared/libs/list-query/src/client/index.ts"
+      ],
+      "@libs/list-query": [
+        "shared/libs/list-query/src/index.ts"
+      ],
+      "@libs/rich-text-editor": [
+        "shared/libs/rich-text-editor/src/index.ts"
+      ],
+      "@libs/ui-data": [
+        "shared/libs/ui/ui-data/src/index.ts"
+      ],
+      "@libs/ui-data/*": [
+        "shared/libs/ui/ui-data/src/*"
+      ],
+      "@libs/ui-types": [
+        "shared/libs/ui/types/index.ts"
+      ],
+      "@libs/ui-fixtures/*": [
+        "shared/libs/ui/web/fixtures/*"
+      ],
+      "@libs/theme-engine/*": [
+        "shared/libs/ui/web/theme-engine/*"
+      ],
+      "@libs/mobile-components/schemas": [
+        "tool/web/stubs/mobile.ts"
+      ],
+      "@libs/mobile-layouts/schemas": [
+        "tool/web/stubs/mobile.ts"
+      ],
+      "@libs/mobile-components": [
+        "tool/web/stubs/mobile.ts"
+      ],
+      "@libs/mobile-layouts": [
+        "tool/web/stubs/mobile.ts"
+      ]
+    }
+  },
+  "include": [
+    "tool",
+    "shared/libs/ui/web/fixtures",
+    "shared/libs/ui/ui-data/src",
+    "shared/libs/ui/types"
+  ],
+  "exclude": [
+    "**/*.test.ts",
+    "**/node_modules"
+  ]
+}

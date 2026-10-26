@@ -1,0 +1,41 @@
+{
+  "name": "@libs/ui-data",
+  "version": "0.1.0",
+  "description": "UI as data: the document model, the expression language, the dictionary, the validator, the lock and the interpreter. Code only: whoever needs it imports it and runs it.",
+  "type": "module",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types/index.ts",
+    "./expr": "./src/expr/index.ts",
+    "./actions": "./src/actions/index.ts",
+    "./dictionary": "./src/dictionary/index.ts",
+    "./schema": "./src/schema/index.ts",
+    "./validate": "./src/validate/index.ts",
+    "./lock": "./src/lock/index.ts",
+    "./deps": "./src/deps/index.ts",
+    "./runtime": "./src/runtime/index.tsx"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "@libs/web-components": "workspace:*",
+    "@libs/web-layouts": "workspace:*",
+    "@libs/list-query": "workspace:*",
+    "@libs/rich-text-editor": "workspace:*",
+    "@libs/ui-types": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0 || ^19.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "*"
+  }
+}

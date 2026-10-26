@@ -1,0 +1,74 @@
+{
+  "top-nav": {
+    "status": "pending",
+    "note": "The shell's top-nav variant with the sidebar's exact entries and options: brand line · org switcher (active org's avatar, name, chevron) | the nav items as a tab bar (control-group--tab-bar / control--tab-trigger, one selected, the same count badge) | the user menu. Same gating: the second row is a company member's bar — Legal documents gated away by requiredRoles. The third is the compact bar: items fold into a menu button, the top-bar analogue of the icon rail. The band is the ShellNav region — its look is the theme's (layouts.shellNav, unset in wireframe-stroke)."
+  },
+  "status-cards": {
+    "status": "pending",
+    "note": "The same four notices — info · success · warning · error — carried seven ways: the whole Card tinted (as #25), a status CardHeader band over neutral content, a neutral Card whose title row and Badge carry it, a status icon Tile as the leading cell, a slim status Tile strip, an Alert (the component for a message about a state, with actions), and a status CardFooter. Pick by what the card is: a thing in a state → tint · header · badge · icon cell · strip · footer; a message about a state → Alert. Card parts · Alert · Tile · Badge · Button · Icon · type--*; every colour from the status axis."
+  },
+  "list-stacked-items": {
+    "status": "pending",
+    "note": "Long lists whose rows are themselves stacked compositions — contacts with presence, a role Badge over email over last-active and two actions (8, one selected), an inbox with sender + time, subject and preview (7), dense order rows of four stacked cells ending in amount over status (8), an activity feed with typed icon Tiles (8). List/ListItem carry row status and state; every cell is a Stack of type--* with Avatar · Badge · Chip · Tile · Button · Icon. Invented from the vocabulary, no reference image yet — refine against one later."
+  },
+  "table-stacked-cells": {
+    "status": "pending",
+    "note": "Tables whose cells stack content — a team table (Avatar beside name over email, status dot, last-active over date, row actions, one row selected), an invoices table (number over issued date, company over contact, amount, status Badge, due date over a status-coloured relative time, a TableFooter total), and a regions table with stacked header cells (label over unit) and value-over-delta body cells. Table parts only; every cell a Stack of type--*. Invented from the vocabulary — refine against a reference later."
+  },
+  "forms-and-checkout": {
+    "status": "pending",
+    "note": "Two form compositions — Create your account: social sign-in buttons, an or-divider, name fields side by side, email, PhoneInput, password, Continue and a sign-in footer, built with Form/FormField exactly as form-feedback (#5); Checkout in two states side by side: an order summary with Separator and total, Collapsible payment sections with a saved-card InputSelect and Pay, quick-pay buttons — and the success state as an EmptyState over a receipt footer (#24). Gaps: brand marks and logos (text Buttons, Avatar fallback), no credit-card icon."
+  },
+  "alerts-and-logs": {
+    "status": "pending",
+    "note": "Four compositions — an error Alert collapsed and expanded, with Try again / Copy error and a Collapsible stack trace in type--code (#13, #14); an event log of Processing / Completed / Failed cards with a status Badge (a Spinner for Processing), a type--code payload, meta, and an error Alert footer (#22); Tasks Project checklist cards with Checkbox rows and a footer action, the second as emphasis='hero' (#30). Gaps: none — Badge has no loading state, so a Spinner stands in."
+  },
+  "card-grids": {
+    "status": "pending",
+    "note": "Two grid compositions — a 2-column grid of agent cards with status badges and capability chips (#7/#9, built once), and Referenced Sources: an Accordion whose open section is a 2-column grid of source Tiles, with a collapsed API References item (#8). Card · Tile · Accordion · Avatar · Badge · Chip · Icon · type--*. Gaps: icon frames and favicons (Avatar with an Icon fallback)."
+  },
+  "cards-and-panels": {
+    "status": "pending",
+    "note": "Six card and panel compositions — the Agent Memory panel with search and Accordion sections (#6/#11, once), Agent Routing input → target cards (#12), a profile card (#15), a repo card (#16), a task card with meta chips (#27), a report card with a primary action (#28). Card · Tile · Accordion · Input · Avatar · Badge · Chip · Button · Icon · type--*. Gaps: inline text highlight (an info Badge per term), avatar stacks and brand logos (Avatars), a dashed add-zone (tertiary full-width Button), a loading Chip (loading icon)."
+  },
+  "metric-cards": {
+    "status": "pending",
+    "note": "Five metric compositions from the uploads — feature cards with an embedded stat card and a real Table (#1), the compliance tile (#4), a big stat over a chart region (#17), a 2×2 of stat tiles with deltas (#19), three rate-limit cards in success/warning/error (#23). Card · Tile · Progress · Table · Badge · Button · EmptyState · Icon · type--*. Gaps: the line chart and sparklines (EmptyState marks the region; sparklines omitted), the three-segment meter (Progress, one value)."
+  },
+  "pricing-and-offers": {
+    "status": "pending",
+    "note": "Two offer compositions — a three-plan pricing row with the middle plan emphasised and feature checklists (#18), a hero loan banner over a 2×2 of loan tiles (#31). Card emphasis primary/hero · Tile · Badge · Button · Icon · type--*. Gaps: none — glyphs substituted where the icon set lacks them."
+  },
+  "list-rows": {
+    "status": "pending",
+    "note": "Five list compositions from the uploads — content-safety checks (#10), a file list with row actions (#20), a leaderboard (#21), a file-diff list with a selected row (#29), agent status rows (#32). List/ListItem carry each row's status and state; Card · Tile · Badge · Chip · Avatar · Button · Icon · type--* for content. Gaps: image thumbnails (quiet Tile + file icon), medal colours (emphasis), a brain icon (activity stands in)."
+  },
+  "timelines-and-agenda": {
+    "status": "pending",
+    "note": "Three stacked compositions — a delivery page with a two-stop timeline (#3), an agenda of status-coloured event cards (#25), a goals list with Progress and actions (#26). Gaps: the illustration (quiet Icon), a timeline connector line (none — stops are a column of marker + content), coloured left-accent bars (status on the Card instead)."
+  },
+  "card-with-tiles": {
+    "status": "pending",
+    "note": "A Card holding a Stack of Tiles (surface--tile). The markup says only what things are; how a tile looks and how two tiles are separated is the theme's — see shared/libs/ui/themes/wireframe-stroke/v1/theme.ts → elements.tile, the TILE block."
+  },
+  "kpi-card-1": {
+    "status": "pending",
+    "note": "The 8b78805c upload from canonical components only — Card · Stack · Separator · Progress · Icon · Spinner · type--* with emphasis/status. No inline styles. Gap surfaced: no segmented meter component exists, so Progress stands in for the stacked bar."
+  },
+  "form-feedback": {
+    "status": "pending",
+    "note": ""
+  },
+  "sidebar": {
+    "status": "pending",
+    "note": "The product's shell sidebar as composed: header (brand line · the org switcher — active org's avatar, name, chevron), content (a collapse toggle item · nav items with icon + title, one selected, a count badge), footer (the user: avatar, name, menu). Expanded and collapsed to the icon rail, then the settings secondary sidebar (a LeftSidebar region holding a labelled menu). Sidebar parts only — control-group--sidebar · control--sidebar-item; icon and title are plain content. Known lib gap: Sidebar hardcodes its widths (w-14/w-60) and emits concept=collapsed instead of state='collapsed' — the width belongs to the theme."
+  },
+  "sidebar-with-tabs": {
+    "status": "pending",
+    "note": "Placeholder — replace with a proper copy of the real product sidebar."
+  },
+  "todo-tree": {
+    "status": "pending",
+    "note": "A nested to-do from ListDraggable plus canonical components. One row: grip (ctx.handle) · Checkbox (on a parent it ticks everything inside) · number by position (ctx.path) · title · Badge with progress (parents only) · icon Buttons (add inside, edit, expand/collapse on parents) · the optional detail as quiet type. Layout is Stack. Drag by the grip: top of a row is before it, bottom is after it, the middle after a pause is inside it."
+  }
+}

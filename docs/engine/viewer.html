@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seed — Docs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f7f4ee;
+    --paper-2: #efeae0;
+    --ink: #1b1813;
+    --ink-soft: #4a443b;
+    --ink-faint: #8c8478;
+    --rule: #d8d1c4;
+    --accent: #9c4221;
+    --accent-soft: #b9714f;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", Menlo, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-weight: 300; font-size: 15px; line-height: 1.65; }
+  .layout { display: flex; min-height: 100vh; }
+
+  /* sidebar */
+  aside { flex: 0 0 260px; border-right: 1px solid var(--rule); padding: 40px 22px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  aside .brand { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; }
+  aside .group { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin: 20px 0 6px; }
+  aside .group:first-of-type { margin-top: 0; }
+  aside .doclink { display: block; text-decoration: none; color: var(--ink-soft); font-size: 13.5px; padding: 6px 8px; border-radius: 5px; margin: 1px 0; }
+  aside .doclink:hover { background: var(--paper-2); }
+  aside .doclink.active { background: var(--paper-2); color: var(--ink); font-weight: 500; }
+
+
+  aside .search { width: 100%; font: 12px var(--mono); padding: 6px 8px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink); margin-bottom: 6px; }
+  aside .status { width: 100%; font: 11px var(--mono); padding: 4px 6px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--ink-soft); margin-bottom: 10px; }
+  aside details { margin: 4px 0; }
+  aside summary { cursor: pointer; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); padding: 4px 0; }
+  aside summary a { color: inherit; text-decoration: none; }
+  aside .badge { font-family: var(--mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-left: 6px; }
+  aside .badge.todo { color: var(--accent); }
+  .conv { font: 12px var(--mono); color: var(--accent); border: 1px dashed var(--accent-soft); padding: 8px 12px; border-radius: 6px; margin: 0 0 24px; }
+  table.map { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  table.map td, table.map th { text-align: left; vertical-align: top; padding: 7px 10px; border-top: 1px dotted var(--rule); }
+  table.map th { font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); border-top: none; }
+
+
+  .st { font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; border: 1px solid var(--rule); color: var(--ink-faint); }
+  .st.approved { color: #2f7d4f; border-color: #2f7d4f; }
+  .st.converted { color: #a9752a; border-color: #a9752a; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 8px; background: var(--rule); }
+  .dot.approved { background: #2f7d4f; } .dot.converted { background: #d9a03c; }
+  .docstatus { margin: -8px 0 18px; }
+  aside .showtodo { display: block; font: 10.5px var(--mono); color: var(--ink-soft); margin: 0 0 12px; }
+  aside .globalgloss { font-weight: 500; margin-bottom: 8px; }
+  .gentry { padding: 10px 0; border-top: 1px dotted var(--rule); }
+  .gterm-name { font-weight: 600; margin-bottom: 2px; }
+  .gloc { font: 10px var(--mono); color: var(--ink-faint); margin-left: 8px; text-decoration: none; }
+
+
+  .mp { font: 11px var(--mono); } .mp.ok { color: #2f7d4f; } .mp.no { color: #b5483a; }
+  .nc { color: #b5483a; font-size: 10px; margin-left: 6px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
+  .chip { font: 10.5px var(--mono); padding: 2px 9px; border: 1px solid var(--rule); border-radius: 10px; color: var(--ink-soft); text-decoration: none; }
+  .chip.on { border-color: var(--accent); color: var(--accent); }
+  .gmeta { margin: 2px 0 4px; }
+  aside .glossmini { font: 11px var(--mono); color: var(--accent); }
+  .meta { margin: -4px 0 18px; font-size: 12px; color: var(--ink-faint); }
+
+  /* content */
+  main { flex: 1; min-width: 0; padding: 52px 48px 120px; max-width: 940px; }
+  .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.15; padding-bottom: 24px; border-bottom: 3px double var(--rule); margin-bottom: 34px; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 48px 0 14px; scroll-margin-top: 24px; display: flex; align-items: baseline; gap: 12px; }
+  h3 { font-family: var(--serif); font-weight: 500; font-size: 18px; margin: 32px 0 8px; scroll-margin-top: 24px; }
+  h3 .tno { color: var(--accent-soft); font-family: var(--mono); font-size: 13px; margin-right: 8px; }
+  .statement { color: var(--ink-soft); margin: 4px 0 14px; max-width: 840px; }
+  .statement.missing { color: var(--ink-faint); font-style: italic; }
+  code { font-family: var(--mono); font-size: 0.86em; background: var(--paper-2); padding: 1px 5px; border-radius: 3px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+
+  ol.axioms { margin-left: 22px; }
+  ol.axioms > li { margin: 12px 0; }
+  ol.axioms ul { margin: 6px 0 6px 20px; list-style: disc; }
+  ol.axioms ul li { margin: 4px 0; }
+  ul.purpose { margin-left: 22px; }
+  ul.purpose li { margin: 6px 0; }
+  blockquote { border-left: 3px solid var(--accent-soft); padding: 6px 16px; margin: 14px 0; color: var(--ink-soft); }
+
+  ul.claims { list-style: none; }
+  ul.claims > li { padding: 9px 0; border-bottom: 1px dotted var(--rule); }
+  ul.claims > li:last-child { border-bottom: none; }
+  .ctext { max-width: 880px; }
+  /* Standards ids are provenance, not content: a faint trailing mark, never a column.
+     They disappear entirely when standards.json is fully digested. */
+  .cids { margin-left: 8px; white-space: nowrap; }
+  .cid { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.04em; opacity: 0.65; margin-left: 4px; }
+  .src { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); margin-left: 8px; }
+  .opennote { color: var(--ink-faint); font-style: italic; }
+
+  /* note / warning callouts on a claim */
+  .callout { display: block; margin-top: 7px; padding: 7px 12px; border-radius: 6px; font-size: 13px; line-height: 1.5; }
+  .callout .cbadge { font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; padding: 1px 6px; margin-right: 8px; vertical-align: 1px; }
+  .callout.note { background: var(--paper-2); color: var(--ink-soft); border-left: 3px solid var(--ink-faint); }
+  .callout.note .cbadge { background: var(--ink-faint); color: var(--paper); }
+  .callout.warn { background: #f2e0dc; color: #7a2d24; border-left: 3px solid #9c3a2f; }
+  .callout.warn .cbadge { background: #9c3a2f; color: #fff; }
+
+  pre.ascii { font-family: var(--mono); font-size: 12.5px; line-height: 1.5; background: #fff; border: 1.5px solid var(--rule); border-radius: 8px; padding: 16px 20px; margin: 14px 0; overflow-x: auto; color: var(--ink-soft); }
+  pre.codeblock { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; background: #201d17; color: #ded6c6; border-radius: 8px; padding: 16px 20px; margin: 14px 0; overflow-x: auto; }
+  /* syntax tokens — warm palette, tuned for the dark codeblock */
+  pre.codeblock .t-c { color: #7d7566; font-style: italic; }  /* comment */
+  pre.codeblock .t-s { color: #c3b17a; }                       /* string  */
+  pre.codeblock .t-n { color: #c3b17a; }                       /* number  */
+  pre.codeblock .t-k { color: #dd8c6e; }                       /* keyword */
+  pre.codeblock .t-b { color: #9fb8a8; }                       /* builtin type */
+  pre.codeblock .t-t { color: #8fb0c4; }                       /* Type    */
+  pre.codeblock .t-f { color: #e8d9b4; }                       /* call    */
+  .blocktitle { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin: 14px 0 -8px; }
+  .blocksection { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-soft); margin: 26px 0 4px; padding-bottom: 4px; border-bottom: 1px solid var(--rule); }
+  .example { margin: 14px 0 22px; }
+  .example .extitle { font-family: var(--serif); font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .example .extext { color: var(--ink-soft); max-width: 840px; }
+  .example pre.codeblock { margin-top: 10px; }
+  .imgblock { margin: 14px 0; }
+  .imgblock img { max-width: 100%; border: 1.5px solid var(--rule); border-radius: 8px; }
+  .htmlblock { margin: 14px 0; border: 1.5px solid var(--rule); border-radius: 8px; padding: 16px 20px; background: #fff; }
+  .htmlblock.loading { color: var(--ink-faint); font-family: var(--mono); font-size: 12px; }
+  .htmlblock.load-error { color: #9c3a2f; font-family: var(--mono); font-size: 12px; }
+
+  /* review badges */
+  .review { font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 3px; padding: 2px 8px; vertical-align: middle; }
+  .review.closed { background: #e6efe2; color: #4f7a4d; border: 1px solid #4f7a4d; }
+  .review.unreviewed { background: #f6efdd; color: #a9752a; border: 1px dashed #a9752a; }
+  .review-note { display: block; font-family: var(--sans); font-weight: 300; font-size: 13px; text-transform: none; letter-spacing: normal; color: var(--ink-faint); margin: -6px 0 16px; max-width: 780px; }
+
+  /* decision register (ADR) */
+  .adr { padding: 22px 0 6px; border-bottom: 1px dotted var(--rule); }
+  .adr:last-child { border-bottom: none; }
+  .adr h3 { margin: 0 0 6px; }
+  .adr-meta { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .adr-status { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; padding: 1px 7px; }
+  .adr-status.accepted { background: #e6efe2; color: #4f7a4d; border: 1px solid #4f7a4d; }
+  .adr-status.proposed { background: #f3ead6; color: #a9752a; border: 1px dashed #a9752a; }
+  .adr-status.superseded { background: var(--paper-2); color: var(--ink-faint); border: 1px solid var(--ink-faint); text-decoration: line-through; }
+  .adr-date { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
+  .adr-affects { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-bottom: 12px; }
+  .adr-affects a { color: var(--accent-soft); text-decoration: none; border-bottom: 1px dotted var(--accent-soft); }
+  .adr-part { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-soft); margin: 16px 0 4px; }
+  .adr p { max-width: 860px; color: var(--ink-soft); }
+  ul.adr-cons { margin-left: 22px; max-width: 860px; }
+  ul.adr-cons li { margin: 6px 0; color: var(--ink-soft); }
+
+  /* standards tracker — here the rule id IS the subject, so it keeps its column */
+  ul.claims > li.rule { display: flex; gap: 14px; align-items: baseline; }
+  .tcid { flex: 0 0 56px; font-family: var(--mono); font-size: 11px; font-weight: 500; text-align: center; border-radius: 3px; padding: 1px 0; border: 1px solid; }
+  .stdnote { color: var(--ink-soft); max-width: 840px; margin-bottom: 6px; }
+  .stdhead { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .stdhead .governs { color: var(--ink-faint); font-size: 13px; }
+  .stdbar { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-left: auto; }
+  .stdbar b { color: #4f7a4d; font-weight: 500; }
+  .consumed { font-family: var(--mono); font-size: 10px; color: #4f7a4d; border: 1px solid #4f7a4d; background: #e6efe2; border-radius: 3px; padding: 0 6px; margin-left: 8px; white-space: nowrap; }
+  .pending-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--ink-faint); margin-left: 8px; vertical-align: 1px; }
+  .sect { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin: 14px 0 2px; }
+
+  /* glossary */
+  dl.gloss { max-width: 860px; }
+  dl.gloss dt { font-weight: 500; margin-top: 16px; font-size: 15.5px; }
+  dl.gloss dt .proposed { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #a9752a; border: 1px dashed #a9752a; border-radius: 3px; padding: 0 5px; margin-left: 8px; vertical-align: 2px; }
+  dl.gloss dd { color: var(--ink-soft); margin: 2px 0 0 0; padding-bottom: 12px; border-bottom: 1px dotted var(--rule); }
+
+  .error { border: 1.5px solid #9c3a2f; background: #f2e0dc; color: #9c3a2f; border-radius: 8px; padding: 18px 22px; max-width: 700px; }
+  .error code { background: rgba(255,255,255,.6); }
+
+  /* glossary term references: [[term]] */
+  .gterm { position: relative; border-bottom: 1px dotted var(--accent-soft); cursor: help; text-decoration: none; color: inherit; }
+  .gterm:hover { border-bottom-style: solid; color: var(--accent); }
+  .gtip { display: none; position: absolute; left: 0; bottom: calc(100% + 8px); z-index: 10; width: 320px;
+          background: #fffdf8; border: 1.5px solid var(--rule); border-radius: 8px; box-shadow: 0 4px 18px rgba(27,24,19,.12);
+          padding: 10px 14px; font-size: 13px; font-weight: 300; line-height: 1.5; color: var(--ink-soft); white-space: normal; }
+  .gtip .gt { font-weight: 500; color: var(--ink); display: block; margin-bottom: 2px; }
+  .gterm:hover .gtip { display: block; }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar"><div class="brand">seed · docs</div></aside>
+  <main id="content"></main>
+</div>
+
+<script>
+/* ---------- doc registry: id -> {doc, path, group} ---------- */
+let DOCS_BY_ID = {};
+let GLOSS = {};
+const slugTerm = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+/* ---------- inline markup: escape HTML, then [[term]] `code` **bold** *em* ---------- */
+function mdBase(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+function md(s) {
+  // [[term]] or [[term|display]] → hoverable glossary reference, click → glossary entry.
+  // Falls back to a doc id ([[unmet-requirements|…]]) → plain link to that doc.
+  return mdBase(s).replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, term, display) => {
+    const key = term.trim().toLowerCase();
+    const g = GLOSS[key], def = g && g.def;
+    const shown = display ?? term;
+    if (def) {
+      return `<a class="gterm" href="?view=glossary#g-${g.slug}">${shown}` +
+             `<span class="gtip"><span class="gt">${mdBase(term)}</span>${mdBase(def)}</span></a>`;
+    }
+    if (DOCS_BY_ID['doc/' + term.trim()]) return `<a class="gterm" href="?e=${encodeURIComponent('doc/' + term.trim())}">${shown}</a>`;
+    return shown; // unknown term: render plain, no decoration
+  });
+}
+
+/* ---------- claim-id chip colors by prefix ---------- */
+const PREFIX_COLORS = {
+  SCF:  ['#4a5a8a', '#e4e8f2'],
+  MOD:  ['#4f7a4d', '#e6efe2'],
+  API:  ['#7a5a9a', '#ece4f2'],
+  AC:   ['#9c3a2f', '#f2e0dc'],
+  CFG:  ['#a9752a', '#f3ead6'],
+  PRV:  ['#2e7d7d', '#dff0f0'],
+  FE:   ['#b0568a', '#f5e3ee'],
+  TST:  ['#5a7a2a', '#eaf0dc'],
+  GATE: ['#8a6a2a', '#f2ecd9'],
+  DOC:  ['#5a6a7a', '#e6ebf0'],
+  PRC:  ['#7a4a3a', '#f2e6e0'],
+  UOM:  ['#3a6a8a', '#dfeaf2'],
+};
+function chip(id) {
+  if (!id) return '';
+  const prefix = id.match(/^[A-Z]+/)?.[0] ?? '';
+  const [fg] = PREFIX_COLORS[prefix] ?? ['#4a443b'];
+  return `<span class="cid" style="color:${fg}">${id}</span>`;
+}
+/** The tracker still needs the full chip — there the id IS the subject. */
+function trackerChip(id) {
+  const prefix = id.match(/^[A-Z]+/)?.[0] ?? '';
+  const [fg, bg] = PREFIX_COLORS[prefix] ?? ['#4a443b', '#efeae0'];
+  return `<span class="tcid" style="color:${fg};background:${bg};border-color:${fg}">${id}</span>`;
+}
+
+/* ---------- review badges ---------- */
+function reviewBadge(review) {
+  if (!review) return '';
+  const label = review.state === 'closed' ? 'closed' : 'unreviewed';
+  return `<span class="review ${review.state}">${label}</span>`;
+}
+function reviewNote(review) {
+  return review?.note ? `<span class="review-note">${md(review.note)}</span>` : '';
+}
+
+/* ---------- renderers ---------- */
+function callouts(item) {
+  let h = '';
+  if (item.note)    h += `<span class="callout note"><span class="cbadge">note</span>${md(item.note)}</span>`;
+  if (item.warning) h += `<span class="callout warn"><span class="cbadge">⚠ warning</span>${md(item.warning)}</span>`;
+  return h;
+}
+function renderClaims(claims) {
+  return `<ul class="claims">` + claims.map(c => {
+    // No callouts here: a canonical doc states the rule and nothing else.
+    // Reasoning, provenance and open questions live in the decision register (DOC1).
+    const src = c.source ? `<span class="src">· ${md(c.source)}</span>` : '';
+    const ids = (c.ids ?? [c.id]).filter(Boolean);
+    const chips = ids.length ? `<span class="cids">${ids.map(chip).join('')}</span>` : '';
+    return `<li><span class="ctext">${md(c.text)}${chips}${src}</span></li>`;
+  }).join('') + `</ul>`;
+}
+// Blocks needing an async fetch (type:"html" with src) render a placeholder now
+// and are hydrated by hydrateHtmlBlocks() after the DOM is attached.
+let htmlBlockSeq = 0;
+function renderImagesAndDiagrams(items, docBase) {
+  return (items ?? []).map(d => {
+    const title = d.title ? `<div class="blocktitle">${md(d.title)}</div>` : '';
+    if (d.type === 'image') {
+      const src = new URL(d.src, docBase).href;
+      return title + `<div class="imgblock"><img src="${src}" alt="${(d.alt ?? d.title ?? '').replace(/"/g, '&quot;')}" /></div>`;
+    }
+    if (d.type === 'html' && d.src) {
+      const id = `htmlblock-${htmlBlockSeq++}`;
+      const src = new URL(d.src, docBase).href;
+      return title + `<div class="htmlblock loading" id="${id}" data-html-src="${src}">loading ${md(d.src)}…</div>`;
+    }
+    if (d.type === 'html' && d.value) {
+      return title + `<div class="htmlblock">${d.value}</div>`;
+    }
+    // type: "ascii" (or legacy shape without an explicit type)
+    const value = d.value ?? d.ascii ?? '';
+    return title + `<pre class="ascii">${String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>`;
+  }).join('');
+}
+async function hydrateHtmlBlocks() {
+  const nodes = document.querySelectorAll('[data-html-src]');
+  for (const node of nodes) {
+    const src = node.getAttribute('data-html-src');
+    try {
+      const r = await fetch(src);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      node.innerHTML = await r.text();
+      // a fragment may carry behaviour (popovers, lightboxes): re-create its <script> tags so they execute
+      for (const s of node.querySelectorAll('script')) { const n = document.createElement('script'); for (const at of s.attributes) n.setAttribute(at.name, at.value); n.textContent = s.textContent; s.replaceWith(n); }
+      node.classList.remove('loading');
+    } catch (e) {
+      node.classList.remove('loading');
+      node.classList.add('load-error');
+      node.textContent = `Could not load ${src}: ${e.message}`;
+    }
+  }
+}
+/* ---------- syntax highlighting (self-contained: no CDN, works offline) ----------
+   Deliberately small — it covers the TS/JS the docs actually show. File trees are
+   left alone: tokenizing box-drawing art makes it less readable, not more.       */
+const HL_KEYWORD = /^(?:import|export|from|const|let|var|function|async|await|return|type|interface|extends|implements|class|new|if|else|for|of|in|while|switch|case|break|continue|default|typeof|instanceof|as|is|null|undefined|true|false|this|public|private|protected|readonly|static|enum|declare|satisfies|throw|try|catch|finally|yield|delete)$/;
+const HL_BUILTIN = /^(?:string|number|boolean|any|unknown|never|void|object|symbol|bigint)$/;
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function highlight(code) {
+  const src = String(code);
+  if (/[│├└─]/.test(src)) return esc(src);           // a file tree, not code
+  const token = /((?<!:)\/\/[^\n]*|\/\*[\s\S]*?\*\/)|("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`(?:[^`\\]|\\.)*`)|(\b\d+(?:\.\d+)?\b)|([A-Za-z_$][\w$]*)/g;
+  let out = '', last = 0, m;
+  while ((m = token.exec(src)) !== null) {
+    const [text, comment, str, num, word] = m;
+    out += esc(src.slice(last, m.index));
+    last = token.lastIndex;
+    if (comment) out += `<span class="t-c">${esc(text)}</span>`;
+    else if (str) out += `<span class="t-s">${esc(text)}</span>`;
+    else if (num) out += `<span class="t-n">${esc(text)}</span>`;
+    else if (word) {
+      const cls = HL_KEYWORD.test(text) ? 't-k'
+        : HL_BUILTIN.test(text) ? 't-b'
+        : /^[A-Z]/.test(text) ? 't-t'
+        : src[token.lastIndex] === '(' ? 't-f'
+        : null;
+      out += cls ? `<span class="${cls}">${esc(text)}</span>` : esc(text);
+    }
+  }
+  return out + esc(src.slice(last));
+}
+
+function renderExamples(examples) {
+  return (examples ?? []).map(e =>
+    `<div class="example">` +
+    (e.title ? `<div class="extitle">${md(e.title)}</div>` : '') +
+    (e.text ? `<p class="extext">${md(e.text)}</p>` : '') +
+    (e.snippets ?? []).map(s =>
+      (s.caption ? `<div class="blocktitle">${md(s.caption)}</div>` : '') +
+      `<pre class="codeblock">${highlight(s.code)}</pre>`
+    ).join('') +
+    `</div>`
+  ).join('');
+}
+
+function renderDoc(doc, docBase) {
+  let h = `<div class="kicker">docs · ${doc.id}</div><h1>${md(doc.title)}</h1>`;
+
+  if (doc.type === 'standards') {
+    if (doc.note) h += `<p class="stdnote">${md(doc.note)}</p>`;
+    const totals = doc.files.reduce((a, f) => {
+      const c = f.rules.filter(r => r.consumedBy?.length).length;
+      return { c: a.c + c, t: a.t + f.rules.length };
+    }, { c: 0, t: 0 });
+    h += `<p class="stdnote"><strong>${totals.c} / ${totals.t}</strong> rules consumed.</p>`;
+    doc.files.forEach((f, i) => {
+      const c = f.rules.filter(r => r.consumedBy?.length).length;
+      h += `<h3 id="t${i + 1}"><span class="tno">${f.prefix}</span>${f.file}</h3>
+            <div class="stdhead"><span class="governs">${md(f.governs)}</span><span class="stdbar"><b>${c}</b> / ${f.rules.length} consumed</span></div>`;
+      let lastSection = null;
+      h += `<ul class="claims">` + f.rules.map(r => {
+        const sect = (r.section && r.section !== lastSection) ? `</ul><div class="sect">${md(r.section)}</div><ul class="claims">` : '';
+        lastSection = r.section ?? lastSection;
+        const status = r.consumedBy?.length
+          ? r.consumedBy.map(d => `<span class="consumed">consumed → ${d}</span>`).join('')
+          : `<span class="pending-dot" title="not yet consumed"></span>`;
+        return `${sect}<li class="rule">${trackerChip(r.id)}<span class="ctext">${md(r.text)}${status}${callouts(r)}</span></li>`;
+      }).join('') + `</ul>`;
+    });
+    return h;
+  }
+
+  if (doc.type === 'adr') {
+    h += doc.entries.map(e => {
+      const sup = e.supersededBy ? ` → ${md(e.supersededBy)}` : '';
+      const affects = e.affects?.length
+        ? `<div class="adr-affects">governs ${e.affects.map(a => `<a href="?e=${encodeURIComponent('doc/' + a)}">${md(a)}</a>`).join(' · ')}</div>`
+        : '';
+      return `<div class="adr">
+        <h3 id="${e.id}">${md(e.title)}</h3>
+        <div class="adr-meta"><span class="adr-status ${e.status}">${e.status}${sup}</span><span class="adr-date">${md(e.date)}</span></div>
+        ${affects}
+        <div class="adr-part">Context</div><p>${md(e.context)}</p>
+        <div class="adr-part">Decision</div><p>${md(e.decision)}</p>
+        <div class="adr-part">Consequences</div><ul class="adr-cons">${e.consequences.map(c => `<li>${md(c)}</li>`).join('')}</ul>
+      </div>`;
+    }).join('');
+    return h;
+  }
+
+  if (doc.type === 'glossary') {
+    h += `<dl class="gloss">` + doc.terms.map(t =>
+      `<dt id="g-${slugTerm(t.term)}">${md(t.term)}${t.status === 'proposed' ? '<span class="proposed">proposed</span>' : ''}</dt><dd>${md(t.def)}</dd>`
+    ).join('') + `</dl>`;
+    return h;
+  }
+
+  // type: "doc" — Axiom → Purpose → Reference
+  const rev = doc.review ?? {};
+  h += `<h2 id="axioms">Axioms ${reviewBadge(rev.axioms)}</h2>${reviewNote(rev.axioms)}<ol class="axioms">` + doc.axioms.map(a =>
+    `<li>${md(a.text)}` + (a.sub ? `<ul>${a.sub.map(s => `<li>${md(s)}</li>`).join('')}</ul>` : '') + `</li>`
+  ).join('') + `</ol>`;
+
+  const p = doc.purpose;
+  h += `<h2 id="purpose">Purpose ${reviewBadge(rev.purpose)}</h2>${reviewNote(rev.purpose)}`;
+  if (p.intro) h += `<p>${md(p.intro)}</p>`;
+  if (p.points) h += `<ul class="purpose">${p.points.map(x => `<li>${md(x)}</li>`).join('')}</ul>`;
+  if (p.note) h += `<blockquote>${md(p.note)}</blockquote>`;
+
+  h += `<h2 id="reference">Reference ${reviewBadge(rev.reference)}</h2>${reviewNote(rev.reference)}`;
+  doc.reference.forEach((t, i) => {
+    h += `<h3 id="t${i + 1}"><span class="tno">${i + 1}</span>${md(t.topic)}</h3>`;
+    h += t.statement
+      ? `<p class="statement">${md(t.statement)}</p>`
+      : `<p class="statement missing">(no statement yet)</p>`;
+    if (t.claims?.length) h += `<div class="blocksection">Claims</div>` + renderClaims(t.claims);
+    const diagrams = renderImagesAndDiagrams(t.imagesAndDiagrams ?? t.diagrams, docBase);
+    if (diagrams) h += `<div class="blocksection">Diagrams</div>` + diagrams;
+    const examples = renderExamples(t.examples);
+    if (examples) h += `<div class="blocksection">Examples</div>` + examples;
+  });
+  return h;
+}
+
+/* ---------- shell ---------- */
+async function getJSON(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+  return r.json();
+}
+const mark = c => c.compliant ? '<span class="mp ok">✓</span>' : `<span class="mp no">✗ ${md(c.issues.join('; '))}</span>`;
+let SEARCH = null;
+const slugOf = t => slugTerm(t);
+
+const SUBJ = {};
+const subjTitle = id => (SUBJ[id] && SUBJ[id].title) || id;
+function renderGlossaryAll(entries, subject) {
+  const terms = entries.filter(e => e.kind === 'term' && (!subject || e.subjects.includes(subject))).sort((p, q) => p.title.localeCompare(q.title));
+  const used = [...new Set(entries.filter(e => e.kind === 'term').flatMap(e => e.subjects))];
+  const chips = `<div class="chips"><a class="chip${subject ? '' : ' on'}" href="?view=glossary">all</a>` + Object.keys(SUBJ).filter(k => used.includes(k)).map(k => `<a class="chip${subject === k ? ' on' : ''}" href="?view=glossary&subject=${encodeURIComponent(k)}">${md(subjTitle(k))}</a>`).join('') + `</div>`;
+  return `<div class="kicker">one glossary</div><h1>Glossary${subject ? ' · ' + md(subjTitle(subject)) : ''}</h1><p class="statement">${terms.length} terms. A term can belong to several subjects.</p>${chips}` +
+    terms.map(e => `<div class="gentry" id="g-${slugOf(e.title)}"><div class="gterm-name">${md(e.title)}${e.term.aliases && e.term.aliases.length ? ` <span class="gloc">also: ${md(e.term.aliases.join(', '))}</span>` : ''}${e.term.proposed ? ' <span class="st todo">proposed</span>' : ''}</div><div class="gmeta">${e.subjects.map(k => `<a class="chip" href="?view=glossary&subject=${encodeURIComponent(k)}">${md(subjTitle(k))}</a>`).join(' ')} ${e.paths.length ? e.paths.map(p => `<code>${md(p)}</code>`).join(' ') : ''}</div><div>${md(e.term.def)}</div></div>`).join('');
+}
+
+function entryHeader(e) {
+  return `<div class="docstatus"><span class="st ${e.status}">${e.status}</span> ${mark(e.compliance)} ${e.subject ? `<span class="chip on">${md(subjTitle(e.subject))}</span>` : ''}</div>
+    <div class="meta">${e.paths.length ? e.paths.map(p => `<code>${md(p)}</code>`).join(' ') : '<span class="gloc">global</span>'} ${e.tags.map(t => `<span class="gloc">#${md(t)}</span>`).join(' ')}</div>`;
+}
+
+async function main() {
+  const sidebar = document.getElementById('sidebar'), content = document.getElementById('content');
+  let entries;
+  try { entries = (await getJSON('../db/index.json')).entries; (await getJSON('../db/subjects.json')).subjects.forEach(x => { SUBJ[x.id] = x; }); }
+  catch (e) {
+    content.innerHTML = `<div class="error"><strong>Could not load the database.</strong><br/>${md(e.message)}<br/><br/>
+      Run: <code>node docs/engine/build.ts</code>, and serve the repo root: <code>node docs/engine/serve.mjs</code>, then open http://localhost:8901/docs/</div>`;
+    return;
+  }
+  const byId = {}; entries.forEach(e => { byId[e.id] = e; if (e.kind === 'doc') DOCS_BY_ID[e.id] = e; });
+  entries.filter(e => e.kind === 'term').forEach(e => { const slug = slugOf(e.title); [e.title, ...(e.term.aliases || [])].forEach(n => { GLOSS[n.toLowerCase()] = { def: e.term.def, slug }; }); });
+  const allTags = [...new Set(entries.flatMap(e => e.tags))].sort((a, b) => a.localeCompare(b));
+
+  sidebar.innerHTML = `<div class="brand">docs</div><input class="search" id="q" placeholder="search the docs" />
+    <select class="status" id="gb"><option value="subject">by subject</option><option value="tag">by tag</option></select>
+    <select class="status" id="kd"><option value="">docs and decisions</option><option value="doc">docs</option><option value="adr">decisions</option><option value="standards">standards</option><option value="term">terms</option></select>
+    <select class="status" id="st"><option value="">all statuses</option><option value="approved">approved</option><option value="converted">converted</option><option value="todo">todo</option></select>
+    <select class="status" id="mp"><option value="">mapper: all</option><option value="yes">mapper compliant</option><option value="no">not mapper compliant</option></select>
+    <select class="status" id="tg"><option value="">all tags</option>${allTags.map(t => `<option>${md(t)}</option>`).join('')}</select>
+    <a class="doclink globalgloss" id="gg" href="?view=glossary">Glossary · ${entries.filter(e => e.kind === 'term').length} terms</a><div id="nav"></div>`;
+  const nav = document.getElementById('nav'), OPEN = new Set(), $ = id => document.getElementById(id);
+  let currentId = null, view = null;
+  const draw = async () => {
+    const q = $('q').value.trim().toLowerCase(), st = $('st').value, mp = $('mp').value, kd = $('kd').value, tg = $('tg').value, gb = $('gb').value;
+    if (q && !SEARCH) SEARCH = await getJSON('../db/search.json');
+    const list = entries.filter(e => (kd ? e.kind === kd : e.kind !== 'term') && (!st || e.status === st) && (!mp || (mp === 'yes') === e.compliance.compliant) && (!tg || e.tags.includes(tg)) && (!q || SEARCH[e.id].includes(q)));
+    const groups = new Map(), KO = { doc: 0, adr: 1, standards: 2, term: 3 };
+    list.sort((p, q) => KO[p.kind] - KO[q.kind] || p.title.localeCompare(q.title));
+    list.forEach(e => { (gb === 'tag' ? e.tags : (e.subjects || [e.subject])).forEach(k => { if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }); });
+    const order = Object.keys(SUBJ), rank = k => (gb === 'subject' ? order.indexOf(k) : 0);
+    const termsOf = k => entries.filter(e => e.kind === 'term' && e.subjects.includes(k)).length;
+    nav.innerHTML = [...groups.entries()].sort((a, b) => rank(a[0]) - rank(b[0]) || a[0].localeCompare(b[0])).map(([k, es]) =>
+      `<details data-g="${md(k)}"${OPEN.has(k) || q ? ' open' : ''}><summary>${md(gb === 'subject' ? subjTitle(k) : k)} <span class="badge">${es.length}</span></summary>` +
+      (gb === 'subject' && termsOf(k) ? `<a class="doclink glossmini" href="?view=glossary&subject=${encodeURIComponent(k)}">Glossary · ${termsOf(k)} terms</a>` : '') +
+      es.map(e => `<a class="doclink" data-id="${md(e.id)}" href="?e=${encodeURIComponent(e.id)}"><span class="dot ${e.status}" title="${e.status}"></span>${md(e.title)}${e.kind === 'adr' ? '<span class="badge">decision</span>' : ''}${!e.compliance.compliant && e.status !== 'todo' ? `<span class="nc" title="${e.compliance.issues.join('; ').replace(/"/g, '')}">✗</span>` : ''}</a>`).join('') + `</details>`).join('');
+    mk();
+  };
+  const mk = () => {
+    nav.querySelectorAll('.doclink').forEach(a => a.classList.toggle('active', a.dataset.id === currentId));
+    $('gg').classList.toggle('active', view === 'glossary');
+    const act = [...nav.querySelectorAll('.doclink.active')];
+    if (act.length && !act.some(a => a.parentElement.open)) { act[0].parentElement.open = true; OPEN.add(act[0].parentElement.dataset.g); }
+  };
+  nav.addEventListener('toggle', e => { const g = e.target.dataset && e.target.dataset.g; if (g) { e.target.open ? OPEN.add(g) : OPEN.delete(g); } }, true);
+  ['st', 'mp', 'kd', 'tg', 'gb'].forEach(id => { $(id).onchange = draw; }); $('q').oninput = draw;
+
+  const route = async () => {
+    const params = new URLSearchParams(location.search);
+    view = params.get('view'); currentId = view ? null : (byId[params.get('e')] ? params.get('e') : 'doc/mapper');
+    mk();
+    if (view === 'glossary') { document.title = 'Glossary · docs'; content.innerHTML = renderGlossaryAll(entries, params.get('subject')); }
+    else {
+      const meta = byId[currentId], url = new URL(`../db/${currentId}.json`, location.href), full = await getJSON(url);
+      document.title = `${meta.title} · docs`;
+      let body = '';
+      if (full.kind === 'doc') body = full.doc ? renderDoc({ id: full.docId, type: 'doc', title: full.title, ...full.doc }, url) : `<div class="kicker">not migrated</div><h1>${md(full.title)}</h1><p class="statement">${md(full.summary || '')}</p>`;
+      else if (full.kind === 'adr') body = renderDoc({ id: full.id, type: 'adr', title: full.title, entries: [{ id: full.id, title: full.title, date: full.adr.date, status: full.adr.adrStatus, context: full.adr.context, decision: full.adr.decision, consequences: full.adr.consequences, affects: full.adr.affects, supersededBy: full.adr.supersededBy }] }, url);
+      else if (full.kind === 'standards') body = renderDoc({ id: full.id, type: 'standards', title: full.title, ...full.standards }, url);
+      else body = `<div class="kicker">term</div><h1>${md(full.title)}</h1><p class="statement">${md(full.term.def)}</p><p><a href="?view=glossary#g-${slugOf(full.title)}">in the glossary</a></p>`;
+      content.innerHTML = entryHeader(meta) + (meta.status === 'converted' && full.doc && full.doc.converted ? `<div class="conv">converted from markdown: axioms and purpose are still to write, nothing is validated</div>` : '') + body;
+      hydrateHtmlBlocks();
+    }
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+  };
+  // navigate without reloading the page: only the content changes, the sidebar stays as it is
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a'); const href = a && a.getAttribute('href');
+    if (!href || !href.startsWith('?') || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault(); history.pushState(null, '', href); route();
+  });
+  window.addEventListener('popstate', route);
+  await draw(); route();
+}
+main();
+</script>
+</body>
+</html>

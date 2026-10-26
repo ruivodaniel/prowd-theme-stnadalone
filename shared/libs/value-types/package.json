@@ -1,0 +1,43 @@
+{
+  "name": "@libs/value-types",
+  "version": "0.1.0",
+  "description": "Universe of valid values for shared vocabulary backed by ISO/IANA/BCP 47/E.164 standards. Pure data + thin validators. Zero product knowledge.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./locale": "./src/locale/index.ts",
+    "./timezone": "./src/timezone/index.ts",
+    "./phone": "./src/phone/index.ts",
+    "./country": "./src/country/index.ts",
+    "./currency": "./src/currency/index.ts",
+    "./address": "./src/address/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vitest": "^3.1.4",
+    "zod": "^4.4.3"
+  },
+  "keywords": [
+    "value-types",
+    "iso",
+    "iana",
+    "bcp47",
+    "e164",
+    "locale",
+    "timezone",
+    "phone",
+    "country",
+    "currency"
+  ],
+  "license": "MIT"
+}

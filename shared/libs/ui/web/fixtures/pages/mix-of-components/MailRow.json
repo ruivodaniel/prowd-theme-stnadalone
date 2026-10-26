@@ -1,0 +1,133 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "MailRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "initials",
+  "from",
+  "time",
+  "subject",
+  "preview"
+ ],
+ "slots": [
+  "badge",
+  "action"
+ ],
+ "root": {
+  "type": "ListItem",
+  "props": {
+   "className": "gap-3"
+  },
+  "children": [
+   {
+    "type": "ListItemIcon",
+    "props": {},
+    "children": [
+     {
+      "type": "Avatar",
+      "props": {
+       "scale": "md"
+      },
+      "children": [
+       {
+        "type": "AvatarFallback",
+        "props": {
+         "children": {
+          "bind": "initials"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "ListItemContent",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 8,
+         "align": "baseline",
+         "justify": "between"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "align": "baseline"
+          },
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": {
+              "bind": "from"
+             }
+            }
+           },
+           {
+            "type": "Slot",
+            "props": {
+             "name": "badge"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": {
+            "bind": "time"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body",
+         "children": {
+          "bind": "subject"
+         }
+        }
+       },
+       {
+        "type": "ListItemDescription",
+        "props": {
+         "children": {
+          "bind": "preview"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Slot",
+    "props": {
+     "name": "action"
+    }
+   }
+  ]
+ }
+}

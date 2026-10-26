@@ -1,0 +1,508 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "SystemsShell",
+ "version": 1,
+ "surface": "web",
+ "slots": [
+  "children"
+ ],
+ "root": {
+  "type": "ShellSideNav",
+  "props": {
+   "className": "flex h-screen w-full overflow-hidden"
+  },
+  "children": [
+   {
+    "type": "ShellNav",
+    "props": {
+     "className": "flex h-full flex-col"
+    },
+    "children": [
+     {
+      "type": "SidebarProvider",
+      "props": {
+       "open": true,
+       "className": "h-full"
+      },
+      "children": [
+       {
+        "type": "Sidebar",
+        "props": {
+         "collapsible": "icon"
+        },
+        "children": [
+         {
+          "type": "SidebarHeader",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarMenuButton",
+            "props": {
+             "emphasis": "primary",
+             "concept": "org-switcher",
+             "tooltip": "Veltrix MES 7 — Northline line"
+            },
+            "children": [
+             {
+              "type": "Avatar",
+              "props": {
+               "scale": "sm"
+              },
+              "children": [
+               {
+                "type": "AvatarFallback",
+                "props": {
+                 "children": "VM"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "className": "flex-1 truncate",
+               "children": "Veltrix MES 7 — Northline line"
+              }
+             },
+             {
+              "type": "Icon",
+              "props": {
+               "name": "chevronDown",
+               "size": "sm"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "SidebarContent",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarGroup",
+            "props": {},
+            "children": [
+             {
+              "type": "SidebarMenu",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Overview"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "layout",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Overview"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Sources"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "upload",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Sources"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "6"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Coverage"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "layers",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Coverage"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "42"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Readiness"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "home",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Readiness"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "9"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Findings"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "list",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Findings"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "14"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Tests"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "grid",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Tests"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "31"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Test runs"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "activity",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Test runs"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "8"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Reports",
+                   "isActive": true
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "fileText",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Reports"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "3"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Data"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "database",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Data"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "7"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "SidebarFooter",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarMenu",
+            "props": {},
+            "children": [
+             {
+              "type": "SidebarMenuItem",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenuButton",
+                "props": {
+                 "emphasis": "primary",
+                 "tooltip": "Elena Marchetti"
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "sm"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {
+                     "children": "EM"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "className": "flex-1 truncate",
+                   "children": "Elena Marchetti"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Slot",
+    "props": {
+     "name": "children"
+    }
+   }
+  ]
+ }
+}

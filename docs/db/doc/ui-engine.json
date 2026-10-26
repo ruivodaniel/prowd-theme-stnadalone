@@ -1,0 +1,176 @@
+{
+  "id": "doc/ui-engine",
+  "kind": "doc",
+  "title": "Theme Engine",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui",
+    "contributor"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "How the CSS engine works. The engine compiles a Theme object into a single CSS file that owns all visual styling for the application.",
+  "docId": "ui-engine",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "How the CSS engine works. The engine compiles a Theme object into a single CSS file that owns all visual styling for the application."
+    },
+    "reference": [
+      {
+        "topic": "Architecture",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "shared/libs/ui/web/theme-engine/\n├── conventions.ts     Family prefixes, element→family mapping, selector generation\n├── emit.ts            Token-to-CSS emitters (boundary, interior, typography, etc.)\n├── theme-process.ts   Main engine: walks theme, generates complete CSS output\n├── build.ts           Build script: imports theme, runs engine, writes CSS file\n├── index.ts           Barrel export\n├── fonts/             Font files (owned by the lib)\n├── generated/         Output CSS (one file per theme)\n└── sandbox/           Visual test page"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Convention-Driven",
+        "claims": [
+          {
+            "text": "The only structural knowledge is in `conventions.ts`:"
+          },
+          {
+            "text": "**FAMILY_PREFIXES** — 9 entries mapping family keys to CSS prefixes"
+          },
+          {
+            "text": "**ELEMENT_FAMILIES** — maps each element key to its family"
+          },
+          {
+            "text": "**FAMILY_DEFAULTS** — sensible defaults per family (cursor, transition)"
+          },
+          {
+            "text": "Add an element to the theme → the engine processes it automatically. No registry to update."
+          }
+        ],
+        "statement": "The engine has no hardcoded element lists. It walks the theme object dynamically and processes whatever it finds."
+      },
+      {
+        "topic": "Hybrid CSS Approach",
+        "claims": [
+          {
+            "text": "These exist because tint, smart-bw, and alpha mixing require cross-property composition that plain CSS properties can't express."
+          },
+          {
+            "text": "**Everything else is plain CSS.** Padding, border-width, radius, shadow, cursor, transition, typography — set directly on cascade selectors. No indirection, no variable chains."
+          }
+        ],
+        "statement": "The engine uses **5 CSS custom properties** for composition: `--bg`, `--fg`, `--tint`, `--border-color`, `--bg-alpha`."
+      },
+      {
+        "topic": "Output Structure",
+        "claims": [
+          {
+            "text": "**@font-face** — font file declarations"
+          },
+          {
+            "text": "**Tailwind variant declarations** — `@custom-variant dark`"
+          },
+          {
+            "text": "**L1: Primitives** — `:root` custom properties (colors, typography, spacing, etc.)"
+          },
+          {
+            "text": "**L1b: Modes + Derivations** — per color scheme (`:root` default, `[data-mode]` others)"
+          },
+          {
+            "text": "**Tailwind token registrations** — `@theme inline` block"
+          },
+          {
+            "text": "**Legacy bridge** — shadcn compat vars (removed as components migrate)"
+          },
+          {
+            "text": "**Base layer** — `@layer base` (body bg/fg, border defaults)"
+          },
+          {
+            "text": "**Property application** — tint/alpha composition on `[element]` and `[layout]`"
+          },
+          {
+            "text": "**Family & element extras** — scrim, placeholder, scrollbar, disabled, icons"
+          },
+          {
+            "text": "**Cascade** — L2 families → L3 elements → L4 concepts → L5 contextual → axes → sizes"
+          },
+          {
+            "text": "**Component overrides** — `[data-slot]` integration (removed as components migrate)"
+          }
+        ],
+        "statement": "The generated CSS file reads as a coherent document:"
+      },
+      {
+        "topic": "Build Pipeline",
+        "claims": [
+          {
+            "text": "The app wears exactly one theme@version, chosen in `configs/theme/index.ts` (`APP_THEME = { theme, version }`); its vite config aliases `@theme` to that version's generated CSS:"
+          },
+          {
+            "text": "Watch mode: `pnpm theme:watch` — rebuilds on theme or engine file changes."
+          }
+        ],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "npx tsx shared/libs/ui/web/theme-engine/build.ts",
+                "caption": "bash"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "@import \"@theme-fonts\";\n@import \"@theme\";   /* → shared/libs/ui/themes/wireframes/v2/generated/wireframes.css */",
+                "caption": "css"
+              }
+            ]
+          }
+        ],
+        "statement": "Reads every `themes/<theme>/v<n>/theme.ts`, runs the engine, writes `themes/<theme>/v<n>/generated/<theme>.css` (+ `<theme>-fonts.css`) beside it."
+      },
+      {
+        "topic": "Smart Bleed (Build-Time Resolution)",
+        "claims": [],
+        "statement": "When the engine encounters `smartBleed` on a contextual child, it resolves the parent's padding/radius/border-width by walking the cascade (L2→L3→L4), then emits concrete negative margins and border-radius values on the child's specific selector. No CSS variables, no runtime computation."
+      },
+      {
+        "topic": "What the Engine Does NOT Do",
+        "claims": [
+          {
+            "text": "No runtime JavaScript in the browser"
+          },
+          {
+            "text": "No Shadow DOM isolation"
+          },
+          {
+            "text": "No PR layout class generation"
+          },
+          {
+            "text": "No runtime linting"
+          },
+          {
+            "text": "No component modifications"
+          }
+        ]
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

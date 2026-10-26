@@ -1,0 +1,1218 @@
+{
+ "kind": "page",
+ "schemaVersion": 1,
+ "name": "report",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "use": {
+   "component": "SystemsShell",
+   "version": "latest"
+  },
+  "slots": {
+   "children": [
+    {
+     "type": "Page",
+     "children": [
+      {
+       "type": "PageBody",
+       "children": [
+        {
+         "type": "Main",
+         "children": [
+          {
+           "type": "MainContent",
+           "children": [
+            {
+             "type": "MainBody",
+             "children": [
+              {
+               "type": "Container",
+               "children": [
+                {
+                 "type": "Stack",
+                 "props": {
+                  "dir": "col",
+                  "gap": 16,
+                  "data-testid": "report-page"
+                 },
+                 "children": [
+                  {
+                   "type": "Stack",
+                   "props": {
+                    "dir": "row",
+                    "align": "center",
+                    "justify": "between",
+                    "gap": 12,
+                    "wrap": true
+                   },
+                   "children": [
+                    {
+                     "type": "Stack",
+                     "props": {
+                      "dir": "col",
+                      "gap": 2
+                     },
+                     "children": [
+                      {
+                       "type": "Stack",
+                       "props": {
+                        "dir": "row",
+                        "align": "center",
+                        "gap": 8,
+                        "wrap": true
+                       },
+                       "children": [
+                        {
+                         "type": "Text",
+                         "props": {
+                          "element": "type--heading3",
+                          "children": "Factory acceptance test protocol — Line 3 packaging"
+                         }
+                        },
+                        {
+                         "type": "Badge",
+                         "props": {
+                          "emphasis": "quiet",
+                          "scale": "xs",
+                          "status": "success",
+                          "children": "v3 · current"
+                         }
+                        }
+                       ]
+                      },
+                      {
+                       "type": "Text",
+                       "props": {
+                        "element": "type--body-extra-small",
+                        "children": "Generated 24 Oct 2026, 14:12 · by Aoife Doyle · 214 test cases",
+                        "emphasis": "quiet"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "type": "Stack",
+                     "props": {
+                      "dir": "row",
+                      "align": "center",
+                      "gap": 10
+                     },
+                     "children": [
+                      {
+                       "type": "Button",
+                       "props": {
+                        "emphasis": "quiet",
+                        "buttonType": "icon-text",
+                        "startIcon": "file",
+                        "data-testid": "report-preview-btn",
+                        "children": "Preview"
+                       }
+                      },
+                      {
+                       "type": "Button",
+                       "props": {
+                        "emphasis": "quiet",
+                        "buttonType": "icon-text",
+                        "startIcon": "download",
+                        "data-testid": "report-export-docx-btn",
+                        "children": "Export DOCX"
+                       }
+                      },
+                      {
+                       "type": "Separator",
+                       "props": {
+                        "orientation": "vertical"
+                       }
+                      },
+                      {
+                       "type": "Button",
+                       "props": {
+                        "emphasis": "quiet",
+                        "buttonType": "icon-text",
+                        "startIcon": "message",
+                        "data-testid": "report-request-changes-btn",
+                        "children": "Request changes"
+                       }
+                      },
+                      {
+                       "type": "Button",
+                       "props": {
+                        "emphasis": "primary",
+                        "buttonType": "icon-text",
+                        "startIcon": "check",
+                        "data-testid": "report-approve-btn",
+                        "children": "Approve"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "Separator"
+                  },
+                  {
+                   "type": "Stack",
+                   "props": {
+                    "dir": "row",
+                    "gap": 16,
+                    "align": "stretch",
+                    "wrap": true
+                   },
+                   "children": [
+                    {
+                     "type": "Card",
+                     "props": {
+                      "position": "w-lg"
+                     },
+                     "children": [
+                      {
+                       "type": "CardContent",
+                       "children": [
+                        {
+                         "type": "Stack",
+                         "props": {
+                          "dir": "col",
+                          "gap": 8
+                         },
+                         "children": [
+                          {
+                           "type": "Text",
+                           "props": {
+                            "element": "type--body-small",
+                            "children": "Contents",
+                            "emphasis": "quiet"
+                           }
+                          },
+                          {
+                           "type": "ListTree",
+                           "props": {
+                            "items": [
+                             {
+                              "id": "1",
+                              "number": "1",
+                              "label": "Introduction"
+                             },
+                             {
+                              "id": "2",
+                              "number": "2",
+                              "label": "Scope and objectives"
+                             },
+                             {
+                              "id": "3",
+                              "number": "3",
+                              "label": "System description"
+                             },
+                             {
+                              "id": "4",
+                              "number": "4",
+                              "label": "Test cases",
+                              "children": [
+                               {
+                                "id": "4.1",
+                                "number": "4.1",
+                                "label": "Batch record creation"
+                               },
+                               {
+                                "id": "4.2",
+                                "number": "4.2",
+                                "label": "Electronic signature on release"
+                               },
+                               {
+                                "id": "4.3",
+                                "number": "4.3",
+                                "label": "Audit trail integrity"
+                               },
+                               {
+                                "id": "4.4",
+                                "number": "4.4",
+                                "label": "Equipment interlock on line stop"
+                               }
+                              ]
+                             },
+                             {
+                              "id": "5",
+                              "number": "5",
+                              "label": "Traceability matrix"
+                             },
+                             {
+                              "id": "6",
+                              "number": "6",
+                              "label": "Deviations and approvals"
+                             }
+                            ],
+                            "selectedId": "4.2",
+                            "indent": 16,
+                            "lines": true,
+                            "data-testid": "report-contents-tree"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "type": "Stack",
+                     "props": {
+                      "dir": "col",
+                      "gap": 16,
+                      "size": "fill"
+                     },
+                     "children": [
+                      {
+                       "type": "Card",
+                       "children": [
+                        {
+                         "type": "CardContent",
+                         "children": [
+                          {
+                           "type": "Stack",
+                           "props": {
+                            "dir": "col",
+                            "gap": 12
+                           },
+                           "children": [
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "col",
+                              "gap": 2
+                             },
+                             "children": [
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-extra-small",
+                                "children": "Test cases · 4.2 · TC-OQ-042",
+                                "emphasis": "quiet"
+                               }
+                              },
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--heading4",
+                                "children": "Electronic signature on batch release"
+                               }
+                              },
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-small",
+                                "children": "Verify that a batch can only be released after a second authorised user applies an electronic signature that is bound to the record.",
+                                "emphasis": "quiet"
+                               }
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Table",
+                             "children": [
+                              {
+                               "type": "TableHeader",
+                               "children": [
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableHead",
+                                   "props": {
+                                    "children": "Step"
+                                   }
+                                  },
+                                  {
+                                   "type": "TableHead",
+                                   "props": {
+                                    "children": "Action"
+                                   }
+                                  },
+                                  {
+                                   "type": "TableHead",
+                                   "props": {
+                                    "children": "Expected result"
+                                   }
+                                  },
+                                  {
+                                   "type": "TableHead",
+                                   "props": {
+                                    "children": "Result"
+                                   }
+                                  }
+                                 ]
+                                }
+                               ]
+                              },
+                              {
+                               "type": "TableBody",
+                               "children": [
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "1"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Log in as a QA reviewer and open batch B-24-0817 in status Pending release."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "The batch record opens read-only and the Release action is enabled."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "success",
+                                      "children": "Pass"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "2"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Select Release and enter the reviewer username and password in the signature dialog."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "The dialog records the signer name, date, time and meaning of the signature."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "success",
+                                      "children": "Pass"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "3"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Repeat the release as the same user who created the batch record."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "The system rejects the signature: creator and releaser must be different users."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "success",
+                                      "children": "Pass"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "4"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Enter an incorrect password three times in a row."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "The account is locked and a security event is written to the audit trail."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "error",
+                                      "children": "Fail"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "5"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Open the audit trail for B-24-0817 and filter by signature events."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Each signature attempt appears with user, timestamp and outcome; entries cannot be edited."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "neutral",
+                                      "children": "Not marked"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "TableRow",
+                                 "children": [
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "6"
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "Export the batch record to PDF."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Text",
+                                     "props": {
+                                      "element": "type--body-small",
+                                      "children": "The PDF shows the printed name, signature date and meaning for every signature."
+                                     }
+                                    }
+                                   ]
+                                  },
+                                  {
+                                   "type": "TableCell",
+                                   "children": [
+                                    {
+                                     "type": "Badge",
+                                     "props": {
+                                      "emphasis": "quiet",
+                                      "scale": "xs",
+                                      "status": "neutral",
+                                      "children": "Not marked"
+                                     }
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "type": "Card",
+                       "props": {
+                        "data-testid": "report-provenance-card"
+                       },
+                       "children": [
+                        {
+                         "type": "CardContent",
+                         "children": [
+                          {
+                           "type": "Stack",
+                           "props": {
+                            "dir": "col",
+                            "gap": 12
+                           },
+                           "children": [
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "row",
+                              "align": "center",
+                              "gap": 8
+                             },
+                             "children": [
+                              {
+                               "type": "Icon",
+                               "props": {
+                                "name": "info",
+                                "size": "sm"
+                               }
+                              },
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--heading4",
+                                "children": "Where this came from"
+                               }
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "col",
+                              "gap": 6
+                             },
+                             "children": [
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-extra-small",
+                                "children": "Requirement",
+                                "emphasis": "quiet"
+                               }
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Stack",
+                                 "props": {
+                                  "dir": "row",
+                                  "align": "center",
+                                  "gap": 8,
+                                  "wrap": true
+                                 },
+                                 "children": [
+                                  {
+                                   "type": "Text",
+                                   "props": {
+                                    "element": "type--body-small",
+                                    "children": "SR-0412"
+                                   }
+                                  },
+                                  {
+                                   "type": "Badge",
+                                   "props": {
+                                    "emphasis": "quiet",
+                                    "scale": "xs",
+                                    "children": "Customer URS"
+                                   }
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--quote-small",
+                                  "children": "The system shall require a second, independent electronic signature before any batch is released for distribution."
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "User requirements, section 7.3, page 41",
+                                  "emphasis": "quiet"
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Separator"
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "col",
+                              "gap": 8
+                             },
+                             "children": [
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-extra-small",
+                                "children": "Capabilities",
+                                "emphasis": "quiet"
+                               }
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Stack",
+                                 "props": {
+                                  "dir": "row",
+                                  "align": "center",
+                                  "gap": 8,
+                                  "wrap": true
+                                 },
+                                 "children": [
+                                  {
+                                   "type": "Text",
+                                   "props": {
+                                    "element": "type--body-small",
+                                    "children": "CAP-018"
+                                   }
+                                  },
+                                  {
+                                   "type": "Badge",
+                                   "props": {
+                                    "emphasis": "quiet",
+                                    "scale": "xs",
+                                    "children": "Vendor spec"
+                                   }
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--quote-small",
+                                  "children": "Electronic signatures are bound to the record and display signer, date, time and meaning."
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Veltrix MES 7 functional specification, section 12.2, page 88",
+                                  "emphasis": "quiet"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Stack",
+                                 "props": {
+                                  "dir": "row",
+                                  "align": "center",
+                                  "gap": 8,
+                                  "wrap": true
+                                 },
+                                 "children": [
+                                  {
+                                   "type": "Text",
+                                   "props": {
+                                    "element": "type--body-small",
+                                    "children": "CAP-021"
+                                   }
+                                  },
+                                  {
+                                   "type": "Badge",
+                                   "props": {
+                                    "emphasis": "quiet",
+                                    "scale": "xs",
+                                    "children": "Vendor spec"
+                                   }
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--quote-small",
+                                  "children": "Separation of duties can be enforced per workflow step through role configuration."
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Veltrix MES 7 functional specification, section 12.5, page 93",
+                                  "emphasis": "quiet"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Stack",
+                                 "props": {
+                                  "dir": "row",
+                                  "align": "center",
+                                  "gap": 8,
+                                  "wrap": true
+                                 },
+                                 "children": [
+                                  {
+                                   "type": "Text",
+                                   "props": {
+                                    "element": "type--body-small",
+                                    "children": "CAP-033"
+                                   }
+                                  },
+                                  {
+                                   "type": "Badge",
+                                   "props": {
+                                    "emphasis": "quiet",
+                                    "scale": "xs",
+                                    "children": "Configuration guide"
+                                   }
+                                  }
+                                 ]
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--quote-small",
+                                  "children": "Failed login attempts lock the account after a configurable threshold and raise a security event."
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Configuration guide, section 4.1, page 17",
+                                  "emphasis": "quiet"
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Separator"
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "col",
+                              "gap": 2
+                             },
+                             "children": [
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-extra-small",
+                                "children": "Test steps",
+                                "emphasis": "quiet"
+                               }
+                              },
+                              {
+                               "type": "Text",
+                               "props": {
+                                "element": "type--body-small",
+                                "children": "Steps 1 to 6 derive from the signature workflow described in CAP-018 and CAP-021; the lock-out in step 4 derives from CAP-033."
+                               }
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "type": "Card",
+                       "props": {
+                        "data-testid": "report-comments-card"
+                       },
+                       "children": [
+                        {
+                         "type": "CardContent",
+                         "children": [
+                          {
+                           "type": "Stack",
+                           "props": {
+                            "dir": "col",
+                            "gap": 12
+                           },
+                           "children": [
+                            {
+                             "type": "Text",
+                             "props": {
+                              "element": "type--heading4",
+                              "children": "Comments"
+                             }
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "row",
+                              "align": "start",
+                              "gap": 8
+                             },
+                             "children": [
+                              {
+                               "type": "Avatar",
+                               "props": {
+                                "scale": "sm"
+                               },
+                               "children": [
+                                {
+                                 "type": "AvatarFallback",
+                                 "props": {
+                                  "children": "MT"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Mei Tanaka · on step 4 · 2 days ago",
+                                  "emphasis": "quiet"
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-small",
+                                  "children": "Please confirm the lock-out threshold with the vendor; the configuration guide says 5 attempts, not 3."
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "row",
+                              "align": "start",
+                              "gap": 8
+                             },
+                             "children": [
+                              {
+                               "type": "Avatar",
+                               "props": {
+                                "scale": "sm"
+                               },
+                               "children": [
+                                {
+                                 "type": "AvatarFallback",
+                                 "props": {
+                                  "children": "AD"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Aoife Doyle · on step 4 · 1 day ago",
+                                  "emphasis": "quiet"
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-small",
+                                  "children": "Agreed. I changed the step to five attempts and flagged the earlier run as failed on that basis."
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "row",
+                              "align": "start",
+                              "gap": 8
+                             },
+                             "children": [
+                              {
+                               "type": "Avatar",
+                               "props": {
+                                "scale": "sm"
+                               },
+                               "children": [
+                                {
+                                 "type": "AvatarFallback",
+                                 "props": {
+                                  "children": "RA"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "type": "Stack",
+                               "props": {
+                                "dir": "col",
+                                "gap": 2
+                               },
+                               "children": [
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-extra-small",
+                                  "children": "Rui Almeida · on step 6 · 5 hours ago",
+                                  "emphasis": "quiet"
+                                 }
+                                },
+                                {
+                                 "type": "Text",
+                                 "props": {
+                                  "element": "type--body-small",
+                                  "children": "Add the page footer to the expected result so the reviewer checks that the signature block is not truncated."
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "type": "Textarea",
+                             "props": {
+                              "placeholder": "Add a comment on this test case.",
+                              "data-testid": "report-comment-input"
+                             }
+                            },
+                            {
+                             "type": "Stack",
+                             "props": {
+                              "dir": "row"
+                             },
+                             "children": [
+                              {
+                               "type": "Button",
+                               "props": {
+                                "buttonType": "icon-text",
+                                "startIcon": "message",
+                                "data-testid": "report-add-comment-btn",
+                                "children": "Add comment"
+                               }
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

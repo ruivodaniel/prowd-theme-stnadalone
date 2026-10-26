@@ -1,0 +1,246 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "MemberRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "state",
+  "name",
+  "initials",
+  "email",
+  "role",
+  "active",
+  "date",
+  "status"
+ ],
+ "root": {
+  "type": "TableRow",
+  "props": {
+   "state": {
+    "bind": "state"
+   }
+  },
+  "children": [
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 10,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Avatar",
+        "props": {
+         "scale": "sm"
+        },
+        "children": [
+         {
+          "type": "AvatarFallback",
+          "props": {
+           "children": {
+            "bind": "initials"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body",
+           "children": {
+            "bind": "name"
+           }
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": {
+            "bind": "email"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Badge",
+      "props": {
+       "emphasis": "quiet",
+       "children": {
+        "bind": "role"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-small",
+       "status": {
+        "if": [
+         {
+          "eq": [
+           {
+            "bind": "status"
+           },
+           "Active"
+          ]
+         },
+         "success",
+         {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "status"
+             },
+             "Away"
+            ]
+           },
+           "neutral",
+           "warning"
+          ]
+         }
+        ]
+       }
+      },
+      "children": [
+       {
+        "type": "Icon",
+        "props": {
+         "name": "dot",
+         "size": "xs"
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "children": {
+          "concat": [
+           " ",
+           {
+            "bind": "status"
+           }
+          ]
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-small",
+         "children": {
+          "bind": "active"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": "quiet",
+         "children": {
+          "bind": "date"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 4,
+       "justify": "end"
+      },
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "buttonType": "icon",
+         "startIcon": "edit",
+         "emphasis": "quiet",
+         "scale": "sm",
+         "aria-label": {
+          "concat": [
+           "Edit ",
+           {
+            "bind": "name"
+           }
+          ]
+         }
+        }
+       },
+       {
+        "type": "Button",
+        "props": {
+         "buttonType": "icon",
+         "startIcon": "more",
+         "emphasis": "quiet",
+         "scale": "sm",
+         "aria-label": "More"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,258 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "ContactRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "id",
+  "name",
+  "initials",
+  "role",
+  "email",
+  "last",
+  "presence",
+  "invited",
+  "selected"
+ ],
+ "root": {
+  "type": "ListItem",
+  "props": {
+   "status": {
+    "if": [
+     {
+      "bind": "invited"
+     },
+     "warning"
+    ]
+   },
+   "state": {
+    "if": [
+     {
+      "bind": "selected"
+     },
+     "selected"
+    ]
+   },
+   "className": "gap-3"
+  },
+  "children": [
+   {
+    "type": "ListItemIcon",
+    "props": {},
+    "children": [
+     {
+      "type": "Avatar",
+      "props": {
+       "scale": "md",
+       "status": {
+        "if": [
+         {
+          "eq": [
+           {
+            "bind": "presence"
+           },
+           1
+          ]
+         },
+         "success",
+         {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "presence"
+             },
+             2
+            ]
+           },
+           "warning",
+           {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "presence"
+               },
+               3
+              ]
+             },
+             "info",
+             {
+              "if": [
+               {
+                "eq": [
+                 {
+                  "bind": "presence"
+                 },
+                 4
+                ]
+               },
+               "error",
+               {
+                "if": [
+                 {
+                  "eq": [
+                   {
+                    "bind": "presence"
+                   },
+                   5
+                  ]
+                 },
+                 "neutral"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      },
+      "children": [
+       {
+        "type": "AvatarFallback",
+        "props": {
+         "children": {
+          "bind": "initials"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "ListItemContent",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 8,
+         "align": "baseline"
+        },
+        "children": [
+         {
+          "type": "ListItemTitle",
+          "props": {
+           "children": {
+            "bind": "name"
+           }
+          }
+         },
+         {
+          "type": "Badge",
+          "props": {
+           "emphasis": "quiet",
+           "children": {
+            "bind": "role"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "ListItemDescription",
+        "props": {
+         "children": {
+          "bind": "email"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": "quiet",
+         "status": {
+          "if": [
+           {
+            "bind": "invited"
+           },
+           "warning"
+          ]
+         },
+         "children": {
+          "bind": "last"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "ListItemAction",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 4
+      },
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "buttonType": "icon",
+         "startIcon": "mail",
+         "emphasis": "quiet",
+         "scale": "sm",
+         "aria-label": {
+          "concat": [
+           "Email ",
+           {
+            "bind": "name"
+           }
+          ]
+         },
+         "data-testid": {
+          "concat": [
+           "contacts-row-",
+           {
+            "bind": "id"
+           },
+           "-mail-btn"
+          ]
+         }
+        }
+       },
+       {
+        "type": "Button",
+        "props": {
+         "buttonType": "icon",
+         "startIcon": "more",
+         "emphasis": "quiet",
+         "scale": "sm",
+         "aria-label": "More",
+         "data-testid": {
+          "concat": [
+           "contacts-row-",
+           {
+            "bind": "id"
+           },
+           "-more-btn"
+          ]
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

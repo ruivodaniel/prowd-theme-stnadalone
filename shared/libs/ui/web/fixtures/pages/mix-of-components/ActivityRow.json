@@ -1,0 +1,256 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "ActivityRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "tone",
+  "actor",
+  "action",
+  "object",
+  "time"
+ ],
+ "slots": [
+  "icon",
+  "action"
+ ],
+ "root": {
+  "type": "ListItem",
+  "props": {
+   "className": "gap-3",
+   "status": {
+    "if": [
+     {
+      "eq": [
+       {
+        "bind": "tone"
+       },
+       1
+      ]
+     },
+     "success",
+     {
+      "if": [
+       {
+        "eq": [
+         {
+          "bind": "tone"
+         },
+         2
+        ]
+       },
+       "warning",
+       {
+        "if": [
+         {
+          "eq": [
+           {
+            "bind": "tone"
+           },
+           3
+          ]
+         },
+         "info",
+         {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "tone"
+             },
+             4
+            ]
+           },
+           "error",
+           {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "tone"
+               },
+               5
+              ]
+             },
+             "neutral"
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "children": [
+   {
+    "type": "ListItemIcon",
+    "props": {},
+    "children": [
+     {
+      "type": "Tile",
+      "props": {
+       "emphasis": "quiet",
+       "className": "p-2"
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-small",
+         "status": {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "tone"
+             },
+             1
+            ]
+           },
+           "success",
+           {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "tone"
+               },
+               2
+              ]
+             },
+             "warning",
+             {
+              "if": [
+               {
+                "eq": [
+                 {
+                  "bind": "tone"
+                 },
+                 3
+                ]
+               },
+               "info",
+               {
+                "if": [
+                 {
+                  "eq": [
+                   {
+                    "bind": "tone"
+                   },
+                   4
+                  ]
+                 },
+                 "error",
+                 {
+                  "if": [
+                   {
+                    "eq": [
+                     {
+                      "bind": "tone"
+                     },
+                     5
+                    ]
+                   },
+                   "neutral"
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        },
+        "children": [
+         {
+          "type": "Slot",
+          "props": {
+           "name": "icon"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "ListItemContent",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 6,
+         "align": "baseline",
+         "wrap": true
+        },
+        "children": [
+         {
+          "type": "ListItemTitle",
+          "props": {
+           "children": {
+            "bind": "actor"
+           }
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": {
+            "bind": "action"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "ListItemDescription",
+        "props": {
+         "children": {
+          "bind": "object"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": "quiet",
+         "children": {
+          "bind": "time"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Slot",
+    "props": {
+     "name": "action"
+    }
+   }
+  ]
+ }
+}

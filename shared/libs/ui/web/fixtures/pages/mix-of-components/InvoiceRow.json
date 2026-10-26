@@ -1,0 +1,287 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "InvoiceRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "number",
+  "issued",
+  "company",
+  "contact",
+  "amount",
+  "status",
+  "due",
+  "rel"
+ ],
+ "root": {
+  "type": "TableRow",
+  "props": {},
+  "children": [
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--code",
+         "children": {
+          "bind": "number"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": "quiet",
+         "children": {
+          "bind": "issued"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body",
+         "children": {
+          "bind": "company"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": "quiet",
+         "children": {
+          "bind": "contact"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--numbers-small",
+       "children": {
+        "bind": "amount"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Badge",
+      "props": {
+       "emphasis": "quiet",
+       "status": {
+        "if": [
+         {
+          "eq": [
+           {
+            "bind": "status"
+           },
+           "Paid"
+          ]
+         },
+         "success",
+         {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "status"
+             },
+             "Due"
+            ]
+           },
+           "info",
+           {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "status"
+               },
+               "Overdue"
+              ]
+             },
+             "error",
+             "neutral"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "children": {
+        "bind": "status"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 2
+      },
+      "children": [
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-small",
+         "children": {
+          "bind": "due"
+         }
+        }
+       },
+       {
+        "type": "Text",
+        "props": {
+         "as": "span",
+         "element": "type--body-extra-small",
+         "emphasis": {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "status"
+             },
+             "Draft"
+            ]
+           },
+           "quiet",
+           null
+          ]
+         },
+         "status": {
+          "if": [
+           {
+            "eq": [
+             {
+              "bind": "status"
+             },
+             "Paid"
+            ]
+           },
+           "success",
+           {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "status"
+               },
+               "Due"
+              ]
+             },
+             "info",
+             {
+              "if": [
+               {
+                "eq": [
+                 {
+                  "bind": "status"
+                 },
+                 "Overdue"
+                ]
+               },
+               "error",
+               null
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         "children": {
+          "bind": "rel"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "TableCell",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "justify": "end"
+      },
+      "children": [
+       {
+        "type": "Button",
+        "props": {
+         "buttonType": "icon",
+         "startIcon": "download",
+         "emphasis": "quiet",
+         "scale": "sm",
+         "aria-label": {
+          "concat": [
+           "Download ",
+           {
+            "bind": "number"
+           }
+          ]
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

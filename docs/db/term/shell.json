@@ -1,0 +1,19 @@
+{
+  "id": "term/shell",
+  "kind": "term",
+  "title": "shell",
+  "status": "approved",
+  "subjects": [
+    "main",
+    "ui"
+  ],
+  "tags": [
+    "ui"
+  ],
+  "paths": [],
+  "term": {
+    "def": "The outermost viewport frame: `shell-side-nav`, `shell-top-nav` or `shell-none`. It decides what chrome surrounds the [[page]]. The app picks one per route.",
+    "aliases": [],
+    "proposed": true
+  }
+}

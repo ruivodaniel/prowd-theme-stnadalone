@@ -1,0 +1,857 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "table-stacked-cells",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "team — member = Avatar beside name over email · role Badge · status dot + text · last active over date · actions; one row selected"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "Table",
+          "props": {},
+          "children": [
+           {
+            "type": "TableHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Member"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Role"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Status"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Last active"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {}
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TableBody",
+            "props": {},
+            "children": [
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Daniel Ruivo",
+               "initials": "DR",
+               "email": "daniel@altar.io",
+               "role": "Owner",
+               "status": "Active",
+               "active": "Now",
+               "date": "13 Sep 2026",
+               "state": "selected"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Inês Carvalho",
+               "initials": "IC",
+               "email": "ines@altar.io",
+               "role": "Admin",
+               "status": "Active",
+               "active": "12 min ago",
+               "date": "13 Sep 2026"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Tomás Ferreira",
+               "initials": "TF",
+               "email": "tomas@altar.io",
+               "role": "Designer",
+               "status": "Away",
+               "active": "2 h ago",
+               "date": "13 Sep 2026"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Marta Silva",
+               "initials": "MS",
+               "email": "marta@altar.io",
+               "role": "Engineer",
+               "status": "Away",
+               "active": "Yesterday",
+               "date": "12 Sep 2026"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Rui Almeida",
+               "initials": "RA",
+               "email": "rui@altar.io",
+               "role": "Engineer",
+               "status": "Invited",
+               "active": "—",
+               "date": "Invited 11 Sep"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "Sofia Mendes",
+               "initials": "SM",
+               "email": "sofia@altar.io",
+               "role": "Product",
+               "status": "Away",
+               "active": "3 days ago",
+               "date": "10 Sep 2026"
+              }
+             },
+             {
+              "use": {
+               "component": "MemberRow",
+               "version": "latest"
+              },
+              "args": {
+               "name": "João Costa",
+               "initials": "JC",
+               "email": "joao@altar.io",
+               "role": "Viewer",
+               "status": "Away",
+               "active": "Last week",
+               "date": "5 Sep 2026"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "invoices — number over issued date · company over contact · amount · status Badge · due date over a status-coloured relative time · a footer total"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "Table",
+          "props": {},
+          "children": [
+           {
+            "type": "TableHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Invoice"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Customer"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Amount"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Status"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Due"
+                }
+               },
+               {
+                "type": "TableHead",
+                "props": {}
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TableBody",
+            "props": {},
+            "children": [
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0142",
+               "issued": "Issued 1 Sep 2026",
+               "company": "Altar Design Systems",
+               "contact": "Inês Carvalho",
+               "amount": "€4,800.00",
+               "due": "15 Sep 2026",
+               "rel": "paid 12 Sep",
+               "status": "Paid"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0141",
+               "issued": "Issued 28 Aug 2026",
+               "company": "Blueway Logistics",
+               "contact": "Nuno Baptista",
+               "amount": "€6,380.00",
+               "due": "16 Sep 2026",
+               "rel": "in 3 days",
+               "status": "Due"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0140",
+               "issued": "Issued 20 Aug 2026",
+               "company": "Helm Works",
+               "contact": "Carla Reis",
+               "amount": "€1,240.00",
+               "due": "3 Sep 2026",
+               "rel": "10 days late",
+               "status": "Overdue"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0139",
+               "issued": "Issued 18 Aug 2026",
+               "company": "Nordic Compliance AB",
+               "contact": "Erik Lund",
+               "amount": "€3,150.00",
+               "due": "1 Sep 2026",
+               "rel": "paid 30 Aug",
+               "status": "Paid"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0138",
+               "issued": "Issued —",
+               "company": "Clerk Studio",
+               "contact": "Maya Ortiz",
+               "amount": "€920.00",
+               "due": "—",
+               "rel": "not sent",
+               "status": "Draft"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0137",
+               "issued": "Issued 5 Aug 2026",
+               "company": "Loan Plans Ltd",
+               "contact": "Owen Price",
+               "amount": "€4,410.00",
+               "due": "19 Aug 2026",
+               "rel": "25 days late",
+               "status": "Overdue"
+              }
+             },
+             {
+              "use": {
+               "component": "InvoiceRow",
+               "version": "latest"
+              },
+              "args": {
+               "number": "INV-2026-0136",
+               "issued": "Issued 1 Aug 2026",
+               "company": "Nordic Compliance AB",
+               "contact": "Erik Lund",
+               "amount": "€3,150.00",
+               "due": "15 Aug 2026",
+               "rel": "paid 14 Aug",
+               "status": "Paid"
+              }
+             },
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "7 invoices"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "3 paid · 1 due · 2 overdue · 1 draft"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-small",
+                   "children": "€24,050.00"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TableCell",
+                "props": {}
+               },
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "status": "error",
+                   "children": "€5,650.00 overdue"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TableCell",
+                "props": {}
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "regions — stacked header cells (label over unit) · body cells of a number over its delta"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Table",
+          "props": {},
+          "children": [
+           {
+            "type": "TableHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableHead",
+                "props": {
+                 "children": "Region"
+                }
+               },
+               {
+                "use": {
+                 "component": "StackedHead",
+                 "version": "latest"
+                },
+                "args": {
+                 "label": "Revenue",
+                 "unit": "EUR · month"
+                }
+               },
+               {
+                "use": {
+                 "component": "StackedHead",
+                 "version": "latest"
+                },
+                "args": {
+                 "label": "Orders",
+                 "unit": "count · month"
+                }
+               },
+               {
+                "use": {
+                 "component": "StackedHead",
+                 "version": "latest"
+                },
+                "args": {
+                 "label": "Avg. order",
+                 "unit": "EUR"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TableBody",
+            "props": {},
+            "children": [
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Portugal"
+                  }
+                 }
+                ]
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "48.2k",
+                 "delta": " +12%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "1,092",
+                 "delta": " +4%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "44.10",
+                 "delta": " +7%",
+                 "dir": "up"
+                }
+               }
+              ]
+             },
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Spain"
+                  }
+                 }
+                ]
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "31.7k",
+                 "delta": " +3%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "804",
+                 "delta": " −2%",
+                 "dir": "dn"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "39.40",
+                 "delta": " +5%",
+                 "dir": "up"
+                }
+               }
+              ]
+             },
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Nordics"
+                  }
+                 }
+                ]
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "27.9k",
+                 "delta": " +18%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "512",
+                 "delta": " +11%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "54.50",
+                 "delta": " +6%",
+                 "dir": "up"
+                }
+               }
+              ]
+             },
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "UK"
+                  }
+                 }
+                ]
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "22.4k",
+                 "delta": " −6%",
+                 "dir": "dn"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "633",
+                 "delta": " −9%",
+                 "dir": "dn"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "35.40",
+                 "delta": " +3%",
+                 "dir": "up"
+                }
+               }
+              ]
+             },
+             {
+              "type": "TableRow",
+              "props": {},
+              "children": [
+               {
+                "type": "TableCell",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Germany"
+                  }
+                 }
+                ]
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "19.1k",
+                 "delta": " +1%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "440",
+                 "delta": " +2%",
+                 "dir": "up"
+                }
+               },
+               {
+                "use": {
+                 "component": "DeltaCell",
+                 "version": "latest"
+                },
+                "args": {
+                 "value": "43.40",
+                 "delta": " −1%",
+                 "dir": "dn"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

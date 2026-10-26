@@ -1,0 +1,1489 @@
+{
+ "kind": "page",
+ "schemaVersion": 1,
+ "name": "dashboard",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "ShellSideNav",
+  "props": {
+   "className": "flex h-screen w-full overflow-hidden"
+  },
+  "children": [
+   {
+    "type": "ShellNav",
+    "props": {
+     "className": "flex h-full flex-col"
+    },
+    "children": [
+     {
+      "type": "SidebarProvider",
+      "props": {
+       "open": true,
+       "className": "h-full"
+      },
+      "children": [
+       {
+        "type": "Sidebar",
+        "props": {
+         "collapsible": "icon"
+        },
+        "children": [
+         {
+          "type": "SidebarHeader",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarMenuButton",
+            "props": {
+             "emphasis": "primary",
+             "concept": "org-switcher",
+             "tooltip": "Northwind Logistics"
+            },
+            "children": [
+             {
+              "type": "Avatar",
+              "props": {
+               "scale": "sm"
+              },
+              "children": [
+               {
+                "type": "AvatarFallback",
+                "props": {
+                 "children": "NL"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "className": "flex-1 truncate",
+               "children": "Northwind Logistics"
+              }
+             },
+             {
+              "type": "Icon",
+              "props": {
+               "name": "chevronDown",
+               "size": "sm"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "SidebarContent",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarGroup",
+            "props": {},
+            "children": [
+             {
+              "type": "SidebarMenu",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Home",
+                   "isActive": true
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "home",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Home"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Organizations"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "users",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Organizations"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "children": "3"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Legal documents"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "fileText",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Legal documents"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "main-nav-item",
+                   "tooltip": "Settings"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "settings",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "Settings"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "SidebarFooter",
+          "props": {},
+          "children": [
+           {
+            "type": "SidebarMenu",
+            "props": {},
+            "children": [
+             {
+              "type": "SidebarMenuItem",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenuButton",
+                "props": {
+                 "emphasis": "primary",
+                 "tooltip": "Samantha Reyes"
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "sm"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {
+                     "children": "SR"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "className": "flex-1 truncate",
+                   "children": "Samantha Reyes"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Page",
+    "props": {
+     "className": "flex flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+     {
+      "type": "PageHeader",
+      "props": {},
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 8,
+         "align": "center",
+         "pad": 16
+        },
+        "children": [
+         {
+          "type": "Icon",
+          "props": {
+           "name": "home",
+           "size": "md"
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--heading3",
+           "children": "Home"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "PageBody",
+      "props": {
+       "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+       {
+        "type": "Main",
+        "props": {
+         "className": "flex flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+         {
+          "type": "MainBody",
+          "props": {
+           "className": "flex flex-1 flex-col overflow-y-auto"
+          },
+          "children": [
+           {
+            "type": "Container",
+            "props": {
+             "scale": "lg",
+             "align": "center"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 20
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 4,
+                 "data-testid": "dashboard-page"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading3",
+                   "as": "h2",
+                   "children": "Welcome, Samantha"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "You're all caught up \u2014 nothing needs your attention."
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 16,
+                 "wrap": true,
+                 "className": "w-full"
+                },
+                "children": [
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-48"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "pad": 18
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "justify": "between",
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Members"
+                        }
+                       },
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "users",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-large",
+                       "children": "248"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "status": "success"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "arrowUp",
+                         "size": "xs"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "children": " +12 this month"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-48"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "pad": 18
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "justify": "between",
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Active organizations"
+                        }
+                       },
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "folder",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-large",
+                       "children": "3"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "status": "success"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "arrowUp",
+                         "size": "xs"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "children": " +1 this quarter"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-48"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "pad": 18
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "justify": "between",
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Pending invitations"
+                        }
+                       },
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "mail",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-large",
+                       "children": "7"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "status": "error"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "arrowDown",
+                         "size": "xs"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "children": " -2 since last week"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-48"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "pad": 18
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "justify": "between",
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Sign-ins (7 days)"
+                        }
+                       },
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "activity",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-large",
+                       "children": "1,942"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "status": "success"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "arrowUp",
+                         "size": "xs"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "children": " +8.4% vs prior week"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 16,
+                 "wrap": true,
+                 "align": "stretch",
+                 "className": "w-full"
+                },
+                "children": [
+                 {
+                  "type": "Card",
+                  "props": {
+                   "status": "success",
+                   "className": "flex-1 min-w-56"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 6
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "success",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Security checks passed"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "All 248 members have verified email addresses."
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "12 min ago"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "status": "warning",
+                   "className": "flex-1 min-w-56"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 6
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "warning",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Seats almost used"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "Plan includes 250 seats; 248 are assigned."
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "1 h ago"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "status": "info",
+                   "className": "flex-1 min-w-56"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 6
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 8,
+                       "align": "center"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "info",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Role review scheduled"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "Quarterly access review starts on 3 November."
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "Yesterday"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 16,
+                 "wrap": true,
+                 "align": "stretch",
+                 "className": "w-full"
+                },
+                "children": [
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-72"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 16,
+                     "pad": 20
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Recent activity"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Last 24 hours"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "List",
+                      "props": {
+                       "className": "w-full"
+                      },
+                      "children": [
+                       {
+                        "type": "ListItem",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "ListItemIcon",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Icon",
+                            "props": {
+                             "name": "users",
+                             "size": "sm"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemContent",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "ListItemTitle",
+                            "props": {
+                             "children": "Priya Nair joined the organization"
+                            }
+                           },
+                           {
+                            "type": "ListItemDescription",
+                            "props": {
+                             "children": "Accepted invitation as Admin"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemAction",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "emphasis": "quiet",
+                             "children": "09:41"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "ListItem",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "ListItemIcon",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Icon",
+                            "props": {
+                             "name": "fileText",
+                             "size": "sm"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemContent",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "ListItemTitle",
+                            "props": {
+                             "children": "Terms of service v4 published"
+                            }
+                           },
+                           {
+                            "type": "ListItemDescription",
+                            "props": {
+                             "children": "Legal documents"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemAction",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "emphasis": "quiet",
+                             "children": "08:30"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "ListItem",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "ListItemIcon",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Icon",
+                            "props": {
+                             "name": "settings",
+                             "size": "sm"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemContent",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "ListItemTitle",
+                            "props": {
+                             "children": "Default role changed"
+                            }
+                           },
+                           {
+                            "type": "ListItemDescription",
+                            "props": {
+                             "children": "Member now includes reports access"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemAction",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "emphasis": "quiet",
+                             "children": "Yesterday"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "ListItem",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "ListItemIcon",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Icon",
+                            "props": {
+                             "name": "mail",
+                             "size": "sm"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemContent",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "ListItemTitle",
+                            "props": {
+                             "children": "3 invitations sent"
+                            }
+                           },
+                           {
+                            "type": "ListItemDescription",
+                            "props": {
+                             "children": "Elena Rossi and 2 others"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemAction",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "emphasis": "quiet",
+                             "children": "Yesterday"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "ListItem",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "ListItemIcon",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Icon",
+                            "props": {
+                             "name": "warning",
+                             "size": "sm"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemContent",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "ListItemTitle",
+                            "props": {
+                             "children": "Aiko Tanaka suspended"
+                            }
+                           },
+                           {
+                            "type": "ListItemDescription",
+                            "props": {
+                             "children": "Suspended by Marcus Webb"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "ListItemAction",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "emphasis": "quiet",
+                             "children": "2 days ago"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "props": {
+                   "className": "flex-1 min-w-72"
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 16,
+                     "pad": 20
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Members"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "Most recent sign-ins"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Table",
+                      "props": {
+                       "className": "w-full"
+                      },
+                      "children": [
+                       {
+                        "type": "TableHeader",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableHead",
+                            "props": {
+                             "children": "Member"
+                            }
+                           },
+                           {
+                            "type": "TableHead",
+                            "props": {
+                             "children": "Role"
+                            }
+                           },
+                           {
+                            "type": "TableHead",
+                            "props": {
+                             "children": "Status"
+                            }
+                           },
+                           {
+                            "type": "TableHead",
+                            "props": {
+                             "className": "text-right",
+                             "children": "Last active"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "TableBody",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Priya Nair"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Admin"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Active"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "className": "text-right",
+                             "children": "Today, 09:41"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Tom\u00e1s Ferreira"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Member"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Active"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "className": "text-right",
+                             "children": "Today, 08:12"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Elena Rossi"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Member"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Invited"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "className": "text-right",
+                             "children": "Yesterday"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Marcus Webb"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Billing"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Active"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "className": "text-right",
+                             "children": "2 days ago"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "TableRow",
+                          "props": {},
+                          "children": [
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Aiko Tanaka"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Member"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "children": "Suspended"
+                            }
+                           },
+                           {
+                            "type": "TableCell",
+                            "props": {
+                             "className": "text-right",
+                             "children": "12 Oct"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

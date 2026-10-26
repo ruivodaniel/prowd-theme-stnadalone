@@ -1,0 +1,1160 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "timelines-and-agenda",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#3 · Blueway delivery — app title · a hero Card (Input + icon Button) · an action-row Card · 'Ongoing Delivery': Card header (shipment · date · Badge · illustration) over a two-stop timeline, each stop with a quiet package sub-Card"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 16
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 12,
+           "align": "center"
+          },
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "menu"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--heading3",
+             "children": "Blueway"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "emphasis": "hero"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 12,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Track your package"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "children": "Please enter your tracking number"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 8,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Input",
+                "props": {
+                 "placeholder": "Shipment Number",
+                 "startIcon": {
+                  "type": "Icon",
+                  "props": {
+                   "name": "package",
+                   "size": "sm"
+                  }
+                 },
+                 "className": "flex-1 min-w-0",
+                 "data-testid": "track-shipment-input"
+                }
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "buttonType": "icon",
+                 "startIcon": "search",
+                 "aria-label": "Track",
+                 "data-testid": "track-search-btn"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "center",
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Icon",
+              "props": {
+               "name": "package"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-large",
+               "className": "flex-1 min-w-0",
+               "children": "Pickup / Drop New Package"
+              }
+             },
+             {
+              "type": "Button",
+              "props": {
+               "buttonType": "icon",
+               "startIcon": "send",
+               "aria-label": "New package",
+               "data-testid": "new-package-btn"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--heading3",
+           "children": "Ongoing Delivery"
+          }
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "CardHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "justify": "between",
+               "align": "start"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 4
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Shipment number"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "children": "PD-202411200146"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "gap": 8,
+                   "align": "center"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "emphasis": "quiet",
+                     "children": "19-11-2024 02:45 PM"
+                    }
+                   },
+                   {
+                    "type": "Badge",
+                    "props": {
+                     "status": "info",
+                     "children": "On the way to deliver"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "package",
+                   "size": "lg"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 16
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 12,
+                 "align": "start"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "emphasis": "quiet"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "circle",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 6,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Raju Textile"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "emphasis": "quiet",
+                     "children": "15, Nerhu Street, Pallipalayam, Namakkal - 652396"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "gap": 4,
+                     "align": "baseline"
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Contact on"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "Raju | +919874563210"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "emphasis": "quiet"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 12,
+                       "justify": "between",
+                       "align": "center",
+                       "pad": 12
+                      },
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "col",
+                         "gap": 2
+                        },
+                        "children": [
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "children": "Package 1"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "emphasis": "quiet",
+                           "children": "Notebooks | ₹200"
+                          }
+                         }
+                        ]
+                       },
+                       {
+                        "type": "Button",
+                        "props": {
+                         "emphasis": "quiet",
+                         "scale": "sm",
+                         "children": "Pickup package",
+                         "data-testid": "stop-0-action-btn"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 12,
+                 "align": "start"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "emphasis": "primary"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "mapPin",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 6,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Home"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "emphasis": "quiet",
+                     "children": "145, Kovil Street, Pallipalayam, Namakkal - 652396"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "gap": 4,
+                     "align": "baseline"
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Contact on"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "Raju | +919874563210"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "emphasis": "quiet"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "row",
+                       "gap": 12,
+                       "justify": "between",
+                       "align": "center",
+                       "pad": 12
+                      },
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "col",
+                         "gap": 2
+                        },
+                        "children": [
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "children": "Package 1"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "emphasis": "quiet",
+                           "children": "Notebooks | ₹200"
+                          }
+                         }
+                        ]
+                       },
+                       {
+                        "type": "Button",
+                        "props": {
+                         "emphasis": "quiet",
+                         "scale": "sm",
+                         "children": "Delivery package",
+                         "data-testid": "stop-1-action-btn"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#25 · agenda — three event Cards, status='info' | 'success' | 'error': title · time · place"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 12,
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "status": "info"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Team Standup"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "9:00 AM - 9:30 AM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Google Meet"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "success"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Product Review"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "2:00 PM - 3:00 PM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Conference Room A"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "status": "error"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "pad": 16
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Client Call"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "4:00 PM - 5:00 PM"
+              }
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "Zoom"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#26 · goals — three Cards: title · Progress with the % at right · a meta row (phase Badge · steps Badge · date) beside a 'View Goal' secondary Button"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 16,
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Launch MVP by end of quarter"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Progress",
+                "props": {
+                 "value": 75,
+                 "className": "flex-1 min-w-0"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers",
+                 "emphasis": "quiet",
+                 "children": "75%"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center",
+                 "wrap": true
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "info",
+                   "children": "In Progress"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "emphasis": "tertiary",
+                   "showIcon": true,
+                   "iconName": "success",
+                   "children": "3/4 steps"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "calendar",
+                     "size": "xs"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "children": " Dec 8, 2025"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "buttonType": "text-icon",
+                 "endIcon": "chevronRight",
+                 "children": "View Goal",
+                 "data-testid": "goal-0-view-btn"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Complete user onboarding flow"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Progress",
+                "props": {
+                 "value": 100,
+                 "className": "flex-1 min-w-0"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers",
+                 "emphasis": "quiet",
+                 "children": "100%"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center",
+                 "wrap": true
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "success",
+                   "children": "Completed"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "emphasis": "tertiary",
+                   "showIcon": true,
+                   "iconName": "success",
+                   "children": "3/3 steps"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "calendar",
+                     "size": "xs"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "children": " Dec 1, 2025"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "buttonType": "text-icon",
+                 "endIcon": "chevronRight",
+                 "children": "View Goal",
+                 "data-testid": "goal-1-view-btn"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--heading4",
+               "children": "Fix critical performance issues"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Progress",
+                "props": {
+                 "value": 30,
+                 "className": "flex-1 min-w-0"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers",
+                 "emphasis": "quiet",
+                 "children": "30%"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "align": "center",
+               "justify": "between"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center",
+                 "wrap": true
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "info",
+                   "children": "In Progress"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "emphasis": "tertiary",
+                   "showIcon": true,
+                   "iconName": "success",
+                   "children": "1/3 steps"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "calendar",
+                     "size": "xs"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "children": " Dec 15, 2025"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Button",
+                "props": {
+                 "emphasis": "secondary",
+                 "buttonType": "text-icon",
+                 "endIcon": "chevronRight",
+                 "children": "View Goal",
+                 "data-testid": "goal-2-view-btn"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

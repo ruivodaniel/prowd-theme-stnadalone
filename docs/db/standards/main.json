@@ -1,0 +1,1274 @@
+{
+  "id": "standards/main",
+  "kind": "standards",
+  "title": "Standards — consumption tracker",
+  "status": "converted",
+  "subject": "main",
+  "tags": [
+    "main"
+  ],
+  "paths": [
+    "apps/main"
+  ],
+  "summary": "Temporary: which auto-generated rules were digested into canonical docs.",
+  "standards": {
+    "note": "Every rule from `_meta/_docs_to_consume/standards/`, verbatim, with consumption status. A rule is consumed when it lands in a consumer doc. IDs are append-only: never renumber, never reuse a retired number.",
+    "files": [
+      {
+        "file": "scaffolding.md",
+        "prefix": "SCF",
+        "governs": "folder structure & placement — universal (API, frontend, mobile)",
+        "rules": [
+          {
+            "id": "SCF1",
+            "text": "Layer folders everywhere: `middlewares/ routes/ services/ repositories/ models/` — identical at every level (seed slice, product slice, app). Always folders, even for one file; scaffolding never changes shape.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "SCF2",
+            "text": "One abstraction per file, maximally separated.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF3",
+            "text": "Models: `<entity>.model.ts` + `<entity>.schemas.ts` side by side, in a folder named `models` (never `schemas`).",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF4",
+            "text": "One canonical **model** per entity, one declarer — re-declaring elsewhere is a violation. Models carry no business logic. *(open: Daniel — \"sometimes some logic in the model\"; exact wording unresolved.)*",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF5",
+            "text": "Zod schemas are inferred from the Drizzle model (drizzle-zod), never hand-written; types for dynamic data infer from the Zod schema.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF6",
+            "text": "An entity's schema lives in its slice's shared folder and is consumed by all apps of that slice. A slice = a seed slice or the app (never a product slice).",
+            "note": "Destined for `backend-composition` — that doc's axiom 1 already owns entity/schema ownership. Un-consumed from `scaffolding-and-import-boundaries` on 2026-08-11: scaffolding owns placement and import boundaries, not what lives inside the layers. CORRECTION on digestion: the second sentence is wrong — a slice is a seed slice or an product slice, never `the app`. See the glossary and scaffolding axiom 1."
+          },
+          {
+            "id": "SCF7",
+            "text": "Module entities in `<seed slice>/api/models/`; product slice entities in `apps/main/slices/product/<f>/api/models/` — same shape, one declarer each; `src/models/index.ts` re-exports only (db-client aggregation), declares nothing.",
+            "note": "Text updated 2026-07-24: product slices are full-stack slices under `apps/main/slices/product/<f>/` (api / web + shared), same anatomy as seed slices. Was: app entities in `product slices/<f>/models/`. Destined for `backend-composition` — that doc's axiom 1 already owns entity/schema ownership. Un-consumed from `scaffolding-and-import-boundaries` on 2026-08-11: scaffolding owns placement and import boundaries, not what lives inside the layers. CORRECTION on digestion: this rule's paths are the right ones. The `backend-composition` draft is stale — it still says app-specific entities live in `apps/main/shared/api/src/models/`, predating the product slices restructure.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF8",
+            "text": "Shared code lives in a folder named `shared`, at the nearest level to its consumers — api-internal helpers in `api/shared/` (replaces `api/lib/`); api↔web code in the seed slice's top-level `shared/`. No `lib` folders for shared code.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "SCF9",
+            "text": "Helpers are self-sufficient: no DB access, data passed in.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF10",
+            "text": "Once-only init (server, db pool, redis) lives at `src/` root, never in a lib/shared folder.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF11",
+            "text": "Placement ladder (first fit wins): pure data → `configs/` · generic engine → `shared/libs/` · reusable slice → `apps/main/slices/seed/` · this-app product logic → `product slices/` · wiring → app shell.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "SCF12",
+            "text": "A configs folder never has its own libs subfolder.",
+            "note": "Parked for the config-architecture doc; decided while building 02."
+          },
+          {
+            "id": "SCF13",
+            "text": "Integration code for a **consumed** provider lives in its own folder, not `api/` — `api/` is what you expose, not what you consume.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "SCF14",
+            "text": "The seed baseline contains zero DB migrations — migrations belong to products built from the seed.",
+            "note": "Parked — belongs to a db/baseline doc (likely 03), not scaffolding; decided while building 02."
+          },
+          {
+            "id": "SCF15",
+            "text": "README is a pointer to the docs, not the docs.",
+            "note": "Parked for the documentation doc (DOC rules); decided while building 02."
+          }
+        ]
+      },
+      {
+        "file": "seed slices.md",
+        "prefix": "MOD",
+        "governs": "app/slice/library boundaries, wiring, hooks",
+        "rules": [
+          {
+            "id": "MOD1",
+            "text": "`apps/main/shared/api` has no product logic. It mounts seed slices, wires them together, injects what they need. Its only app-level logic is cross-seed slice hook plumbing, centralized in one place.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "MOD2",
+            "text": "The app imports only seed slice public surfaces (`api/index.ts` barrels). No deep imports into seed slice internals — anywhere.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "MOD3",
+            "text": "Seed slices never import each other. Cross-seed slice connections live only in the app's hooks wiring in api/src/mounts.ts : seed slices emit fact-only lifecycle hooks; the app decides and may call another seed slice's public service.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "MOD4",
+            "text": "A hook carries the bare fact only — message/template content is exported separately.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "MOD5",
+            "text": "A seed slice that receives an external webhook owns it exclusively and translates it into an internal lifecycle hook; other seed slices react to the hook, never the webhook.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "MOD6",
+            "text": "Seed slices never import configs, db, or loggers — they declare needs; the app injects at mount.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ],
+            "note": "Consumed by scaffolding axiom 3 (`a slice imports only libs and packages... injected by the app`), which states it more completely — it also names leaf adapters. No separate reference claim."
+          },
+          {
+            "id": "MOD7",
+            "text": "Seed slices import only node modules or internal shared libraries. Libraries import only node modules — never other libraries. Seed slices and libraries carry zero product knowledge.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "MOD8",
+            "text": "Library ≠ seed slice: library = low-level reusable engine + adapters, zero product knowledge; seed slice = configurable, product-facing slice reusable across apps.",
+            "consumedBy": [
+              "main-glossary"
+            ],
+            "note": "Absorbed by the glossary: the terms library and seed slice carry these definitions. A claim that defines terms is the glossary´s job."
+          },
+          {
+            "id": "MOD9",
+            "text": "Seed slices are self-contained and reusable across projects. App product slices are product-specific, need not be self-contained, and may import each other (a product slice is a code-org convention, not an import boundary). Same internal scaffolding either way.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ],
+            "note": "Consumed by scaffolding axiom 4 (`slices differ in one thing only: whether they may reach each other`). No separate reference claim."
+          },
+          {
+            "id": "MOD10",
+            "text": "The app owns all routing and mounts every route a seed slice exports.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "MOD11",
+            "text": "Removal test: deleting a seed slice = delete its folder + mount line(s) + hook line(s) + configs. Nothing else breaks. One touch point (the mount) between seed slice and app.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ],
+            "note": "Absorbed by scaffolding´s Purpose (decoupability states the removal test near-verbatim). No separate reference claim."
+          },
+          {
+            "id": "MOD12",
+            "text": "Client-facing and machine-to-machine (M2M) routes are distinct top-level paths.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "api-layering.md",
+        "prefix": "API",
+        "governs": "routes → services → repositories → models; naming; errors/logs",
+        "rules": [
+          {
+            "id": "API1",
+            "section": "Layers",
+            "text": "Five layers, one responsibility each: middleware (hydration/auth) → router (HTTP transport) → service (business logic) → repository (data access) → model.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API2",
+            "section": "Layers",
+            "text": "Only repositories touch the database — read and write, no exception. Two valid paths: middleware→router→service→repo→db, or middleware→repo→db (hydration reads only).",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API3",
+            "section": "Layers",
+            "text": "Backends with no API surface (e.g. cron over self-contained libraries) are exempt from the 5-layer/2-path rule.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API4",
+            "section": "Repositories",
+            "text": "One repository = one table.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API5",
+            "section": "Repositories",
+            "text": "Standard method set per repo: `findAll` (paginated: identical WHERE for list + count, returns `{ rows, total }`), `findByIds` (always an array — want one? pass `[id]`; no `findById`), `create`, `update`, `delete`. Full CRUD present even if currently unused.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API6",
+            "section": "Repositories",
+            "text": "Extra repo methods only for a genuinely specific query shape, with a stated reason. Named for the field filtered, plural, array params: `findAllByOrgIds`, never `listFor*`. Specificity and product constraints are the role of services, not repos.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API7",
+            "section": "Repositories",
+            "text": "Repos are dumb: zero business logic — no conditional, switch, throw, or decision. A repo never throws; it returns empty state. A permission-style lookup returns rows/count, never a boolean (boolean = business logic).",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API8",
+            "section": "Repositories",
+            "text": "No hand-written joins in a repo. AC-built queries may contain joins — for permission scoping and for display/enrichment alike (see AC7). Any other cross-entity read: service enrichment or a DB view — case-by-case call.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API9",
+            "section": "Repositories",
+            "text": "Views end in `View`. A view lives in the repository of its base entity and is that repo's queryable relation.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API10",
+            "section": "Repositories",
+            "text": "Every model/table gets a repository and a service — the service may be a thin route→repo proxy.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API11",
+            "section": "Services",
+            "text": "Services hold the logic. They never touch db or SQL.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API12",
+            "section": "Services",
+            "text": "In a seed slice, a service calls only its own entity's repository; it reaches other entities through **their service** — never their repo. Cross-entity access is always service-to-service. (App product slices may be looser: product slices can reach each other.)",
+            "consumedBy": [
+              "backend-composition"
+            ],
+            "note": "Absorbed by backend-composition axioms (the five layers and the fixed call graph). No separate reference claim."
+          },
+          {
+            "id": "API13",
+            "section": "Services",
+            "text": "A service calling another service as a pure pass-through (no added logic) is removed — call the underlying service directly.",
+            "note": "Removed from the backend-composition draft on Daniel's review (2026-08-11) — claim wording vague and imprecise. Restate precisely before digesting, or drop."
+          },
+          {
+            "id": "API14",
+            "section": "Services",
+            "text": "Entity-creation logic centralizes in the owning service, never duplicated inline by callers.",
+            "note": "Removed from the backend-composition draft on Daniel's review (2026-08-11) — claim wording vague and imprecise. Restate precisely before digesting, or drop."
+          },
+          {
+            "id": "API15",
+            "section": "Services",
+            "text": "Every service method has a real consumer — unused service methods are deleted (repos are the exception: API5).",
+            "note": "Removed from the backend-composition draft on Daniel's review (2026-08-11) — claim wording vague and imprecise. Restate precisely before digesting, or drop."
+          },
+          {
+            "id": "API16",
+            "section": "Services",
+            "text": "Meaningful slice actions get their own named service method (`publish`, `accept`), never an overloaded `update`.",
+            "note": "Removed from the backend-composition draft on Daniel's review (2026-08-11) — claim wording vague and imprecise. Restate precisely before digesting, or drop."
+          },
+          {
+            "id": "API17",
+            "section": "Services",
+            "text": "Services throw typed `AppError` subclasses only (`lib/error.ts`), never raw `new Error()`. The service is the only layer that throws.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API18",
+            "section": "Routers",
+            "text": "Routers are thin: extract request identity, zod-parse input, call one service, return. Never import a repo or db; zero business logic; never decide access.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API19",
+            "section": "Routers",
+            "text": "Design and finalize routes first — the route is the interface; the service shape emerges from routes + repo.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API20",
+            "section": "Middleware",
+            "text": "Middleware hydrates blindly — no business branching (no if/else on session validity; the service throws when there's no session). Hydration is the one sanctioned exception to \"all DB access goes through AC\": it must read the DB *before* AC exists (it produces the bag AC needs), so it uses a dedicated method minted by scoped AC that reaches the DB without a Scope. Kept safe by being a public service method with no route exposing it.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API21",
+            "section": "Middleware",
+            "text": "Protected requests pass a fixed linear middleware sequence before the handler: set/validate session → fetch roles/memberships → hydrate effective-permissions bag → unmet-requirements gate (see GATE).",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API22",
+            "section": "Errors & logs",
+            "text": "Global error handler wired once, in `server.ts`. Every error body includes `requestId`. No internal details in responses."
+          },
+          {
+            "id": "API23",
+            "section": "Errors & logs",
+            "text": "pino only, no `console.*`. Shape: `logger.warn({ err, ...ctx }, \"msg\")` — object first, Error on `err`. No PII in logs beyond ids."
+          },
+          {
+            "id": "API24",
+            "section": "Naming",
+            "text": "Repos use `find*`; services use `get*`; `load*` is reserved for config — and a config loader is never named like a DB accessor. Layers don't share one name: repo `findByX` → service `getByX`.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API25",
+            "section": "Naming",
+            "text": "`getMy*` is allowed in services.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API26",
+            "section": "Naming",
+            "text": "Multi-record lookups are plural and take array params; singular names only for single-unique-entity lookups.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API27",
+            "section": "Naming",
+            "text": "Mutate endpoints are named `update`, not `patch`.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API28",
+            "section": "Naming",
+            "text": "Recovery/reset endpoints are named after the slice object (`completePasswordRecovery`), not generic verbs.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API29",
+            "section": "Naming",
+            "text": "Public endpoint names never leak internal mechanism (`register`, not `flows`); services are named for what they do, not how (`auth`, not `relay`).",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API30",
+            "section": "Naming",
+            "text": "`getCurrent*` is `getLatest*` when no rollback exists — names reflect what the system actually does.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API31",
+            "section": "Naming",
+            "text": "`me` namespace = data of the requesting user and no organization. A route is `me` only if both hold: it touches no other user's data, and it works without an active org. Fails the first → `admin` (ban/suspend/delete) or the entity's route; fails the second → the entity's route under the active org. `me` routes are exactly the ones allowed to run with no active-org context.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API32",
+            "section": "Naming",
+            "text": "Route grouping follows the primary entity retrieved, not URL nesting (`/organization/invitations` is an invitation route); a route path need not match its service name.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API33",
+            "section": "Naming",
+            "text": "Identity-provider-specific lookups never live in the generic user model/service — they belong to the integration layer.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API34",
+            "section": "Data shape",
+            "text": "Immutable classification fields (e.g. org type) never change post-creation; denormalize them onto dependent records for convenience.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "API35",
+            "section": "Data shape",
+            "text": "Request-scoped, client-owned state (e.g. active org) is never persisted — the client sends it every request; the server re-derives and re-checks. (Exception: real-time server-initiated actions.)",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "access-control.md",
+        "prefix": "AC",
+        "governs": "ALL access control: engine, DSL, library isolation, public/private typing",
+        "rules": [
+          {
+            "id": "AC1",
+            "section": "Engine",
+            "text": "Default deny: protected endpoints grant zero access; only an explicit rule grants any.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC2",
+            "section": "Engine",
+            "text": "The database is private-first: public rows/fields are the narrow, explicit exception — never the default, and never a public-permission join added to every query.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC3",
+            "section": "Engine",
+            "text": "Every private/authenticated endpoint passes through the AC gate; public endpoints skip it.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC4",
+            "section": "Engine",
+            "text": "The AC engine only returns query params (where/select/join) — it decides nothing, has no conditionals, is never a \"god method\".",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC5",
+            "section": "Engine",
+            "text": "Reads: the service is a pass-through; the resolver builds the WHERE/select/join, the repository executes it.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC6",
+            "section": "Engine",
+            "text": "Create/update/delete: the service is the gate (allow/deny) before the write; repos and providers never decide.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC7",
+            "section": "Engine",
+            "text": "All joins come from the AC resolver/DSL — permission-scoping joins and display/enrichment joins alike. Never hand-written in app code; the repo only executes them. Field-level access applies to join output (unpermitted fields come back blanked, not blocked).",
+            "warning": "Contradicted twice, so it stays un-consumed. The `repositories-never-join` decision (2026-08-12) already forbids any join in a repository, engine-built or not, which kills the display/enrichment half. And the engine narrows unpermitted columns out of the projection rather than blanking them — a restricted field list changes the SELECT, it never returns a nulled column. Needs a ruling on both halves before it can land."
+          },
+          {
+            "id": "AC8",
+            "section": "Engine",
+            "text": "When AC evaluates a view, its config declares which entities compose that view — per-field access on join output resolves from the composing entities.",
+            "warning": "Not built. A view is an ordinary entity in the injected tables map: no config declares composing entities, and field access on it comes from the permission's own field list exactly as on a table. The access-control doc claims the built behaviour instead. Either this rule is aspirational or the library is under-built — unresolved."
+          },
+          {
+            "id": "AC9",
+            "section": "Engine",
+            "text": "Create checks permission on the parent container (the entity doesn't exist yet); update/delete gate via a read-style query against the target — zero rows = denied.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "Both halves now hold, by a different route than this rule imagined. Update/delete gate via the read-style query. Create still computes no target — the row does not exist — but the `payload` slot added in roadmap step 4 gates it on the parent the new row points at, checked before the write. Not \"permission on the parent container\" as a container concept; a condition that follows the written row's own reference."
+          },
+          {
+            "id": "AC10",
+            "section": "Engine",
+            "text": "Update/delete: cheap in-memory field-level check first, only then the row-level query.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "Built for update (`allowUpdate`). Delete has no field-level check — there are no columns to write — so the rule reads as update-only in the doc."
+          },
+          {
+            "id": "AC11",
+            "section": "Engine",
+            "text": "A boolean gate is named `allow*`; a query-builder is named `resolve*`. Never one name for both.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC12",
+            "section": "Engine",
+            "text": "Consumers may only narrow a resolved query (AND). OR at the root is forbidden (only nested inside an AND); no manually added OR clauses.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC13",
+            "section": "Engine",
+            "text": "A per-method AC config may only restrict the base grant, never expand it.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "No per-method AC config exists yet; consumed as the general narrow-only rule alongside AC12."
+          },
+          {
+            "id": "AC14",
+            "section": "Engine",
+            "text": "Access context (session, active org, effective permissions) is hydrated once in middleware and passed through all layers — never recomputed per layer.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC15",
+            "section": "Engine",
+            "text": "Membership/roles re-resolve server-side every request against the active org; never trust a client-asserted role or org context.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC16",
+            "section": "Engine",
+            "text": "Effective permissions resolve only from the active org's memberships. Exception: account-level security gates (2FA) evaluate across ALL memberships (see GATE5).",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "The exception is stated here but owned by `unmet-requirements` (GATE5) — the two mechanisms are separate code paths."
+          },
+          {
+            "id": "AC17",
+            "section": "Engine",
+            "text": "The router only classifies an endpoint public/private and passes through — it never gates, and it is not the public/private decision point. Visibility propagates conservatively: every method carries a typed public/private parameter, and private wins over public (public loses to private). AC lives between endpoint and repo, enforced not by a linter but by the branded DB-access methods and type design — reaching the DB without a Scope is a compile error.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "Split across two topics: the branded-scope half sits with the engine/gate, the visibility half with public/private typing."
+          },
+          {
+            "id": "AC18",
+            "section": "Engine",
+            "text": "Every DB query is a branded/typed object only the gated AC lib can produce — no query can bypass AC.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "True of every query the gate runs. Two paths sit outside it by design and are documented as such: the named hydration handle, and reads a service runs after a gated lookup already admitted the caller."
+          },
+          {
+            "id": "AC19",
+            "section": "Engine",
+            "text": "Requests with no active-org context resolve only user-level roles; membership-scoped checks are rejected, not passed through.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "\"Rejected\" is realised as a denial, not an error: the membership rule fails its context check, the scope compiles to FALSE, and the operation returns nothing."
+          },
+          {
+            "id": "AC20",
+            "section": "Engine",
+            "text": "Context (session/env: role, org type) is checked in-memory before any query; context never triggers a DB query. Target = the specific entity acted on.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC21",
+            "section": "Engine",
+            "text": "Keep the redundant context check even when the target check subsumes it — free defense-in-depth.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC22",
+            "section": "Engine",
+            "text": "An endpoint invoked before any session exists must be public, not session-gated.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC23",
+            "section": "DSL & permission model",
+            "text": "The DSL is explicit: no inference, no magic; flatten and name each part.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC24",
+            "section": "DSL & permission model",
+            "text": "A permission = entity + action (+ optional access rule). No rule = unrestricted for matching entities; a rule only narrows.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC25",
+            "section": "DSL & permission model",
+            "text": "Unset `fields` = all fields; a set list restricts read/update to those fields. Fields never default to deny.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC26",
+            "section": "DSL & permission model",
+            "text": "Permissions are always leaves; roles are always branches — never nest a permission in a permission.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC27",
+            "section": "DSL & permission model",
+            "text": "The role/permission hierarchy is a forest: one independent tree per org archetype.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "The doc says \"org type\", which is what the engine and config call it at runtime (`forests[orgType]`, `orgTypePath`). \"Archetype\" survives only in config comments — one of the two spellings should go."
+          },
+          {
+            "id": "AC28",
+            "section": "DSL & permission model",
+            "text": "User roles and membership roles are separate DSLs; never cross-assignable.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "warning": "Stated in the doc but NOT enforced. The account baseline and the org-type forests are one namespace with one global uniqueness check, and hydration unions baseline roles with membership roles into a single flat list — nothing would reject a baseline role granted on a membership. The separation is a convention today."
+          },
+          {
+            "id": "AC29",
+            "section": "DSL & permission model",
+            "text": "Every permission/role has a unique name system-wide, even across archetypes (uniqueness enforced in the DSL layer as a redundant check).",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC30",
+            "section": "DSL & permission model",
+            "text": "Permission names: verb+entity, archetype qualifier when scoped; rules read as close to the path as possible.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC31",
+            "section": "DSL & permission model",
+            "text": "Between permissions is OR; between rules inside one permission is AND.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "warning": "Transcribed backwards, and the doc states the corrected rule. The engine ORs the rules inside a permission and ANDs the conditions inside one rule. The config already depends on the OR: `accept_own_invitation` carries two rules so an invitation matches by email OR by phone — read as AND it would require both, and no invitation carries both."
+          },
+          {
+            "id": "AC32",
+            "section": "DSL & permission model",
+            "text": "Rules reference field names/values only, never storage shape — model changes never require rule changes.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC33",
+            "section": "DSL & permission model",
+            "text": "Create-action rules declare no target (type-enforced); a target is never computed for create.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC34",
+            "section": "DSL & permission model",
+            "text": "DSL symbols are distinct: `$` subject path, bare string entity path, quotes for literals; \"lookup\" (body-based: create/delete) is separate from \"join\" (relation-based: read/update). There is exactly ONE comparison operator, `has` (contains), which subsumes equality — contains covers string equality and membership in a vector alike; there is no separate equal/not-equal. `has not` (`..` / `!..`) exists in the notation but is currently unused.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "Consumed for the symbols. The single-operator rule was REPLACED in roadmap step 4, not kept: `has`/`hasNot` mean containment — and equality on a single-valued column, so a column becoming a list never touches a rule — while `is`/`isNot` are the strict single-value form and refuse a collection at boot. Splitting them is what makes containment safe: one operator meaning both would have made `invitation.email has $session.user.email` match by substring, letting a caller registered as \"m@altar.io\" accept an invitation addressed to \"tim@altar.io\". `lookup` never existed and is superseded by the `payload` slot; `has not` is now `hasNot` and is built, null-inclusive."
+          },
+          {
+            "id": "AC35",
+            "section": "DSL & permission model",
+            "text": "No speculative DSL product slices — add when a real case needs them; rare edges handled in code.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC36",
+            "section": "Until AC lands",
+            "text": "Where a gate belongs, write `// gate: <action> on <entity> by <who>` — nothing else, no AC code. Methods that will need gating take `accessContext` as first parameter now. Pre-AC tenancy/validation methods stay, commented as placeholders, deleted when AC lands.",
+            "note": "Retired, not consumed: scoped AC has landed and is enforced in UOM, so the placeholder markers this rule governs no longer exist. Nothing to digest."
+          },
+          {
+            "id": "AC37",
+            "section": "Library isolation (Scope AC)",
+            "text": "The AC library knows nothing about the app, membership, org, or auth provider — it resolves roles→permissions from config only; runtime slice concepts arrive via a generic `bag` at call time.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC38",
+            "section": "Library isolation (Scope AC)",
+            "text": "Stack-agnostic: ORM and schema validator (Drizzle, Zod) are adapters; the query builds into where/join/select and only the repo executes it.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "warning": "Half-built, and the doc claims only the built half. Zod sits behind a real port (`validate.ts` declares it, `adapters/zod.ts` implements it), but the ORM is not adapted: the engine and the gate import drizzle directly and emit drizzle SQL fragments. Swapping ORMs today means rewriting both. Either the rule overreaches or the port is missing."
+          },
+          {
+            "id": "AC39",
+            "section": "Library isolation (Scope AC)",
+            "text": "The AC library does no auth/session verification — it trusts the consumer's middleware.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC40",
+            "section": "Library isolation (Scope AC)",
+            "text": "The requester's roles stay separate from target-entity resolution — roles may come from a different source later.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC41",
+            "section": "Library isolation (Scope AC)",
+            "text": "Request-scoped cross-cutting data (subject, roles, permissions) travels in a generic `bag`, not anything named `session`. Services get only the minimal id they need unless they must resolve scope. Never build a service just to expose role/membership lookups — inject them into the bag.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "The container is generic, but every subject path the config writes is spelled `$session.*` and the bag type names a `session` key — the rule's own \"not anything named session\" is honoured by the library and dropped by the consumer."
+          },
+          {
+            "id": "AC42",
+            "section": "Public/private typing",
+            "text": "Every layer (route, service, repo) declares and types its own public/private flag; a cross-layer mismatch is a compile-time error. Public at the router = public all the way down. Repo/service private by default — explicit to expose.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC43",
+            "section": "Public/private typing",
+            "text": "Two authorization layers always: gate the caller id before the service AND re-pass and re-check at the repo — a repo is never trusted safe merely because its caller gates.",
+            "consumedBy": [
+              "access-control"
+            ]
+          },
+          {
+            "id": "AC44",
+            "section": "Enforcement",
+            "text": "Architecture + AC conventions are enforced by linter rules wired into CI, consuming the documentation (enforce documented decisions, not the code). Pre-commit blocks on errors, warns on warnings. Rules apply uniformly — no rule-level carve-outs (special cases are business facts, not architecture exceptions).",
+            "note": "No destination doc yet. This governs how every doc is enforced, so it belongs with the DOC/PRC rules, which have no target document in the mind map. Un-consumed from `scaffolding-and-import-boundaries` on 2026-08-11."
+          }
+        ]
+      },
+      {
+        "file": "unmetreqgate.md",
+        "prefix": "GATE",
+        "governs": "the unmet-requirements gate (428) — distinct from scoped AC",
+        "rules": [
+          {
+            "id": "GATE1",
+            "text": "The gate evaluates the caller's obligations (verified identifier, session factor, required profile data, legal consent) and returns clear / unmet. It never resolves queries.",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          },
+          {
+            "id": "GATE2",
+            "text": "Requirements classify as persistent (facts an account carries — e.g. verified email) or session-based (e.g. re-verify OTP this session).",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          },
+          {
+            "id": "GATE3",
+            "text": "Unmet requirements resolve one at a time, in fixed order; the response is HTTP **428** carrying the single next requirement.",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          },
+          {
+            "id": "GATE4",
+            "text": "The gate runs **before** scoped AC: an unmet requirement short-circuits with 428 before any AC-governed query executes.",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          },
+          {
+            "id": "GATE5",
+            "text": "Account-level security requirements (e.g. 2FA) evaluate across **all** memberships, not just the active org — switching org can't bypass them.",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          },
+          {
+            "id": "GATE6",
+            "text": "Frontend contract: on a 428, redirect automatically to the unmet-requirements resolution page — never leave the user stuck on the failed action.",
+            "consumedBy": [
+              "unmet-requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "configs.md",
+        "prefix": "CFG",
+        "governs": "config authoring & consumption",
+        "rules": [
+          {
+            "id": "CFG1",
+            "text": "Configs are pure, declarative data: no functions, no env reads, no runtime imports, no logic/methods/branching. Assembly happens in the app."
+          },
+          {
+            "id": "CFG2",
+            "text": "Env vars drive what mounts: which slices mount and which configs inject come from env vars, never hardcode. The pointer to which config is consumed lives outside the config object.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ]
+          },
+          {
+            "id": "CFG3",
+            "text": "Config is authored as typed TypeScript source, not raw JSON — non-compliant config fails the build. Derive JSON later for external consumers if needed."
+          },
+          {
+            "id": "CFG4",
+            "text": "Config schemas reject contradictory combinations (e.g. `consent:true` with `shown:false`) — valid-combination rules, not free-form flags. Every config value has one identified consumer/owner."
+          },
+          {
+            "id": "CFG5",
+            "text": "Org/account policy (join mode, required consents, required auth factors, doc types) is declarative DSL, never implicit business logic. A new archetype + its rules = zero code, only config."
+          },
+          {
+            "id": "CFG6",
+            "text": "Never hardcode what the DSL is meant to make configurable — if it isn't consumed dynamically, the DSL is lying. Requirements over a model's fields derive dynamically from that model's schema (new fields auto-supported)."
+          },
+          {
+            "id": "CFG7",
+            "text": "Archetype definitions centralize in one config file, never inferred ad hoc."
+          }
+        ]
+      },
+      {
+        "file": "providers.md",
+        "prefix": "PRV",
+        "governs": "external provider (auth/identity) integration",
+        "rules": [
+          {
+            "id": "PRV1",
+            "text": "Every touch-point with an external provider routes through ONE abstraction/integration layer in its owning seed slice. App code never calls provider endpoints or imports the provider directly — the app must not even know the provider's name.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "PRV2",
+            "text": "Provider data normalizes to the app's own shape at the boundary; slice vocabulary internally, never the provider's terms."
+          },
+          {
+            "id": "PRV3",
+            "text": "The auth provider owns authentication/identity only; orgs, memberships, roles, invitations are owned and implemented by the app. The provider must be self-hostable and cloud/surface-agnostic for core auth."
+          },
+          {
+            "id": "PRV4",
+            "text": "On user creation, a provider hook replicates the user into the app DB keyed by the provider's id; the app DB is the source of truth for its own records. Provider DB stays separate from the app DB. Provider fields (email, email-verified) are never persisted on the local user."
+          },
+          {
+            "id": "PRV5",
+            "text": "The backend proxies all identity-provider calls; the frontend never calls the provider or owns the session cookie (edge protection applies). Never issue auth-granting email/SMS links that auto-log-in — always explicit code entry."
+          },
+          {
+            "id": "PRV6",
+            "text": "Security-relevant inputs the provider doesn't validate (e.g. password policy from the DSL) validate locally — backend and frontend — before forwarding."
+          },
+          {
+            "id": "PRV7",
+            "text": "Registration splits into single-purpose services (submit identifier, submit credentials, verify); the verify call carries all remaining data (password, name, consents) in one request — no partial accounts."
+          },
+          {
+            "id": "PRV8",
+            "text": "Never two parallel sessions (in-house + provider) — one session is the source of truth."
+          },
+          {
+            "id": "PRV9",
+            "text": "No caching of provider or derived data by default — cache only when proven necessary."
+          },
+          {
+            "id": "PRV10",
+            "text": "All AC-DSL consumers are limited to the integration layer plus the login/register pages."
+          }
+        ]
+      },
+      {
+        "file": "testing.md",
+        "prefix": "TST",
+        "governs": "test strategy & rules",
+        "rules": [
+          {
+            "id": "TST1",
+            "text": "Confidence ranking: e2e UI > e2e HTTP-request > unit."
+          },
+          {
+            "id": "TST2",
+            "text": "Before refactoring legacy code, write e2e HTTP tests to lock current behavior. Get all tests green (hack the impl if needed) before refactoring so the suite is trustworthy; keep them green through cleanup."
+          },
+          {
+            "id": "TST3",
+            "text": "AC tests assert unhappy paths (unauthorized denied), not only happy paths."
+          },
+          {
+            "id": "TST4",
+            "text": "Tests mount the app against their own configs, independent of dev/prod, so seed slice combinations test in isolation. Exhaustive edge-case config permutations live in the test config, not the seed baseline."
+          },
+          {
+            "id": "TST5",
+            "text": "Migrating a suite: disable unsupported steps at the shared index — don't comment out or delete whole test files (keep intended coverage visible)."
+          }
+        ]
+      },
+      {
+        "file": "frontend.md",
+        "prefix": "FE",
+        "governs": "UI construction & frontend security posture",
+        "rules": [
+          {
+            "id": "FE1",
+            "text": "Markup carries only design-system attributes (`element=card`, state) and layout classes (flex/grid) — never raw appearance (padding, border, background), utility spacing/color classes, or inline styles. Appearance comes from one theme CSS keyed off attributes. Use the UI library's components and layout patterns."
+          },
+          {
+            "id": "FE2",
+            "text": "Seed slices never assemble navigation (sidebars, menus) — they expose contracts (hooks, components); the host app assembles and mounts. Static/shared UI components live in shared libs; only the app instantiates and injects.",
+            "consumedBy": [
+              "scaffolding-and-import-boundaries"
+            ],
+            "note": "Wording wrong, corrected on digestion into scaffolding-and-import-boundaries: a slice DOES assemble navigation over its own pages. The rule is ownership at the most specific level covering all targets — only cross-slice navigation belongs to the app."
+          },
+          {
+            "id": "FE3",
+            "text": "Frontend state stays minimal by default — no speculative global state architecture. Sensitive registration data (password, name, consents) lives in frontend state and ships in one request on verification success."
+          },
+          {
+            "id": "FE4",
+            "text": "The frontend never enforces security — it hides/disables actions the user can't take and gives feedback; it never hard-blocks routes. Only allowed redirect: unauthenticated → login. Restricted pages render empty, not redirect."
+          },
+          {
+            "id": "FE5",
+            "text": "Every config-driven role constraint has two consumers: frontend for UX, backend service for security. The frontend check is never sufficient.",
+            "consumedBy": [
+              "access-control"
+            ],
+            "note": "Digested by access-control rather than frontend-composition: the axiom \"the frontend reflects, never decides\" is access control's, and frontend-composition owns layout and composition, not authorization posture."
+          }
+        ]
+      },
+      {
+        "file": "documentation.md",
+        "prefix": "DOC",
+        "governs": "doc types, maps, ADRs",
+        "rules": [
+          {
+            "id": "DOC1",
+            "text": "Exactly three doc types: Map (navigation only — pointers, no rules/logic), Doc (canonical: Axiom → Purpose → Reference, in that order), ADR (append-only Context/Decision/Consequences + date, never inside canonical docs)."
+          },
+          {
+            "id": "DOC2",
+            "text": "One index per level pointing only to other indexes/maps — no single global index. Each seed slice/library has its own docs folder starting with a map; a central map is referenced from the repo README."
+          },
+          {
+            "id": "DOC3",
+            "text": "A Map points only downstream (own slice + nested maps) — never upstream, never into another slice's files."
+          },
+          {
+            "id": "DOC4",
+            "text": "Docs are positional: a doc lives at the level it governs and applies to everything below. Each concept documented in exactly one place, never duplicated."
+          },
+          {
+            "id": "DOC5",
+            "text": "Axiom = short, inviolable, single idea per line, most-abstract-first; no subjectivity, no method names/shapes (those go in Reference). Reference is terse/diagrammatic. Minimum info per place."
+          },
+          {
+            "id": "DOC6",
+            "text": "Reusable-slice docs split \"For Consumer\" (how to use) from \"For Contributor\" (how to change)."
+          },
+          {
+            "id": "DOC7",
+            "text": "Doc files number by reading order (01, 02…). Update order: draft axiom/reference + human approval → resolve reference gaps + approval → update reference → update index/navigation LAST."
+          },
+          {
+            "id": "DOC8",
+            "text": "Record an ADR journal entry before writing the canonical doc for an architecture change. No one edits a slice's code without first reading its architecture doc."
+          },
+          {
+            "id": "DOC9",
+            "text": "Verbally-agreed rules get written into canonical docs — never left in memory."
+          },
+          {
+            "id": "DOC10",
+            "text": "No doc/test is better than a wrong or half-right one; unreviewed docs move to a meta/review area before a refactor."
+          },
+          {
+            "id": "DOC11",
+            "text": "Documentation carries the principles, not every small decision — separate canonical rules from product slice descriptions/requirements; keep signal-to-noise high, less is more."
+          }
+        ]
+      },
+      {
+        "file": "process.md",
+        "prefix": "PRC",
+        "governs": "design approaches, ways of working, agent rules",
+        "rules": [
+          {
+            "id": "PRC1",
+            "section": "Design approaches",
+            "text": "Define the target architecture first, independent of current code; reviewing code destroys it. Agree schema/spec before coding — review architecture, not code. (Domain/ERD-first thinking lives here as an approach, not an enforced rule.)"
+          },
+          {
+            "id": "PRC2",
+            "section": "Design approaches",
+            "text": "Before writing a product slice, enumerate the exact files and each file's single responsibility; code only once fixed. Per-product slice architecture is required beyond general principles. Minimum files, simplest design."
+          },
+          {
+            "id": "PRC3",
+            "section": "Design approaches",
+            "text": "Keep it simple by default; add complexity only when a concrete need appears. No abstractions for hypothetical needs — unnecessary/wrong abstractions are worse than dead code."
+          },
+          {
+            "id": "PRC4",
+            "section": "Design approaches",
+            "text": "Lock a library/seed slice's public interface before building internals; rebuild from desired interfaces outward. When rewriting legacy, empty it out and reintroduce files one at a time — don't trim in place. New arch work happens in the real repo, not a parallel pilot."
+          },
+          {
+            "id": "PRC5",
+            "section": "Design approaches",
+            "text": "Before writing an abstraction, pick and document a few canonical \"perfect\" reference implementations."
+          },
+          {
+            "id": "PRC6",
+            "section": "Design approaches",
+            "text": "Extract a private helper only when reused in 2+ services; otherwise it stays a private method of its service. A pure function used by many services goes to the nearest shared folder (SCF8). Prefer functional code over classes.",
+            "consumedBy": [
+              "backend-composition"
+            ]
+          },
+          {
+            "id": "PRC7",
+            "section": "Design approaches",
+            "text": "Unconsumed = deleted. No speculative code, no \"for later\" scaffolding. (Repos' standard CRUD is the one exception — API5.)"
+          },
+          {
+            "id": "PRC10",
+            "section": "Working with agents",
+            "text": "Agents never read old code — not `_archive/`, not legacy code still in the repo. Everything needed is in: the step spec, the standards files the task assembles, and the files the spec names. If the spec doesn't say what something does — ask, don't dig."
+          },
+          {
+            "id": "PRC11",
+            "section": "Working with agents",
+            "text": "Never let agents auto-apply edits; review each change as a PR diff, in small steps. Never delegate core entity/type design or large cleanup to agents unsupervised — small fixed-shape units, by hand."
+          },
+          {
+            "id": "PRC12",
+            "section": "Working with agents",
+            "text": "Rules-driven codegen: architect writes the spec; implementer confirms agreement before building one unit at a time; auditor checks the diff against rules + spec. Disagree with a documented decision → raise it before diverging, never silently."
+          },
+          {
+            "id": "PRC13",
+            "section": "Working with agents",
+            "text": "Don't hand the architecture linter's raw output to coding agents — the developer triages it (else agents route around rules)."
+          },
+          {
+            "id": "PRC14",
+            "section": "Working with agents",
+            "text": "Decide independently how you'd build it before reading existing code (avoid anchoring). Touch it, clean it. Keep an index of human-supervised vs AI-generated files; archive unverified code instead of deleting."
+          },
+          {
+            "id": "PRC15",
+            "section": "Working with agents",
+            "text": "Logic changes and mechanical/naming changes land in separate commits — reviewers see the logic diff alone."
+          }
+        ]
+      },
+      {
+        "file": "product slice-uom.md",
+        "prefix": "UOM",
+        "governs": "UOM product slice design — product decisions, not architecture rules",
+        "rules": [
+          {
+            "id": "UOM1",
+            "section": "Entities",
+            "text": "The UOM models: Organization · Membership (renamed from Member — it's a relationship, not a person) · Invitation · User · UserProfile · UserContacts · UserSystemPreferences · LegalDocument · ConsentRecord · OrganizationContacts. No OrganizationProfile in v1 — name, slug, logo/avatar, metadata live on Organization directly."
+          },
+          {
+            "id": "UOM2",
+            "section": "Entities",
+            "text": "A user exists independent of their authentication identifiers; email/phone/OAuth are interchangeable identifiers, never the unique id."
+          },
+          {
+            "id": "UOM3",
+            "section": "Entities",
+            "text": "All identifiers are unique — never the same email/phone twice, regardless of verification status. Unverified users can exist; verification no longer creates the user. *(Biggest logic refactor of the rebuild — lands in its own commit, separate from renames.)*"
+          },
+          {
+            "id": "UOM4",
+            "section": "Entities",
+            "text": "Public profile is a separate minimal entity (name, avatar) from the internal user; sensitive/optional data (contacts, preferences) live in separate tables from the core entity."
+          },
+          {
+            "id": "UOM5",
+            "section": "Entities",
+            "text": "UserContacts exists so lists/joins can show email/phone — identifiers themselves live in the provider's DB, not ours."
+          },
+          {
+            "id": "UOM6",
+            "section": "Entities",
+            "text": "OrganizationContacts is a link table `{ orgId, membershipId, contactId }`: a user owns many contacts; an org selects which of its members' contacts it holds. Repo + service, minimal. *(Table shape — dedicated vs pure link, one org per contact vs array — confirm with Daniel.)*"
+          },
+          {
+            "id": "UOM7",
+            "section": "Entities",
+            "text": "UserSystemPreferences: own model + repo + thin service (a route→repo proxy is fine). Not built yet."
+          },
+          {
+            "id": "UOM8",
+            "section": "Lifecycle",
+            "text": "Suspend is a **membership** state: the user can log in but has no access to that organization. Ban is a **user** state: no login — enforced post-login as a gate; the banned entity is the user, never identifiers. Delete is a **user** soft-delete: no login, identifiers become reusable by a new user. One dedicated service per transition. PII/GDPR anonymization: deferred until a product needs it."
+          },
+          {
+            "id": "UOM9",
+            "section": "Lifecycle",
+            "text": "Organization ownership is defined by the user's membership, never on the organization record."
+          },
+          {
+            "id": "UOM10",
+            "section": "Lifecycle",
+            "text": "One user cannot have more than one membership in one organization."
+          },
+          {
+            "id": "UOM11",
+            "section": "Roles & access",
+            "text": "Persist only role names on the membership (with hierarchy context); granular permissions resolve at request time from config — role hierarchy and permissions live in config, not the database. Cascading is computed at runtime, always."
+          },
+          {
+            "id": "UOM12",
+            "section": "Roles & access",
+            "text": "Active org is client-owned request state (header), never persisted server-side (API35)."
+          },
+          {
+            "id": "UOM13",
+            "section": "Roles & access",
+            "text": "UOM's only architectural distinction from any other slice is the hydration middleware. Everything else defers to access control."
+          },
+          {
+            "id": "UOM14",
+            "section": "Reads & views",
+            "text": "`enrichedMembershipView` = membership ⋈ user ⋈ userProfile ⋈ userContacts, scoped by orgId; lives in the membership repository (API9). Serves the org members list and (with reduced columns) single-membership lookups."
+          },
+          {
+            "id": "UOM15",
+            "section": "Legal",
+            "text": "LegalDocument and ConsentRecord are separate entities — separate models, repos, services — each with its own AC (documents gate who authors/publishes; consent gates who reads consent records)."
+          },
+          {
+            "id": "UOM16",
+            "section": "Legal",
+            "text": "Legal documents have no rollback: the lookup is `getLatestVersion`, not `getCurrent` (API30)."
+          },
+          {
+            "id": "UOM17",
+            "section": "Org types",
+            "text": "Privileged/system org types are never creatable via direct API calls — org type validates at the service layer, not just UI."
+          }
+        ]
+      }
+    ]
+  }
+}

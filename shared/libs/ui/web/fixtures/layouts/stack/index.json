@@ -1,0 +1,464 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "stack",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 32,
+   "pad": 32
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 10
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "children": "direction \u2014 a row, and a column (same component, dir=\"row\" | \"col\")",
+       "emphasis": "quiet"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 24,
+       "align": "start"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 10,
+         "className": "w-80"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3 flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "one"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3 flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "two"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3 flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "three"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 10,
+         "className": "w-40"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "one"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "two"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "three"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 10
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "children": "sizing \u2014 hug \u00b7 fill \u00b7 fixed (the child decides how it takes space)",
+       "emphasis": "quiet"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 10,
+       "className": "w-full max-w-xl"
+      },
+      "children": [
+       {
+        "type": "Card",
+        "props": {
+         "className": "p-3 flex-none"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": "hug"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Card",
+        "props": {
+         "className": "p-3 flex-1 min-w-0"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": "fill \u2014 grows to eat the leftover space"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Card",
+        "props": {
+         "className": "p-3 flex-none w-28"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": "fixed \u00b7 w-28"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 10
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "children": "nesting \u2014 a column of a row of fills, holding a stack (no new concept)",
+       "emphasis": "quiet"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "col",
+       "gap": 10,
+       "className": "w-full max-w-xl h-56"
+      },
+      "children": [
+       {
+        "type": "Card",
+        "props": {
+         "className": "p-3 flex-none"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": "header \u00b7 hug height"
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 10,
+         "size": "fill"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 10,
+           "size": "fill"
+          },
+          "children": [
+           {
+            "type": "Card",
+            "props": {
+             "className": "p-3 flex-none"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "left \u00b7 a"
+              }
+             }
+            ]
+           },
+           {
+            "type": "Card",
+            "props": {
+             "className": "p-3 flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "children": "left \u00b7 b (fills the rest)"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "p-3 flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--body-small",
+             "children": "right (fills)"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "Card",
+        "props": {
+         "className": "p-3 flex-none"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": "footer \u00b7 hug height"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 10
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-extra-small",
+       "children": "wrap \u2014 a cluster that flows onto the next line",
+       "emphasis": "quiet"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 8,
+       "wrap": true,
+       "className": "w-80"
+      },
+      "children": [
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "design"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "system"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "auto"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "layout"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "stack"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "row"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "column"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "gap"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "fill"
+        }
+       },
+       {
+        "type": "Badge",
+        "props": {
+         "emphasis": "secondary",
+         "children": "hug"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

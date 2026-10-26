@@ -1,0 +1,20 @@
+{
+  "id": "term/composition",
+  "kind": "term",
+  "title": "composition",
+  "status": "approved",
+  "subjects": [
+    "ui"
+  ],
+  "tags": [
+    "ui"
+  ],
+  "paths": [
+    "shared/libs/ui/web/layouts"
+  ],
+  "term": {
+    "def": "A prebuilt slot wrapper from `@libs/web-layouts` — currently only `AuthPage`. Other pages assemble [[layout primitive|primitives]] via app-level section layouts (`PageFrame`, `SettingsLayout`).",
+    "aliases": [],
+    "proposed": true
+  }
+}

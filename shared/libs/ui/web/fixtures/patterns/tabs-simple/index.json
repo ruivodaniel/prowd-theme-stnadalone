@@ -1,0 +1,113 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "tabs-simple",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Tabs",
+      "props": {
+       "defaultValue": "account",
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "TabsList",
+        "props": {},
+        "children": [
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "account",
+           "children": "Account"
+          }
+         },
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "security",
+           "children": "Security"
+          }
+         },
+         {
+          "type": "TabsTrigger",
+          "props": {
+           "value": "notifications",
+           "children": "Notifications"
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "account"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Manage your account settings and preferences."
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "security"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Update your password and security options."
+          }
+         }
+        ]
+       },
+       {
+        "type": "TabsContent",
+        "props": {
+         "value": "notifications"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "Configure your notification preferences."
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

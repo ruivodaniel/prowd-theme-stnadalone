@@ -1,0 +1,390 @@
+{
+ "id": "doc/ui-theme-authoring",
+ "kind": "doc",
+ "title": "Theme Authoring",
+ "status": "converted",
+ "subject": "ui",
+ "tags": [
+  "ui",
+  "consumer"
+ ],
+ "paths": [
+  "shared/libs/ui"
+ ],
+ "summary": "How to write a theme object. A theme is a TypeScript object conforming to the `Theme` type (`shared/libs/ui/types/theme.ts`).",
+ "docId": "ui-theme-authoring",
+ "doc": {
+  "axioms": [],
+  "purpose": {
+   "intro": "How to write a theme object. A theme is a TypeScript object conforming to the `Theme` type (`shared/libs/ui/types/theme.ts`)."
+  },
+  "reference": [
+   {
+    "topic": "Theme Object Structure",
+    "claims": [],
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "Theme\n├── id, name\n│\n├── colors                         L1 primitive\n│   ├── main (white, black)\n│   ├── brand (1–4)\n│   ├── status (success, info, warning, error → can reference flat)\n│   ├── flat (11 accent colors)\n│   └── semanticTokens (primary, secondary, accent, muted)\n│\n├── typography                     L1 primitive\n│   ├── fonts (primary, secondary, quote, monoPrimary, monoSecondary)\n│   └── types (18 scales, each: fontFamily, fontStyle, fontSizeMobile,\n│              fontSizeDesktop, fontWeight, lineHeight, letterSpacing)\n│\n├── spacing                        L1 primitive (unit multiplier → xs..3xl)\n├── radius                         L1 primitive (none, xs, sm, md, lg, xl, full)\n├── effects                        L1 primitive (named effect presets)\n├── transitions                    L1 primitive (duration + timing scales)\n├── borderWidths                   L1 primitive (none → extraThick)\n├── icons                          L1 primitive (set, sizes, weight)\n│\n├── modes                          Cross-cutting\n│   └── colorScheme\n│       └── each mode: background + foreground anchors + derivation params\n│\n├── families                       L2 — morphological family defaults\n│   ├── surfaceContainer           (IS the base shape)\n│   ├── elevatedOverlay            (surface + overlay extras)\n│   ├── listContainer              (surface + row/cell/separator/alternating)\n│   ├── interactiveControl         (surface wrapper)\n│   ├── interactiveControlGroup    (surface wrapper)\n│   ├── field                      (surface + placeholder/caret/obfuscation)\n│   ├── shape                      (surface wrapper)\n│   └── media                      (surface + objectFit/aspectRatio/overlay/filter)\n│\n├── elements                       L3 — element overrides (sparse deltas)\n│\n├── concepts                       L4 — product-specific semantic overrides\n│   └── [conceptName]: { [target]: SurfaceContainerTokens + accent + contextual }\n│\n└── contextual                     L5 — parent → child overrides\n    └── [parent]: { [child]: SurfaceContainerTokens }\n        Keys are element names (e.g. 'sidebar', 'header', 'card')\n        matching the keys in ElementTypes. NOT the full attribute\n        value (not 'surface--sidebar')."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Theme Object Structure › What the tree leaves out",
+    "statement": "Beside the levels above, a theme carries:",
+    "claims": [
+     {
+      "text": "`version` (the folder is `v<version>`), `type` (`wireframe` | `high-fidelity`), `kind` (`seed` | `product`)."
+     },
+     {
+      "text": "`platform`: absent means web, `\"mobile\"` means mobile. A theme is for one platform; see Mobile."
+     },
+     {
+      "text": "`gradients`: named gradient definitions, referenced as `gradient-<name>` in a `background`."
+     },
+     {
+      "text": "`icons`: the icon set, the five icon sizes in px, the stroke weight."
+     },
+     {
+      "text": "`layouts`: the regions of a page, themed like elements; see Layouts."
+     },
+     {
+      "text": "`rules` (L6): cascade chains deeper than parent → child; see Concepts, contextual, rules."
+     },
+     {
+      "text": "`press` (mobile only): what a touch shows."
+     }
+    ]
+   },
+   {
+    "topic": "The surface",
+    "statement": "Every family, element and region is written with the same token shape, `SurfaceContainerTokens`. Each key is optional; write only what the level above does not already say.",
+    "claims": [
+     {
+      "text": "`boundary`: `border` (width, style, colour, per side), `radius` (all, per corner), `effect` (a named preset or layers), `outline` (web only), `margin`."
+     },
+     {
+      "text": "`interior`: `background` (a colour or a gradient), `backgroundAlpha`, `foreground`, `opacity`, `padding` (all, x, y, per side), `gap` (all, h, v), `separator`, `childAlign` (horizontal, vertical), `scrollbar` (web only)."
+     },
+     {
+      "text": "`dimensionPosition`: `width`, `height`, `translateX`, `translateY`."
+     },
+     {
+      "text": "`defaultTypography`: `typographyType` (one of the 18 type scales), `textAlign`, `verticalAlign`, `textTransform`, `textDecoration`, `textEffect`. It never carries colour: colour is `interior.foreground`."
+     },
+     {
+      "text": "`tint`: the accent colour the pattern reads through `'tint'`."
+     },
+     {
+      "text": "`cursor` (web only), `smartBleed` (`false` | `normal` | `rounded` | `border` | `border-rounded`), `transition` (duration, timing)."
+     },
+     {
+      "text": "`combined`: the entries per axis value, see The axes."
+     }
+    ]
+   },
+   {
+    "topic": "The axes",
+    "statement": "An element's look varies along axes. The markup carries the axis as an attribute; the theme writes what changes for each value. `shared/libs/ui/types/axes.ts` holds the values, `shared/libs/ui/types/elements.ts` says which axes each element takes.",
+    "claims": [
+     {
+      "text": "An element not listed for an axis ignores that axis. `concept` is on every element and is never listed."
+     },
+     {
+      "text": "`emphasis`, `status`, `state` and `position` are written as `combined` entries on a surface: `{ where: { <axis>: <value> }, partialSurface: {…} }`. A `where` with several keys is a combination."
+     },
+     {
+      "text": "The engine emits the `combined` entries in the order they are written. Write emphasis, then status, then state, then the combinations, so the later ones win."
+     },
+     {
+      "text": "`scale` is not a `combined` key: it is authored in `sizes`, see Size Variants."
+     },
+     {
+      "text": "Emphasis carries the pattern; status carries the colour over it; state carries the delta while it lasts. See Tint Pattern."
+     }
+    ],
+    "imagesAndDiagrams": [
+     {
+      "type": "ascii",
+      "value": "| axis      | values                                                        | carries                                   | written as              |\n|-----------|---------------------------------------------------------------|-------------------------------------------|-------------------------|\n| emphasis  | hero, primary, secondary, tertiary, quiet                     | the pattern: filled, outlined, ghost      | where: { emphasis }     |\n| status    | neutral, info, success, warning, error, destructive           | the tint over the pattern                 | where: { status }       |\n| state     | hover, active, focus, selected, disabled, loading             | the delta while the state lasts           | where: { state }        |\n|           | mobile: no hover; long-pressed in its place; swiped on rows   |                                           |                         |\n| position  | first, last, only, middle, even, odd (sibling order)          | edges and separators of a row in a list   | where: { position }     |\n| scale     | 3xs 2xs xs sm md lg xl 2xl 3xl (default md)                   | padding, typography, icon size; no colour | sizes: { md: {…} }      |\n| concept   | a free name                                                   | a product meaning                         | concepts (L4)           |"
+     }
+    ],
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "interactiveControl: {\n  surface: {\n    interior: { background: \"background\", foreground: \"foreground\" },\n    boundary: { border: { width: \"thin\", style: \"solid\", color: \"gray-300\" } },\n    combined: [\n      { where: { emphasis: \"primary\" }, partialSurface: { tint: \"primary\", interior: { background: \"tint\", foreground: \"smart-bw\" }, boundary: { border: { color: \"transparent\" } } } },\n      { where: { emphasis: \"quiet\" }, partialSurface: { interior: { background: \"transparent\", foreground: \"gray-600\" }, boundary: { border: { color: \"transparent\" } } } },\n      { where: { status: \"error\" }, partialSurface: { tint: \"status-error\", interior: { foreground: \"status-error\" }, boundary: { border: { color: \"status-error\" } } } },\n      { where: { emphasis: \"primary\", status: \"error\" }, partialSurface: { interior: { background: \"tint\", foreground: \"smart-bw\" } } },\n      { where: { state: \"hover\" }, partialSurface: { boundary: { border: { color: \"gray-500\" } } } },\n      { where: { emphasis: \"primary\", state: \"hover\" }, partialSurface: { interior: { background: \"brand-1-dark\" } } },\n      { where: { state: \"focus\" }, partialSurface: { boundary: { outline: { width: \"thin\", style: \"solid\", color: \"brand-1\", offset: \"1px\" } } } },\n      { where: { state: \"disabled\" }, partialSurface: { interior: { opacity: 0.45 }, cursor: \"not-allowed\" } },\n    ],\n  },\n}",
+        "caption": "typescript"
+       }
+      ],
+      "text": "A control: the base, two emphases, a status, a combination, and the states."
+     }
+    ]
+   },
+   {
+    "topic": "Families",
+    "statement": "Eight families. Every element belongs to one; the family block is where most of a theme is written. `surfaceContainer` is the base every other family inherits; the others add the tokens below beside their `surface`.",
+    "claims": [
+     {
+      "text": "`surfaceContainer` (`surface--…`): card, panel, section, header, footer, badge, avatar, tile, alert, separator, spinner, skeleton, progress… Written bare: its tokens are the surface itself."
+     },
+     {
+      "text": "`elevatedOverlay` (`overlay--…`): dialog, drawer, popover, tooltip, toast, sheet, menu. Adds `overlay`: `scrimColor`, `scrimOpacity`, `scrimBlur`, `entranceAnimation`, `exitAnimation`."
+     },
+     {
+      "text": "`interactiveControl` (`control--…`): button, icon-button, chip, toggle, checkbox, radio, tab-trigger, sidebar-item… Adds `startIcon`, `endIcon` (each a surface). `switch` has its own shape: `track` and `thumb`."
+     },
+     {
+      "text": "`interactiveControlGroup` (`control-group--…`): tab-bar, breadcrumb, pagination, button-group, toggle-group, sidebar. A `surface` only."
+     },
+     {
+      "text": "`field` (`field--…`): input, textarea, select, combobox, date-picker, otp, phone… Adds `startIcon`, `endIcon`, `placeholderColor`, `placeholderOpacity`, `caretColor`, `obfuscation` (character, letterSpacing, fontSize)."
+     },
+     {
+      "text": "`listContainer` (`list--…`): list, accordion, menu, tree. Adds `row`, `cell`, `alternating` (surfaces) and `separator` (a surface with `height`, `width`)."
+     },
+     {
+      "text": "`table` elements (`table--…`): root, header, body, row, cell, footer. A surface each; `tableRow` and `tableFooterCell` add `alternating`."
+     },
+     {
+      "text": "`shape` (`shape--…`): icon, logo, decorative. A `surface` only."
+     },
+     {
+      "text": "`media` (`media--…`): image, video, embed. Adds `objectFit`, `objectPosition`, `aspectRatio`, `overlay` (colour, opacity, blur), `filter` (grayscale, brightness, contrast, blur)."
+     },
+     {
+      "text": "The elements of each family, their axes and their platform are the rows of `shared/libs/ui/types/elements.ts`; the names people write are in the markup dictionary."
+     }
+    ]
+   },
+   {
+    "topic": "Layouts",
+    "statement": "The regions of a page are themed in `layouts`, keyed by the camelCase region name (`pageHeader` → `layout=\"page-header\"`). A region carries a `surface` and the dimensions the theme owns.",
+    "claims": [
+     {
+      "text": "`layouts.surface` is the default of every region, as `families.surfaceContainer` is for elements."
+     },
+     {
+      "text": "Headers (`pageHeader`, `secondPageHeader`, `mainHeader`, `secondMainHeader`, `mainFooter`): `height`, and `sm`/`md`/`lg` heights for `scale`."
+     },
+     {
+      "text": "Sidebars (`leftSidebar`, `rightSidebar`, `contextPanel`, `shellNav`): `width`, and `sm`/`md`/`lg` widths. `leftSidebar` adds `widthCollapsed` and a `collapsed` surface."
+     },
+     {
+      "text": "`container`: `maxWidth` per scale `xs`…`xl`. `dialog`: `maxWidth` per `sm`/`md`/`lg`. `sheet`: `size` per `sm`/`md`/`lg`/`full`. Their visual tokens stay in `elements`."
+     },
+     {
+      "text": "`scrollArea`: the `scrollbar` only."
+     },
+     {
+      "text": "`layouts.emphasis` has two values, `primary` and `secondary`: a region's shade over its own base, for a region carrying `emphasis`. The region's own rule keeps its border edge."
+     },
+     {
+      "text": "Regions do not take `status`, `state` or `combined`."
+     }
+    ],
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "layouts: {\n  surface: { interior: { background: \"background\" } },\n  pageHeader: {\n    height: \"56px\", sm: { height: \"48px\" }, md: { height: \"56px\" }, lg: { height: \"72px\" },\n    surface: { interior: { background: \"brand-2\", foreground: \"smart-bw\", padding: { x: \"xl\" } } },\n  },\n  leftSidebar: {\n    width: \"240px\", sm: { width: \"200px\" }, md: { width: \"240px\" }, lg: { width: \"300px\" },\n    surface: { boundary: { border: { right: { width: \"thin\", style: \"solid\", color: \"gray-200\" } } } },\n  },\n  mainBody: { surface: { interior: { background: \"gray-100\", padding: { x: \"xl\", y: \"lg\" } } } },\n  emphasis: {\n    primary: { surface: { interior: { background: \"brand-2\", foreground: \"smart-bw\" } } },\n    secondary: { surface: { interior: { background: \"gray-100\", foreground: \"foreground\" } } },\n  },\n  container: { sm: { maxWidth: \"640px\" }, md: { maxWidth: \"940px\" }, lg: { maxWidth: \"1340px\" } },\n  dialog: { sm: { maxWidth: \"480px\" }, md: { maxWidth: \"640px\" }, lg: { maxWidth: \"940px\" } },\n  scrollArea: { scrollbar: { thumbColor: \"gray-300\", trackColor: \"transparent\", width: \"8px\" } },\n}",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Color References",
+    "claims": [
+     {
+      "text": "Derived colours the engine computes: `gray-50`…`gray-950` (from the mode's background and foreground), `gray-pure-<step>` (mode independent), `brand-<n>-light` | `brand-<n>-dark`, `brand-<n>-gray-<step>` (a brand-tinted gray), `status-<x>-light` | `status-<x>-dark`, `smart-bw`, `tint`. The amounts are the mode's `derivation`."
+     },
+     {
+      "text": "A `background` may be a gradient: `gradient-<name>`, defined in `gradients` as one layer or a stack of layers (linear, radial, conic)."
+     }
+    ],
+    "statement": "Theme token values can reference colors by name:",
+    "imagesAndDiagrams": [
+     {
+      "type": "ascii",
+      "value": "| Type | Examples |\n|------|----------|\n| Primitive | `'main-white'`, `'brand-1'`, `'status-error'`, `'flat-blue'` |\n| Derived | `'gray-200'`, `'brand-1-light'`, `'status-error-dark'` |\n| Semantic | `'primary'`, `'secondary'`, `'accent'`, `'muted'` |\n| Mode anchors | `'background'`, `'foreground'` (resolved from active color mode, not semantic tokens) |\n| Special | `'tint'` (current tint value), `'smart-bw'` (auto black/white) |\n| CSS | `'transparent'`, `'currentColor'`, `'inherit'` |\n| Raw hex | `'#ff0000'` (escape hatch, avoid when possible) |"
+     }
+    ]
+   },
+   {
+    "topic": "Color References › Which colour to write",
+    "claims": [
+     {
+      "text": "A surface's fill is `'background'`; its text is `'foreground'`. The two swap in dark mode."
+     },
+     {
+      "text": "Text on a coloured fill (a brand, a status) is `'smart-bw'`."
+     },
+     {
+      "text": "`'main-white'` and `'main-black'` are written only where the colour must not swap: the mode anchors and the shadows."
+     },
+     {
+      "text": "A tinted ground is a brand-tinted gray (`'brand-1-gray-50'`), with the amount in the mode's `grayColorMixPercentage`."
+     }
+    ]
+   },
+   {
+    "topic": "Modes",
+    "claims": [],
+    "statement": "Each color mode defines background/foreground anchors and derivation parameters. The engine computes gray scales, brand light/dark, status light/dark from these.",
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "modes: {\n  colorScheme: {\n    light: {\n      background: 'main-white',\n      foreground: 'main-black',\n      derivation: {\n        brandLightAmount: 74,\n        brandDarkAmount: 20,\n        statusLightAmount: 74,\n        statusDarkAmount: 20,\n        grayColorMixPercentage: '5%',\n        flatSaturationAdjust: 0,\n      },\n    },\n    dark: { ... },\n  },\n}",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Concepts",
+    "claims": [
+     {
+      "text": "Concepts apply to both elements and layouts. `concept=\"dashboard\"` on a shell → the theme overrides `mainContent` background for dashboard pages."
+     }
+    ],
+    "statement": "Group overrides by business meaning, not by element type:",
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "concepts: {\n  knowledge: {\n    card: {\n      accent: 'brand-2',\n      boundary: { border: { width: 'default', color: 'gray-pure-500' } },\n      contextual: {\n        header: {\n          smartBleed: 'normal',\n          interior: { background: 'brand-2', foreground: 'smart-bw' },\n        },\n      },\n    },\n  },\n  dashboard: {\n    mainContent: {\n      interior: { background: 'gray-50' },\n    },\n  },\n}",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Contextual overrides and rules",
+    "statement": "Two more levels, for what a family or an element cannot say on its own.",
+    "claims": [
+     {
+      "text": "L5 `contextual`: parent → child, keyed by element names (`sidebar: { button: {…} }`), the child typed as its own family shape. For a child that looks different inside one parent."
+     },
+     {
+      "text": "L6 `rules`: a `chain` of segments, each `{ key, concept? }` (an element, a layout or a family name, with the concept the node carries), and the `tokens` to apply at its end. For anything deeper than parent → child, or concepts on several nodes of the chain."
+     },
+     {
+      "text": "Neither repairs what a family should have set. An override written here to fix a general look is a family value in the wrong place."
+     }
+    ],
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "contextual: {\n  sidebar: { button: { surface: { interior: { background: \"transparent\" } } } },\n},\nrules: [\n  { chain: [{ key: \"page\", concept: \"special\" }, { key: \"card\", concept: \"knowledge\" }, { key: \"header\" }], tokens: { interior: { background: \"brand-2\", foreground: \"smart-bw\" } } },\n]",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Size Variants",
+    "claims": [
+     {
+      "text": "Default scale when absent: `md`."
+     },
+     {
+      "text": "The scale values are `3xs 2xs xs sm md lg xl 2xl 3xl`; a size entry is a `partialSurface` and an `icon` size."
+     },
+     {
+      "text": "Scale changes padding, typography and icon size, never colour. It is not a `combined` key."
+     }
+    ],
+    "statement": "Elements the table gives a `scale` define their sizes in `sizes`, keyed by scale. A family may author `sizes` too: every element of the family inherits them, an element overrides with its own.",
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "families: {\n  interactiveControl: {\n    sizes: {\n      sm: { partialSurface: { interior: { padding: { x: \"sm\", y: \"xs\" } }, defaultTypography: { typographyType: \"bodySmall\" } }, icon: { size: \"xs\" } },\n      md: { partialSurface: { interior: { padding: { x: \"md\", y: \"sm\" } }, defaultTypography: { typographyType: \"body\" } }, icon: { size: \"sm\" } },\n    },\n  },\n},\nelements: {\n  iconButton: { sizes: { md: { partialSurface: { interior: { padding: { all: \"sm\" } } } } } },   // only what differs from the family\n}",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Tint Pattern",
+    "claims": [],
+    "statement": "Emphasis defines the pattern and sets `tint`; status overrides `tint` only, so the pattern keeps its shape and changes colour. Both are written as `combined` entries, see The axes.",
+    "examples": [
+     {
+      "snippets": [
+       {
+        "code": "interactiveControl: {\n  surface: {\n    combined: [\n      // emphasis = the pattern; tint = the colour\n      { where: { emphasis: \"primary\" }, partialSurface: { tint: \"primary\", interior: { background: \"tint\", foreground: \"smart-bw\" }, boundary: { border: { color: \"transparent\" } } } },\n      // status re-tints: the pattern stays, the colour changes\n      { where: { status: \"error\" }, partialSurface: { tint: \"status-error\" } },\n      // filled + status: the fill takes the status colour\n      { where: { emphasis: \"primary\", status: \"error\" }, partialSurface: { interior: { background: \"tint\", foreground: \"smart-bw\" } } },\n    ],\n  },\n}",
+        "caption": "typescript"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "topic": "Mobile",
+    "statement": "A mobile theme is the same type with `platform: \"mobile\"`: the same core, families, elements and cascade, in mobile's shapes, plus what only a phone has.",
+    "claims": [
+     {
+      "text": "No `hover`, `cursor`, `scrollbar` or `outline`. Writing one in a mobile theme does not compile."
+     },
+     {
+      "text": "States: the shared ones (`active`, `focus`, `selected`, `disabled`, `loading`) plus `long-pressed` (in the place of `hover`) and `swiped` (a row slid sideways). The elements table says which an element takes (`mobileState`)."
+     },
+     {
+      "text": "Regions in `layouts`: `screen`, `appBar`, `body` (the one that scrolls), `actionBar`, `tabBar`, `drawer` (with `width`), each with a `surface` and `safeArea` edges; bars have `height` with `sm`/`md`/`lg`; `dialog` and `sheet` sizes."
+     },
+     {
+      "text": "`press`: `opacityDim` (iOS) and `ripple` (Android: `color`, `borderless`)."
+     },
+     {
+      "text": "A mobile theme addresses only the elements the table gives to mobile (`platform`). Concepts, contextual, rules and gradients are not emitted by the mobile engine; the build lists them as `unsupported`."
+     },
+     {
+      "text": "A product's web and mobile apps wear two themes. To share values, the mobile theme imports them from the web theme (`colors: webTheme.colors`)."
+     }
+    ]
+   },
+   {
+    "topic": "Build and activate",
+    "statement": "A theme compiles to one file per platform; a project points at one theme per platform.",
+    "claims": [
+     {
+      "text": "`pnpm theme:build` builds every theme: a web theme to `themes/<id>/v<n>/generated/<id>.css`, a mobile theme to `generated/<id>.native.json`."
+     },
+     {
+      "text": "A project names its themes in `shared/themes/active.json`: the web theme at the top, the mobile theme under `mobile`. UX/UI → theme sets each."
+     },
+     {
+      "text": "A design never names a theme. `active.json` is the one pointer."
+     },
+     {
+      "text": "The design system is the test: walk foundations, components, patterns, layouts and the check pages after each level, in light and in dark."
+     }
+    ]
+   }
+  ],
+  "review": {
+   "axioms": {
+    "state": "unreviewed"
+   },
+   "purpose": {
+    "state": "unreviewed"
+   },
+   "reference": {
+    "state": "unreviewed"
+   }
+  },
+  "converted": true
+ }
+}

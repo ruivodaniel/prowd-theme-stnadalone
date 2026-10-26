@@ -1,0 +1,12 @@
+{
+ "subjects": [
+  {
+   "id": "docs",
+   "title": "docs system (root)"
+  },
+  {
+   "id": "ui",
+   "title": "ui lib"
+  }
+ ]
+}

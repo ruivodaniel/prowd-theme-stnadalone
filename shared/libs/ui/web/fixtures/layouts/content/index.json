@@ -1,0 +1,66 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "content",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "ShellSideNav",
+  "props": {
+   "className": "flex h-screen w-full overflow-hidden"
+  },
+  "children": [
+   {
+    "type": "ShellNav",
+    "props": {
+     "className": "flex h-full flex-col",
+     "children": "shell-nav"
+    }
+   },
+   {
+    "type": "Page",
+    "props": {
+     "className": "flex flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+     {
+      "type": "PageHeader",
+      "props": {
+       "children": "page-header"
+      }
+     },
+     {
+      "type": "PageBody",
+      "props": {
+       "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+       {
+        "type": "Main",
+        "props": {
+         "className": "flex flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+         {
+          "type": "MainBody",
+          "props": {
+           "className": "flex flex-1 flex-col overflow-y-auto"
+          },
+          "children": [
+           {
+            "type": "Container",
+            "props": {
+             "children": "Whereas agreement delegation consent authorization statute renewal term majeure venue successor pursuant condition. Expense integration statute default mutual confidentiality hereunder licensee appendix validity. Renewal consent effective payment disclosure binding compliance disclosure fee property. Therefore litigation indemnity force performance property acceptance successor disclosure annex renewal enforcement whereas successor. Whereas jurisdiction statute scope acceptance pursuant intellectual approval.\n            Licensee mediation signature exhibit whereas counterpart licensor compensation settlement license hereunder invoice indemnity. Performance effective term counterpart party venue default modification regulation entirety modification hereunder nondisclosure successor. Liability mediation disclosure notice scope damages acceptance intellectual. Litigation consideration venue successor scope survival liability renewal affiliate execution. Unenforceable force approval termination intellectual waiver enforcement delegation payment herein delegation claim renewal signatory.\n            Warranty applicable license amendment force authorization affiliate therefore entirety litigation. Therefore compliance payment execution therein recital agreement regulation hereunder approval delegation therefore. Confidentiality fee performance indemnity agreement term applicable thereof confidentiality payment compliance settlement. Signature subcontractor pursuant void arbitration execution void therein settlement authorization. Counterpart acceptance venue confidentiality payment litigation covenant notice consideration litigation whereas.\n            Disclosure settlement acceptance warranty condition jurisdiction majeure regulation consent survival regulation affiliate approval. Party parties contract dispute binding therein clause liability licensor binding invoice licensor successor subcontractor exhibit. Integration licensor binding integration statute herein condition license. Execution acceptance payment successor liability proprietary renewal regulation contract hereunder property expense signature. Execution license right confidentiality regulation survival therefore law appendix counterpart consent compensation.Whereas agreement delegation consent authorization statute renewal term majeure venue successor pursuant condition. Expense integration statute default mutual confidentiality hereunder licensee appendix validity. Renewal consent effective payment disclosure binding compliance disclosure fee property. Therefore litigation indemnity force performance property acceptance successor disclosure annex renewal enforcement whereas successor. Whereas jurisdiction statute scope acceptance pursuant intellectual approval.\n            Licensee mediation signature exhibit whereas counterpart licensor compensation settlement license hereunder invoice indemnity. Performance effective term counterpart party venue default modification regulation entirety modification hereunder nondisclosure successor. Liability mediation disclosure notice scope damages acceptance intellectual. Litigation consideration venue successor scope survival liability renewal affiliate execution. Unenforceable force approval termination intellectual waiver enforcement delegation payment herein delegation claim renewal signatory.\n            Warranty applicable license amendment force authorization affiliate therefore entirety litigation. Therefore compliance payment execution therein recital agreement regulation hereunder approval delegation therefore. Confidentiality fee performance indemnity agreement term applicable thereof confidentiality payment compliance settlement. Signature subcontractor pursuant void arbitration execution void therein settlement authorization. Counterpart acceptance venue confidentiality payment litigation covenant notice consideration litigation whereas.\n            Disclosure settlement acceptance warranty condition jurisdiction majeure regulation consent survival regulation affiliate approval. Party parties contract dispute binding therein clause liability licensor binding invoice licensor successor subcontractor exhibit. Integration licensor binding integration statute herein condition license. Execution acceptance payment successor liability proprietary renewal regulation contract hereunder property expense signature. Execution license right confidentiality regulation survival therefore law appendix counterpart consent compensation.Whereas agreement delegation consent authorization statute renewal term majeure venue successor pursuant condition. Expense integration statute default mutual confidentiality hereunder licensee appendix validity. Renewal consent effective payment disclosure binding compliance disclosure fee property. Therefore litigation indemnity force performance property acceptance successor disclosure annex renewal enforcement whereas successor. Whereas jurisdiction statute scope acceptance pursuant intellectual approval.\n            Licensee mediation signature exhibit whereas counterpart licensor compensation settlement license hereunder invoice indemnity. Performance effective term counterpart party venue default modification regulation entirety modification hereunder nondisclosure successor. Liability mediation disclosure notice scope damages acceptance intellectual. Litigation consideration venue successor scope survival liability renewal affiliate execution. Unenforceable force approval termination intellectual waiver enforcement delegation payment herein delegation claim renewal signatory.\n            Warranty applicable license amendment force authorization affiliate therefore entirety litigation. Therefore compliance payment execution therein recital agreement regulation hereunder approval delegation therefore. Confidentiality fee performance indemnity agreement term applicable thereof confidentiality payment compliance settlement. Signature subcontractor pursuant void arbitration execution void therein settlement authorization. Counterpart acceptance venue confidentiality payment litigation covenant notice consideration litigation whereas.\n            Disclosure settlement acceptance warranty condition jurisdiction majeure regulation consent survival regulation affiliate approval. Party parties contract dispute binding therein clause liability licensor binding invoice licensor successor subcontractor exhibit. Integration licensor binding integration statute herein condition license. Execution acceptance payment successor liability proprietary renewal regulation contract hereunder property expense signature. Execution license right confidentiality regulation survival therefore law appendix counterpart consent compensation.Whereas agreement delegation consent authorization statute renewal term majeure venue successor pursuant condition. Expense integration statute default mutual confidentiality hereunder licensee appendix validity. Renewal consent effective payment disclosure binding compliance disclosure fee property. Therefore litigation indemnity force performance property acceptance successor disclosure annex renewal enforcement whereas successor. Whereas jurisdiction statute scope acceptance pursuant intellectual approval.\n            Licensee mediation signature exhibit whereas counterpart licensor compensation settlement license hereunder invoice indemnity. Performance effective term counterpart party venue default modification regulation entirety modification hereunder nondisclosure successor. Liability mediation disclosure notice scope damages acceptance intellectual. Litigation consideration venue successor scope survival liability renewal affiliate execution. Unenforceable force approval termination intellectual waiver enforcement delegation payment herein delegation claim renewal signatory.\n            Warranty applicable license amendment force authorization affiliate therefore entirety litigation. Therefore compliance payment execution therein recital agreement regulation hereunder approval delegation therefore. Confidentiality fee performance indemnity agreement term applicable thereof confidentiality payment compliance settlement. Signature subcontractor pursuant void arbitration execution void therein settlement authorization. Counterpart acceptance venue confidentiality payment litigation covenant notice consideration litigation whereas.\n            Disclosure settlement acceptance warranty condition jurisdiction majeure regulation consent survival regulation affiliate approval. Party parties contract dispute binding therein clause liability licensor binding invoice licensor successor subcontractor exhibit. Integration licensor binding integration statute herein condition license. Execution acceptance payment successor liability proprietary renewal regulation contract hereunder property expense signature. Execution license right confidentiality regulation survival therefore law appendix counterpart consent compensation.Whereas agreement delegation consent authorization statute renewal term majeure venue successor pursuant condition. Expense integration statute default mutual confidentiality hereunder licensee appendix validity. Renewal consent effective payment disclosure binding compliance disclosure fee property. Therefore litigation indemnity force performance property acceptance successor disclosure annex renewal enforcement whereas successor. Whereas jurisdiction statute scope acceptance pursuant intellectual approval.\n            Licensee mediation signature exhibit whereas counterpart licensor compensation settlement license hereunder invoice indemnity. Performance effective term counterpart party venue default modification regulation entirety modification hereunder nondisclosure successor. Liability mediation disclosure notice scope damages acceptance intellectual. Litigation consideration venue successor scope survival liability renewal affiliate execution. Unenforceable force approval termination intellectual waiver enforcement delegation payment herein delegation claim renewal signatory.\n            Warranty applicable license amendment force authorization affiliate therefore entirety litigation. Therefore compliance payment execution therein recital agreement regulation hereunder approval delegation therefore. Confidentiality fee performance indemnity agreement term applicable thereof confidentiality payment compliance settlement. Signature subcontractor pursuant void arbitration execution void therein settlement authorization. Counterpart acceptance venue confidentiality payment litigation covenant notice consideration litigation whereas.\n            Disclosure settlement acceptance warranty condition jurisdiction majeure regulation consent survival regulation affiliate approval. Party parties contract dispute binding therein clause liability licensor binding invoice licensor successor subcontractor exhibit. Integration licensor binding integration statute herein condition license. Execution acceptance payment successor liability proprietary renewal regulation contract hereunder property expense signature. Execution license right confidentiality regulation survival therefore law appendix counterpart consent compensation."
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

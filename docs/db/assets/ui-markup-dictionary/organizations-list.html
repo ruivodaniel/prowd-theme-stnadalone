@@ -1,0 +1,115 @@
+<!--
+  EXAMPLE: Organizations List Page
+  Demonstrates the full layout vocabulary in a shell + list-page pattern.
+
+  Hierarchy:
+    shell
+      shell-side-nav
+        control-group--sidebar-nav
+          surface--header  (org switcher)
+          surface--footer  (user menu)
+      page
+        v-section              ← vertical content column
+          h-section            ← title + primary CTA strip
+          h-section            ← filter controls strip
+          list--table
+            item               ← one row per org
+              h-section        ← avatar+name / badge / action in a row
+-->
+
+<div layout="shell" class="flex h-screen w-full overflow-hidden">
+
+  <!-- Sidebar -->
+  <div layout="shell-side-nav" class="flex h-full flex-col overflow-hidden">
+    <div element="control-group--sidebar-nav" class="flex flex-col">
+
+      <div element="surface--header" class="flex flex-col">
+        <button element="control--nav-item" emphasis="tertiary" scale="lg">
+          <span element="surface--avatar" scale="md">PA</span>
+          <span>Platform Admin</span>
+        </button>
+      </div>
+
+      <div class="flex flex-1 flex-col overflow-auto">
+        <a element="control--nav-item" emphasis="tertiary" scale="md" href="/organizations">
+          <svg element="surface--nav-item-icon" aria-hidden="true"><!-- network icon --></svg>
+          <span element="surface--nav-item-title">Organizations</span>
+        </a>
+        <a element="control--nav-item" emphasis="tertiary" scale="md" href="/manage-legal-documents">
+          <svg element="surface--nav-item-icon" aria-hidden="true"><!-- file icon --></svg>
+          <span element="surface--nav-item-title">Legal Documents</span>
+        </a>
+      </div>
+
+      <div element="surface--footer" class="flex flex-col">
+        <button element="control--nav-item" emphasis="tertiary" scale="lg">
+          <span element="surface--avatar" scale="md">DD</span>
+          <span>Daniel de Castro Ruivo</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Page -->
+  <div layout="page" class="flex flex-1 flex-col overflow-hidden">
+
+    <div layout="v-section" class="flex flex-col">
+
+      <!-- Title + primary action -->
+      <div layout="h-section" class="flex items-center justify-between">
+        <h1 element="type--heading2">All Organizations</h1>
+        <button element="control--button" emphasis="primary" scale="md">
+          <svg element="shape--icon" aria-hidden="true"><!-- plus --></svg>
+          Create Organization
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div layout="h-section" class="flex flex-wrap items-center">
+        <div element="field--input" scale="md">
+          <svg element="shape--icon" aria-hidden="true"><!-- search --></svg>
+          <input placeholder="Search organizations..." />
+        </div>
+        <button element="field--select" scale="md">All Status</button>
+        <button element="field--select" scale="md">All Types</button>
+      </div>
+
+      <!-- Table -->
+      <table element="list--table" class="w-full">
+        <thead element="surface--header">
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Members</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr layout="item">
+            <td>
+              <div layout="h-section" class="flex items-center">
+                <span element="surface--avatar" scale="md">DC</span>
+                Dorothy's Organization
+              </div>
+            </td>
+            <td><span element="type--body-small" emphasis="quiet">Organization</span></td>
+            <td><span element="surface--badge" emphasis="primary" status="success" scale="sm">Active</span></td>
+            <td>3</td>
+            <td>
+              <button element="control--button" emphasis="tertiary" scale="md">
+                <svg element="shape--icon" aria-hidden="true"><!-- arrow-right --></svg>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

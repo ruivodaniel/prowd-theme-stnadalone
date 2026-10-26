@@ -1,0 +1,1427 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "card-grids",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#7 · #9 · agent cards — a 2-column grid of Card; each: Avatar · name + model · quiet status Badge · description · a cluster of Chips; the offline card is state='disabled'"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 16,
+         "wrap": true,
+         "className": "w-full max-w-4xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "start",
+               "justify": "between",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 14
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "md"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "bot",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 2
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Research Agent"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "success",
+                 "showIcon": true,
+                 "iconName": "dot",
+                 "children": "Active"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "Searches the web, reads documentation, and gathers information"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 8,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Web Search"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Document Reading"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Summarization"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "start",
+               "justify": "between",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 14
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "md"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "bot",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 2
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Code Agent"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--code",
+                     "emphasis": "quiet",
+                     "children": "claude-sonnet-4-20250514"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "info",
+                 "showIcon": true,
+                 "iconName": "dot",
+                 "children": "Busy"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "Writes, reviews, and refactors code across multiple languages"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 8,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Code Generation"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Debugging"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Refactoring"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "start",
+               "justify": "between",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 14
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "md"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "bot",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 2
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Planning Agent"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "success",
+                 "showIcon": true,
+                 "iconName": "dot",
+                 "children": "Active"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "Breaks down complex tasks and creates execution plans"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 8,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Task Decomposition"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Scheduling"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Prioritization"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "start",
+               "justify": "between",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 14
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "md"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "bot",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 2
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Review Agent"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "neutral",
+                 "showIcon": true,
+                 "iconName": "dot",
+                 "children": "Idle"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "Reviews code, content, and plans for quality assurance"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 8,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Code Review"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Content Review"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Security Audit"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "state": "disabled"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "start",
+               "justify": "between",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 14
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "md"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "bot",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 2
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Data Agent"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "quiet",
+                 "status": "neutral",
+                 "showIcon": true,
+                 "iconName": "dot",
+                 "children": "Offline"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body",
+               "emphasis": "quiet",
+               "children": "Analyzes data, generates insights, and creates visualizations"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 8,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Data Analysis"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Visualization"
+                }
+               },
+               {
+                "type": "Chip",
+                "props": {
+                 "emphasis": "tertiary",
+                 "scale": "sm",
+                 "closable": false,
+                 "children": "Reporting"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#8 · referenced sources — an Accordion of two sections; the open one holds a 2-column grid of source Tiles, the second is collapsed"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Accordion",
+        "props": {
+         "type": "multiple",
+         "defaultValue": [
+          "sources"
+         ],
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "AccordionItem",
+          "props": {
+           "value": "sources"
+          },
+          "children": [
+           {
+            "type": "AccordionTrigger",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 14
+              },
+              "children": [
+               {
+                "type": "Avatar",
+                "props": {
+                 "scale": "md"
+                },
+                "children": [
+                 {
+                  "type": "AvatarFallback",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "fileText",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "Referenced Sources"
+                }
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "neutral",
+                 "children": "4"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "AccordionContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "lock",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Next.js Quickstart - Clerk"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "clerk.com"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Learn how to add authentication to your Next.js application with Clerk."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "code",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Authentication - Next.js"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "nextjs.org"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Learn how to implement authentication in Next.js applications."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "component",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "Managing State - React"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "react.dev"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Learn how to manage state effectively in React applications."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "gitBranch",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "clerk/javascript - GitHub"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "github.com"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Official Clerk JavaScript SDK monorepo with React, Next.js, and more."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "AccordionItem",
+          "props": {
+           "value": "api"
+          },
+          "children": [
+           {
+            "type": "AccordionTrigger",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 14
+              },
+              "children": [
+               {
+                "type": "Avatar",
+                "props": {
+                 "scale": "md"
+                },
+                "children": [
+                 {
+                  "type": "AvatarFallback",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "fileText",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading4",
+                 "children": "API References"
+                }
+               },
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "secondary",
+                 "status": "neutral",
+                 "children": "2"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "AccordionContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "fileCode",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "useAuth() - Clerk"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "clerk.com"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Hook returning the current session, the user id and a token getter."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Tile",
+                "props": {
+                 "className": "w-[calc(50%-8px)]"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "start",
+                   "gap": 14
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "md"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "fileCode",
+                         "size": "sm"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "col",
+                     "gap": 8,
+                     "size": "fill"
+                    },
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2
+                      },
+                      "children": [
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--heading4",
+                         "children": "middleware - Next.js"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-small",
+                         "emphasis": "quiet",
+                         "children": "nextjs.org"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "emphasis": "quiet",
+                       "children": "Run code before a request is completed, at the edge."
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

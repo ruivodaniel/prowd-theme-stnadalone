@@ -1,0 +1,586 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "sidebar-with-tabs",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[280px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "SidebarProvider",
+      "props": {},
+      "children": [
+       {
+        "type": "Sidebar",
+        "props": {
+         "collapsible": "none",
+         "className": "h-[520px] w-full"
+        },
+        "children": [
+         {
+          "type": "Tabs",
+          "props": {
+           "defaultValue": "browse",
+           "className": "flex flex-1 min-h-0 flex-col"
+          },
+          "children": [
+           {
+            "type": "SidebarHeader",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "children": "Sidebar"
+                }
+               },
+               {
+                "type": "TabsList",
+                "props": {},
+                "children": [
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "children": "Browse",
+                   "value": "browse"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "children": "Search",
+                   "value": "search"
+                  }
+                 },
+                 {
+                  "type": "TabsTrigger",
+                  "props": {
+                   "children": "Recent",
+                   "value": "recent"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "browse",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "SidebarContent",
+              "props": {
+               "className": "h-full"
+              },
+              "children": [
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Navigation"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col"
+                  },
+                  "children": [
+                   {
+                    "type": "SidebarMenu",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "home",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Dashboard"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "layers",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Projects"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "users",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Team"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Settings"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col"
+                  },
+                  "children": [
+                   {
+                    "type": "SidebarMenu",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "user",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Profile"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "bell",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Notifications"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "lock",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Security"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "emphasis": "quiet",
+                   "children": "Resources"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col"
+                  },
+                  "children": [
+                   {
+                    "type": "SidebarMenu",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "file",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Documentation"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "info",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Help center"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "message",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Feedback"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "search",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12,
+               "pad": 12
+              },
+              "children": [
+               {
+                "type": "Input",
+                "props": {
+                 "placeholder": "Search…",
+                 "data-testid": "sidebar-search-input"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet",
+                 "children": "Type to search…"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "TabsContent",
+            "props": {
+             "value": "recent",
+             "className": "flex-1 min-h-0"
+            },
+            "children": [
+             {
+              "type": "SidebarContent",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col"
+                  },
+                  "children": [
+                   {
+                    "type": "SidebarMenu",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "clock",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Recent item 1"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "clock",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Recent item 2"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     },
+                     {
+                      "type": "SidebarMenuItem",
+                      "props": {},
+                      "children": [
+                       {
+                        "type": "SidebarMenuButton",
+                        "props": {},
+                        "children": [
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "clock",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "children": "Recent item 3"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

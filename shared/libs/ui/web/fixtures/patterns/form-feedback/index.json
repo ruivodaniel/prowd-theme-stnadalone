@@ -1,0 +1,173 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "form-feedback",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Form",
+      "props": {
+       "data-testid": "form-feedback-form"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 16
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 0
+          },
+          "children": [
+           {
+            "type": "Label",
+            "props": {
+             "children": "Full name"
+            }
+           },
+           {
+            "type": "Input",
+            "props": {
+             "data-testid": "form-feedback-name-input",
+             "value": "Daniel"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "p",
+             "element": "surface--field-description",
+             "children": "As it appears on your documents."
+            }
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 0
+          },
+          "children": [
+           {
+            "type": "Label",
+            "props": {
+             "children": "Email"
+            }
+           },
+           {
+            "type": "Input",
+            "props": {
+             "data-testid": "form-feedback-email-input",
+             "value": "not-an-email",
+             "status": "error"
+            }
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "p",
+             "element": "surface--field-message",
+             "status": "error",
+             "children": "Enter a valid email address"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 0
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "center"
+            },
+            "children": [
+             {
+              "type": "Checkbox",
+              "props": {
+               "data-testid": "form-feedback-agree-check",
+               "checked": false
+              }
+             },
+             {
+              "type": "Label",
+              "props": {
+               "children": "I accept the terms"
+              }
+             }
+            ]
+           },
+           {
+            "type": "Text",
+            "props": {
+             "as": "p",
+             "element": "surface--field-message",
+             "status": "error",
+             "children": "You must accept the terms"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "data-testid": "form-feedback-save-btn",
+             "type": "submit",
+             "emphasis": "primary",
+             "children": "Save"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "data-testid": "form-feedback-cancel-btn",
+             "type": "button",
+             "emphasis": "secondary",
+             "children": "Cancel"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

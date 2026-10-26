@@ -1,0 +1,1182 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "pricing-and-offers",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#18 · pricing — three plan cards: name, blurb, price on a baseline, checklist, CTA; the popular plan is emphasis='primary'"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 24,
+         "align": "stretch",
+         "className": "w-full max-w-4xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 24,
+             "pad": 28,
+             "size": "fill"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading3",
+                 "children": "Free"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "emphasis": "quiet",
+                 "children": "For hobbyists and side projects"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "baseline",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers-extra-large",
+                 "children": "Free"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Up to 3 projects"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Basic analytics"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Community support"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "state": "disabled"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Custom domain"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "state": "disabled"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Priority support"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "fill": true,
+               "children": "Get Started"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-0",
+           "emphasis": "primary"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 24,
+             "pad": 28,
+             "size": "fill"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "center"
+              },
+              "children": [
+               {
+                "type": "Badge",
+                "props": {
+                 "emphasis": "hero",
+                 "showIcon": true,
+                 "iconName": "star",
+                 "children": "Most Popular"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading3",
+                 "children": "Pro"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "emphasis": "quiet",
+                 "children": "For professionals and growing teams"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "baseline",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers-extra-large",
+                 "children": "$29"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-large",
+                 "emphasis": "quiet",
+                 "children": "/mo"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Unlimited projects"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Advanced analytics"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Priority support"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Custom domain"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " API access"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "primary",
+               "fill": true,
+               "children": "Start Free Trial"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "flex-1 min-w-0"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 24,
+             "pad": 28,
+             "size": "fill"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading3",
+                 "children": "Enterprise"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "emphasis": "quiet",
+                 "children": "For large organizations"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "baseline",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers-extra-large",
+                 "children": "$99"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-large",
+                 "emphasis": "quiet",
+                 "children": "/mo"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 12,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Everything in Pro"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " SSO & SAML"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Dedicated support"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " Custom integrations"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " SLA guarantee"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "secondary",
+               "fill": true,
+               "children": "Contact Sales"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#31 · loan plans — a hero banner (headline, rate, CTA) over a centred heading and a 2×2 of loan tiles"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 24,
+         "className": "w-96"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "emphasis": "hero"
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 20,
+             "pad": 24
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "end"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--heading2",
+                 "children": "Loan Plans"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "children": "Get a business loan"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "justify": "between",
+                 "align": "end",
+                 "gap": 16
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "baseline",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers-extra-large",
+                     "children": "0.5%"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-large",
+                     "children": "Interest"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Button",
+                  "props": {
+                   "emphasis": "secondary",
+                   "buttonType": "text-icon",
+                   "endIcon": "add",
+                   "children": "More"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "justify": "center"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "span",
+             "element": "type--heading3",
+             "emphasis": "quiet",
+             "children": "All Loan Plans"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 16
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 16
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "start",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "book",
+                   "size": "md"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 4,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Education"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "baseline",
+                     "gap": 4
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "Up to"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-small",
+                       "emphasis": "quiet",
+                       "children": "3,000,000"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "children": "Application"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "start",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "home",
+                   "size": "md"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 4,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Home Loan"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "baseline",
+                     "gap": 4
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "Up to"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-small",
+                       "emphasis": "quiet",
+                       "children": "3,000,000"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "children": "Application"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 16
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "start",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "briefcase",
+                   "size": "md"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 4,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Business Loan"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "baseline",
+                     "gap": 4
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "Up to"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-small",
+                       "emphasis": "quiet",
+                       "children": "3,000,000"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "children": "Application"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Tile",
+              "props": {
+               "className": "flex-1 min-w-0"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "start",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "star",
+                   "size": "md"
+                  }
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 4,
+                   "size": "fill"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--heading4",
+                     "children": "Special Loan"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "baseline",
+                     "gap": 4
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-extra-small",
+                       "emphasis": "quiet",
+                       "children": "Up to"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--numbers-small",
+                       "emphasis": "quiet",
+                       "children": "3,000,000"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "children": "Application"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

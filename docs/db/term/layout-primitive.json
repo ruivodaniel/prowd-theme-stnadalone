@@ -1,0 +1,20 @@
+{
+  "id": "term/layout-primitive",
+  "kind": "term",
+  "title": "layout primitive",
+  "status": "approved",
+  "subjects": [
+    "ui"
+  ],
+  "tags": [
+    "ui"
+  ],
+  "paths": [
+    "shared/libs/ui/web/layouts"
+  ],
+  "term": {
+    "def": "A component from `@libs/web-layouts` emitting one `layout=\"…\"` region. Structural behaviour only — scroll, overflow, collapse, sticky, width — never visuals. Shell primitives are app-level only.",
+    "aliases": [],
+    "proposed": true
+  }
+}

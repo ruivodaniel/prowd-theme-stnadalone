@@ -1,0 +1,588 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "top-nav",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "top nav — brand · org switcher | nav items as a tab bar, one selected, a count | user menu (a platform owner: every entry)"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "ShellNav",
+        "props": {
+         "className": "w-full"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 16,
+           "align": "center",
+           "justify": "between",
+           "pad": 8
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "center"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "emphasis": "quiet",
+               "className": "p-1"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Platform logo"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "endIcon": "chevronDown",
+               "aria-label": "Active organization: Platform"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 6,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "xs"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {
+                     "children": "PL"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Platform"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Tabs",
+            "props": {
+             "defaultValue": "organizations"
+            },
+            "children": [
+             {
+              "type": "TabsList",
+              "props": {},
+              "children": [
+               {
+                "type": "TabsTrigger",
+                "props": {
+                 "value": "home"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "home",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "Home"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TabsTrigger",
+                "props": {
+                 "value": "organizations"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "users",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "Organizations"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "status": "info",
+                   "children": "2"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TabsTrigger",
+                "props": {
+                 "value": "legal-documents"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "fileText",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "Legal documents"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "endIcon": "chevronDown",
+             "aria-label": "Account menu: Samantha Reyes"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 6,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Avatar",
+                "props": {
+                 "scale": "xs"
+                },
+                "children": [
+                 {
+                  "type": "AvatarFallback",
+                  "props": {
+                   "children": "SR"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "children": "Samantha Reyes"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "the same bar as a company member sees it — Legal documents gated away by requiredRoles"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "ShellNav",
+        "props": {
+         "className": "w-full"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 16,
+           "align": "center",
+           "justify": "between",
+           "pad": 8
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 12,
+             "align": "center"
+            },
+            "children": [
+             {
+              "type": "Tile",
+              "props": {
+               "emphasis": "quiet",
+               "className": "p-1"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Platform logo"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Button",
+              "props": {
+               "emphasis": "quiet",
+               "endIcon": "chevronDown",
+               "aria-label": "Active organization: Borealis"
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 6,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "xs"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {
+                     "children": "BO"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "children": "Borealis"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Tabs",
+            "props": {
+             "defaultValue": "home"
+            },
+            "children": [
+             {
+              "type": "TabsList",
+              "props": {},
+              "children": [
+               {
+                "type": "TabsTrigger",
+                "props": {
+                 "value": "home"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "home",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "Home"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "TabsTrigger",
+                "props": {
+                 "value": "organizations"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "users",
+                   "size": "sm"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "Organizations"
+                  }
+                 },
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "scale": "xs",
+                   "status": "info",
+                   "children": "2"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "endIcon": "chevronDown",
+             "aria-label": "Account menu: Daniel Ruivo"
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "gap": 6,
+               "align": "center"
+              },
+              "children": [
+               {
+                "type": "Avatar",
+                "props": {
+                 "scale": "xs"
+                },
+                "children": [
+                 {
+                  "type": "AvatarFallback",
+                  "props": {
+                   "children": "DR"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body",
+                 "children": "Daniel Ruivo"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "compact — at a narrow width the items fold into a menu button; brand and the user stay"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "ShellNav",
+        "props": {
+         "className": "w-80"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "align": "center",
+           "justify": "between",
+           "pad": 8
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 8,
+             "align": "center"
+            },
+            "children": [
+             {
+              "type": "Button",
+              "props": {
+               "buttonType": "icon",
+               "startIcon": "menu",
+               "emphasis": "quiet",
+               "aria-label": "Open navigation"
+              }
+             },
+             {
+              "type": "Tile",
+              "props": {
+               "emphasis": "quiet",
+               "className": "p-1"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-extra-small",
+                 "emphasis": "quiet",
+                 "children": "Platform logo"
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "buttonType": "icon",
+             "startIcon": "user",
+             "aria-label": "Account menu: Samantha Reyes"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "term/page",
+  "kind": "term",
+  "title": "page",
+  "status": "approved",
+  "subjects": [
+    "main",
+    "ui"
+  ],
+  "tags": [
+    "ui"
+  ],
+  "paths": [],
+  "term": {
+    "def": "Everything inside the shell content area — `page-header` plus `page-body` (`left-sidebar`, `main`, `right-sidebar`).",
+    "aliases": [],
+    "proposed": true
+  }
+}

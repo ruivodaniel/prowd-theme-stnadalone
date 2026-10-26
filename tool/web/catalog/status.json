@@ -1,0 +1,214 @@
+{
+  "button-group": {
+    "status": "approved",
+    "note": ""
+  },
+  "chip": {
+    "status": "to polish",
+    "note": "fixture does not show scale"
+  },
+  "tabs": {
+    "status": "approved",
+    "note": ""
+  },
+  "button": {
+    "status": "approved",
+    "note": ""
+  },
+  "checkbox": {
+    "status": "approved",
+    "note": ""
+  },
+  "radio": {
+    "status": "to polish",
+    "note": "radio button size changes when selected vs unselected"
+  },
+  "switch": {
+    "status": "approved",
+    "note": ""
+  },
+  "toggle": {
+    "status": "to polish",
+    "note": "fixture shows status but not state \u2014 selected or not is the one thing a toggle must show"
+  },
+  "table": {
+    "status": "approved",
+    "note": ""
+  },
+  "combobox": {
+    "status": "deprecated",
+    "note": "use input-select"
+  },
+  "date-picker": {
+    "status": "pending",
+    "note": ""
+  },
+  "file-upload": {
+    "status": "pending",
+    "note": ""
+  },
+  "form": {
+    "status": "pending",
+    "note": ""
+  },
+  "input-group": {
+    "status": "pending",
+    "note": ""
+  },
+  "input-otp": {
+    "status": "pending",
+    "note": ""
+  },
+  "input": {
+    "status": "pending",
+    "note": ""
+  },
+  "multi-select": {
+    "status": "deprecated",
+    "note": "use input-select"
+  },
+  "phone-input": {
+    "status": "pending",
+    "note": ""
+  },
+  "select": {
+    "status": "deprecated",
+    "note": "use input-select"
+  },
+  "textarea": {
+    "status": "pending",
+    "note": ""
+  },
+  "colors-derivations": {
+    "status": "pending",
+    "note": ""
+  },
+  "colors-primitives": {
+    "status": "pending",
+    "note": ""
+  },
+  "label": {
+    "status": "pending",
+    "note": ""
+  },
+  "separator": {
+    "status": "pending",
+    "note": ""
+  },
+  "typography": {
+    "status": "pending",
+    "note": ""
+  },
+  "avatar": {
+    "status": "pending",
+    "note": ""
+  },
+  "badge": {
+    "status": "pending",
+    "note": ""
+  },
+  "progress": {
+    "status": "pending",
+    "note": ""
+  },
+  "skeleton": {
+    "status": "pending",
+    "note": ""
+  },
+  "toast": {
+    "status": "pending",
+    "note": ""
+  },
+  "spinner": {
+    "status": "pending",
+    "note": ""
+  },
+  "accordion": {
+    "status": "pending",
+    "note": ""
+  },
+  "collapsible": {
+    "status": "pending",
+    "note": ""
+  },
+  "list": {
+    "status": "pending",
+    "note": ""
+  },
+  "scroll-area": {
+    "status": "pending",
+    "note": ""
+  },
+  "tree-view": {
+    "status": "pending",
+    "note": ""
+  },
+  "breadcrumb": {
+    "status": "approved",
+    "note": ""
+  },
+  "pagination": {
+    "status": "approved",
+    "note": ""
+  },
+  "sidebar-expandable-section": {
+    "status": "pending",
+    "note": ""
+  },
+  "sidebar": {
+    "status": "pending",
+    "note": ""
+  },
+  "alert-dialog": {
+    "status": "pending",
+    "note": ""
+  },
+  "command": {
+    "status": "pending",
+    "note": ""
+  },
+  "dialog": {
+    "status": "pending",
+    "note": ""
+  },
+  "dropdown-menu": {
+    "status": "pending",
+    "note": ""
+  },
+  "hover-card": {
+    "status": "pending",
+    "note": ""
+  },
+  "popover": {
+    "status": "pending",
+    "note": ""
+  },
+  "sheet": {
+    "status": "pending",
+    "note": ""
+  },
+  "tooltip": {
+    "status": "pending",
+    "note": ""
+  },
+  "alert": {
+    "status": "pending",
+    "note": ""
+  },
+  "card": {
+    "status": "pending",
+    "note": ""
+  },
+  "empty-state": {
+    "status": "pending",
+    "note": ""
+  },
+  "expandable-card": {
+    "status": "pending",
+    "note": ""
+  },
+  "input-select": {
+    "status": "pending",
+    "note": ""
+  }
+}

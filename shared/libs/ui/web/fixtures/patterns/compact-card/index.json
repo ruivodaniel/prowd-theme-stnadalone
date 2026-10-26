@@ -1,0 +1,91 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "compact-card",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Card",
+      "props": {},
+      "children": [
+       {
+        "type": "CardHeader",
+        "props": {},
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "align": "center",
+           "justify": "between"
+          },
+          "children": [
+           {
+            "type": "Text",
+            "props": {
+             "as": "p",
+             "element": "type--body",
+             "children": "Compact card"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "tertiary",
+             "children": "Action"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CardContent",
+        "props": {},
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "p",
+           "element": "type--body-small",
+           "emphasis": "quiet",
+           "children": "A titled card: header with an action, content, and a footer."
+          }
+         }
+        ]
+       },
+       {
+        "type": "CardFooter",
+        "props": {},
+        "children": [
+         {
+          "type": "Button",
+          "props": {
+           "emphasis": "primary",
+           "children": "Save"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

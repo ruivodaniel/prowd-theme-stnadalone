@@ -1,0 +1,38 @@
+{
+  "borders": {
+    "status": "pending",
+    "note": ""
+  },
+  "colors-derived": {
+    "status": "pending",
+    "note": ""
+  },
+  "colors": {
+    "status": "pending",
+    "note": ""
+  },
+  "effects": {
+    "status": "pending",
+    "note": ""
+  },
+  "icons": {
+    "status": "pending",
+    "note": ""
+  },
+  "radius": {
+    "status": "pending",
+    "note": ""
+  },
+  "spacing": {
+    "status": "pending",
+    "note": ""
+  },
+  "transitions": {
+    "status": "pending",
+    "note": ""
+  },
+  "typography": {
+    "status": "pending",
+    "note": ""
+  }
+}

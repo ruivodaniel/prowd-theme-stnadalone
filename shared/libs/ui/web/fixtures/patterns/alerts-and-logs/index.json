@@ -1,0 +1,1276 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "alerts-and-logs",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#13 · error Alert, Stack Trace collapsed — Alert · two secondary status=error Buttons · Collapsible"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Alert",
+        "props": {
+         "status": "error",
+         "icon": {
+          "type": "Icon",
+          "props": {
+           "name": "warning"
+          }
+         },
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "AlertTitle",
+          "props": {
+           "children": "Error"
+          }
+         },
+         {
+          "type": "AlertDescription",
+          "props": {
+           "children": "Cannot read properties of undefined (reading 'map')"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "wrap": true
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "refresh",
+             "children": "Try again"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "copy",
+             "children": "Copy error"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Collapsible",
+          "props": {
+           "open": false
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "status": "error",
+             "fill": true,
+             "buttonType": "text-icon",
+             "endIcon": "chevronDown",
+             "className": "justify-between",
+             "children": "Stack Trace"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#14 · the same Alert, Stack Trace expanded — three type--code frames"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Alert",
+        "props": {
+         "status": "error",
+         "icon": {
+          "type": "Icon",
+          "props": {
+           "name": "warning"
+          }
+         },
+         "className": "w-full max-w-3xl"
+        },
+        "children": [
+         {
+          "type": "AlertTitle",
+          "props": {
+           "children": "Error"
+          }
+         },
+         {
+          "type": "AlertDescription",
+          "props": {
+           "children": "Cannot read properties of undefined (reading 'map')"
+          }
+         },
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "row",
+           "gap": 8,
+           "wrap": true
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "refresh",
+             "children": "Try again"
+            }
+           },
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "secondary",
+             "status": "error",
+             "scale": "sm",
+             "buttonType": "icon-text",
+             "startIcon": "copy",
+             "children": "Copy error"
+            }
+           }
+          ]
+         },
+         {
+          "type": "Collapsible",
+          "props": {
+           "open": true
+          },
+          "children": [
+           {
+            "type": "Button",
+            "props": {
+             "emphasis": "quiet",
+             "status": "error",
+             "fill": true,
+             "buttonType": "text-icon",
+             "endIcon": "chevronUp",
+             "className": "justify-between",
+             "children": "Stack Trace"
+            }
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4,
+             "className": "overflow-hidden"
+            },
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "at "
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "children": "UserList"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": " (src/components/UserList.tsx:15:23)"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "at "
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "children": "renderWithHooks"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": " (node_modules/react-dom/cjs/react-dom.development.js:14985:18)"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "at "
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "children": "mountIndeterminateComponent"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": " (node_modules/react-dom/cjs/react-dom.development.js:17811:13)"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#22 · event log — three Cards: status Badge + label · id, a type--code payload, a meta row; the failed one ends in an error Alert"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 16,
+         "className": "w-full max-w-2xl"
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "info",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Processing",
+                   "showIcon": false
+                  },
+                  "children": [
+                   {
+                    "type": "Spinner",
+                    "props": {
+                     "scale": "xs",
+                     "status": "info"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "info",
+                   "children": "Processing"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_abc1..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"userId\": \"user_123\", \"action\": \"send_email\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "calendar",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 16:15"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "refresh",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 1/3 retries"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "success",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Completed",
+                   "showIcon": true,
+                   "iconName": "check"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "success",
+                   "children": "Completed"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_xyz7..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"report\": \"daily_analytics\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "calendar",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 15:15"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "check",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 11 Feb, 16:15"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {},
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 16,
+             "pad": 20
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Badge",
+                  "props": {
+                   "status": "error",
+                   "emphasis": "secondary",
+                   "scale": "lg",
+                   "aria-label": "Failed",
+                   "showIcon": true,
+                   "iconName": "close"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "status": "error",
+                   "children": "Failed"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--code",
+                 "emphasis": "quiet",
+                 "children": "msg_fail..."
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "code",
+               "element": "type--code",
+               "children": "{\"webhook\": \"https://api.example.com\"}"
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "align": "center",
+               "gap": 16,
+               "wrap": true
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "refresh",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " 3/3 retries"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Alert",
+              "props": {
+               "status": "error"
+              },
+              "children": [
+               {
+                "type": "AlertDescription",
+                "props": {
+                 "children": "Connection timeout after 30s"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "#30 · Tasks Project — a Card: title row · Checkbox + Label rows · footer of link + pager; the second is emphasis='hero' (the upload's dark variant)"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "gap": 24,
+         "align": "start",
+         "wrap": true
+        },
+        "children": [
+         {
+          "type": "Card",
+          "props": {
+           "className": "w-80"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 16
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "justify": "between",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "children": "Tasks Project"
+                  }
+                 },
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronUp",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Collapse"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-a-0",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-a-0-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-a-0",
+                     "children": "Complete the development"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-a-1",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-a-1-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-a-1",
+                     "children": "Conduct testing and fix"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-a-2",
+                     "checked": true,
+                     "data-testid": "alerts-tasks-a-2-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-a-2",
+                     "emphasis": "quiet",
+                     "children": "Discuss new ideas for improving"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-a-3",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-a-3-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-a-3",
+                     "children": "Prepare a report on the work completed"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12,
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Button",
+                "props": {
+                 "asChild": true,
+                 "emphasis": "quiet",
+                 "scale": "sm"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "a",
+                   "href": "#",
+                   "children": "View All Tasks"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 4
+                },
+                "children": [
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronLeft",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Previous"
+                  }
+                 },
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronRight",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Next"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "Card",
+          "props": {
+           "className": "w-80",
+           "emphasis": "hero"
+          },
+          "children": [
+           {
+            "type": "CardContent",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 16
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "justify": "between",
+                 "align": "center",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "children": "Tasks Project"
+                  }
+                 },
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronUp",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Collapse"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-hero-0",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-hero-0-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-hero-0",
+                     "children": "Complete the development"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-hero-1",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-hero-1-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-hero-1",
+                     "children": "Conduct testing and fix"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-hero-2",
+                     "checked": true,
+                     "data-testid": "alerts-tasks-hero-2-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-hero-2",
+                     "emphasis": "quiet",
+                     "children": "Discuss new ideas for improving"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 12
+                  },
+                  "children": [
+                   {
+                    "type": "Checkbox",
+                    "props": {
+                     "id": "tasks-hero-3",
+                     "checked": false,
+                     "data-testid": "alerts-tasks-hero-3-check"
+                    }
+                   },
+                   {
+                    "type": "Label",
+                    "props": {
+                     "htmlFor": "tasks-hero-3",
+                     "children": "Prepare a report on the work completed"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "CardFooter",
+            "props": {},
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12,
+               "className": "w-full"
+              },
+              "children": [
+               {
+                "type": "Button",
+                "props": {
+                 "asChild": true,
+                 "emphasis": "quiet",
+                 "scale": "sm"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "a",
+                   "href": "#",
+                   "children": "View All Tasks"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 4
+                },
+                "children": [
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronLeft",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Previous"
+                  }
+                 },
+                 {
+                  "type": "Button",
+                  "props": {
+                   "buttonType": "icon",
+                   "startIcon": "chevronRight",
+                   "emphasis": "quiet",
+                   "scale": "sm",
+                   "aria-label": "Next"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

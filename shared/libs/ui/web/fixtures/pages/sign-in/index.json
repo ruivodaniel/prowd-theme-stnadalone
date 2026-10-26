@@ -1,0 +1,27 @@
+{"kind":"page","schemaVersion":1,"name":"sign-in","version":1,"surface":"web",
+"root":{"type":"AuthPage","children":[{"type":"Card","props":{"position":"fill"},"children":[{"type":"CardContent","children":[
+{"type":"Stack","props":{"dir":"col","gap":20,"data-testid":"login-page"},"children":[
+{"type":"Stack","props":{"dir":"col","gap":4},"children":[
+{"type":"Text","props":{"as":"h1","element":"type--heading2","children":"Welcome back"}},
+{"type":"Text","props":{"as":"span","element":"type--body-small","emphasis":"quiet","children":"Sign in to continue."}}]},
+{"type":"Stack","props":{"dir":"row","gap":8,"role":"tablist"},"children":[
+{"type":"Button","props":{"emphasis":"secondary","type":"button","data-testid":"login-identifier-phone-btn","children":"Phone"}},
+{"type":"Button","props":{"emphasis":"primary","type":"button","data-testid":"login-identifier-email-btn","children":"Email"}}]},
+{"type":"Form","props":{"data-testid":"login-code-form"},"children":[
+{"type":"Stack","props":{"dir":"col","gap":16},"children":[
+{"type":"Stack","props":{"dir":"col","gap":6},"children":[
+{"type":"Label","props":{"htmlFor":"login-identifier","children":"Email"}},
+{"type":"Input","props":{"id":"login-identifier","value":"maria.santos@example.com","placeholder":"you@example.com","autoComplete":"username","data-testid":"login-identifier-input"}}]},
+{"type":"Stack","props":{"dir":"col","gap":6},"children":[
+{"type":"Label","props":{"htmlFor":"login-password","children":"Password"}},
+{"type":"Input","props":{"id":"login-password","type":"password","value":"hunter2","status":"error","placeholder":"password","autoComplete":"current-password","data-testid":"login-password-input"}},
+{"type":"Text","props":{"as":"span","element":"type--body-small","status":"error","children":"Incorrect password. Try again or reset it."}}]},
+{"type":"Button","props":{"type":"submit","fill":true,"data-testid":"login-submit-btn","children":"Sign in"}},
+{"type":"Stack","props":{"dir":"row","justify":"center"},"children":[
+{"type":"Text","props":{"as":"span","element":"type--body-small"},"children":[
+{"type":"Text","props":{"as":"a","element":"type--link","href":"#","data-testid":"login-factor-toggle-link","children":"Send me a sign-in code instead"}}]}]}]}]},
+{"type":"Alert","props":{"status":"error","data-testid":"login-error"},"children":[{"type":"AlertDescription","children":[{"type":"Text","props":{"as":"span","children":"We could not sign you in with those details."}}]}]},
+{"type":"Stack","props":{"dir":"row","justify":"between","gap":12},"children":[
+{"type":"Text","props":{"as":"span","element":"type--body-small"},"children":[{"type":"Text","props":{"as":"a","element":"type--link","href":"/forgot-password","data-testid":"login-recovery-link","children":"Forgot your password?"}}]},
+{"type":"Text","props":{"as":"span","element":"type--body-small"},"children":[{"type":"Text","props":{"as":"a","element":"type--link","href":"/register","data-testid":"login-register-link","children":"Create an account"}}]}]}
+]}]}]}]}}

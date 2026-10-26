@@ -1,0 +1,230 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "list-simple",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "List",
+      "props": {
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "file"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Document.pdf"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "2.4 MB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "image"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Photo.jpg"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "1.2 MB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "folder"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Projects"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "12 items"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ListItem",
+        "props": {},
+        "children": [
+         {
+          "type": "ListItemIcon",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "fileText"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemContent",
+          "props": {},
+          "children": [
+           {
+            "type": "ListItemTitle",
+            "props": {
+             "children": "Notes.txt"
+            }
+           },
+           {
+            "type": "ListItemDescription",
+            "props": {
+             "children": "4 KB"
+            }
+           }
+          ]
+         },
+         {
+          "type": "ListItemAction",
+          "props": {},
+          "children": [
+           {
+            "type": "Icon",
+            "props": {
+             "name": "chevronRight",
+             "size": "sm"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

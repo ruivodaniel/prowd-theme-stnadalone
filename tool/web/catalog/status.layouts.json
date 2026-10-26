@@ -1,0 +1,42 @@
+{
+  "full-anatomy": {
+    "status": "pending",
+    "note": "Every region switched on \u2014 the complete anatomy. The reference; real pages are subsets of this."
+  },
+  "anatomy-soft": {
+    "status": "pending",
+    "note": "The same anatomy, no dark band \u2014 the page header steps down to a branded-gray strip, the rest stays canvas. The calm, all-light emphasis."
+  },
+  "anatomy-paneled": {
+    "status": "pending",
+    "note": "The same anatomy with the side rails shaded (secondary) \u2014 soft branded-gray panels framing the white content. Figure/ground from shade, not lines."
+  },
+  "anatomy-framed": {
+    "status": "pending",
+    "note": "The same anatomy with the accent moved down \u2014 page header recedes to gray, the main header wears the strong band (primary). The dark surface sits over the content."
+  },
+  "content": {
+    "status": "pending",
+    "note": "Header + main. A titled page with scrolling content \u2014 the everyday page (a list, a record, a feed)."
+  },
+  "content-nav": {
+    "status": "pending",
+    "note": "Header + a left sidebar + main. A section that carries its own navigation \u2014 settings, docs, an admin area."
+  },
+  "content-panel": {
+    "status": "pending",
+    "note": "Header + main + a context panel on the right. A record beside its properties, activity or help."
+  },
+  "focus": {
+    "status": "pending",
+    "note": "Centered content, no header \u2014 a single focused thing. Dashboard welcome, an empty state, a confirmation."
+  },
+  "auth": {
+    "status": "pending",
+    "note": "No app chrome, a centered card. Sign in, sign up, onboarding \u2014 anything reached before the shell."
+  },
+  "stack": {
+    "status": "pending",
+    "note": "The auto-layout primitive on its own: direction, hug/fill/fixed, nesting, wrap. Cells are Card. Patterns compose with it \u2014 this is the primitive itself."
+  }
+}

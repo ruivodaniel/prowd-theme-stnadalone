@@ -1,0 +1,467 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "kpi-card-1",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "KPI card 1 — layout is <Stack>; content is Card · Separator · Progress · Icon · Spinner · type--*"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "wrap": true,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Card",
+        "props": {
+         "className": "w-96"
+        },
+        "children": [
+         {
+          "type": "Stack",
+          "props": {
+           "dir": "col",
+           "gap": 18,
+           "pad": 22
+          },
+          "children": [
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 4
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "row",
+               "justify": "between",
+               "align": "center",
+               "gap": 12
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 6,
+                 "align": "baseline"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body",
+                   "emphasis": "quiet",
+                   "children": "query"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--heading4",
+                   "children": "getProductById"
+                  }
+                 },
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "chevronRight",
+                   "size": "sm"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Icon",
+                "props": {
+                 "name": "more",
+                 "size": "sm"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-small",
+               "emphasis": "quiet",
+               "children": "7.15M Requests · 9% · 734ms P95"
+              }
+             }
+            ]
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "row",
+             "gap": 24
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6,
+               "size": "fill"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet",
+                 "children": "Cache Hit Rate"
+                }
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Spinner",
+                  "props": {
+                   "scale": "sm",
+                   "status": "error"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--numbers-large",
+                   "children": "12.3%"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "status": "error"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "arrowDown",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": " down from 19.6%"
+                  }
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 6,
+               "size": "fill",
+               "align": "end"
+              },
+              "children": [
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet",
+                 "children": "Max CHR"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--numbers-large",
+                 "children": "72.6%"
+                }
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "children": "CHR Impact +5.4% "
+                  }
+                 },
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "help",
+                   "size": "xs"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "type": "Separator",
+            "props": {}
+           },
+           {
+            "type": "Stack",
+            "props": {
+             "dir": "col",
+             "gap": 14
+            },
+            "children": [
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 4
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "justify": "between",
+                 "align": "end",
+                 "gap": 12
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "gap": 6,
+                   "align": "baseline"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers",
+                     "children": "90.5 GB"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "emphasis": "quiet",
+                     "children": "(69.8%)"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "gap": 6,
+                   "align": "center"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--numbers",
+                     "children": "$9.05"
+                    }
+                   },
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "help",
+                     "size": "xs"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "Text",
+                "props": {
+                 "as": "span",
+                 "element": "type--body-small",
+                 "emphasis": "quiet",
+                 "children": "Cacheable Bandwidth"
+                }
+               }
+              ]
+             },
+             {
+              "type": "Progress",
+              "props": {
+               "value": 30
+              }
+             },
+             {
+              "type": "Stack",
+              "props": {
+               "dir": "col",
+               "gap": 8
+              },
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "dot",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "className": "flex-1 min-w-0",
+                   "children": "Cached"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "12.8 GB (9.8%)"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Icon",
+                  "props": {
+                   "name": "dot",
+                   "size": "xs"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "className": "flex-1 min-w-0",
+                   "children": "Non-Cacheable"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "26.3 GB (20.3%)"
+                  }
+                 }
+                ]
+               },
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "row",
+                 "gap": 8,
+                 "align": "center"
+                },
+                "children": [
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "className": "flex-1 min-w-0",
+                   "children": "Total"
+                  }
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-small",
+                   "children": "129.6 GB"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

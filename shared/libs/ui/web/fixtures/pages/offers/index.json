@@ -1,0 +1,2779 @@
+{
+ "kind": "page",
+ "schemaVersion": 1,
+ "name": "offers",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "ShellNone",
+  "children": [
+   {
+    "type": "Page",
+    "children": [
+     {
+      "type": "PageBody",
+      "children": [
+       {
+        "type": "Main",
+        "children": [
+         {
+          "type": "MainContent",
+          "children": [
+           {
+            "type": "MainBody",
+            "children": [
+             {
+              "type": "Container",
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 20,
+                 "data-testid": "offers-page"
+                },
+                "children": [
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 4
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-extra-small",
+                     "children": "Case BR-2041 \u00b7 Buy-to-let purchase",
+                     "emphasis": "quiet"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "center",
+                     "justify": "between",
+                     "gap": 16,
+                     "wrap": true
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "h1",
+                       "element": "type--heading2",
+                       "children": "Offers for this case"
+                      }
+                     },
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 2,
+                       "align": "end"
+                      },
+                      "children": [
+                       {
+                        "type": "Button",
+                        "props": {
+                         "emphasis": "secondary",
+                         "scale": "sm",
+                         "data-testid": "offers-rerun-btn",
+                         "children": "Re-run matching"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "element": "type--body-extra-small",
+                         "children": "Last run 26 Oct 2026, 09:42",
+                         "emphasis": "quiet"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-small",
+                     "children": "Products matched against the data gathered so far, grouped by how well they fit.",
+                     "emphasis": "quiet"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "center",
+                     "gap": 8
+                    },
+                    "children": [
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "warning",
+                       "size": "sm",
+                       "status": "warning"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "The rental income figure changed after the last run; re-run matching to refresh these offers.",
+                       "status": "warning"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Card",
+                  "children": [
+                   {
+                    "type": "CardContent",
+                    "children": [
+                     {
+                      "type": "Stack",
+                      "props": {
+                       "dir": "col",
+                       "gap": 12
+                      },
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "align": "center",
+                         "gap": 24,
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Property value",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "\u00a3425,000"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Loan requested",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "\u00a3306,000"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "LTV",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "72%"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Monthly rent",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "\u00a32,150"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Borrower",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "Harbour Row Properties Ltd"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 2
+                          },
+                          "children": [
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Term",
+                             "emphasis": "quiet"
+                            }
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body",
+                             "children": "25 years"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       {
+                        "type": "Separator"
+                       },
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "align": "center",
+                         "gap": 8,
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--numbers",
+                           "children": "214"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "children": "in the market for buy-to-let",
+                           "emphasis": "quiet"
+                          }
+                         },
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "chevronRight",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--numbers",
+                           "children": "6"
+                          }
+                         },
+                         {
+                          "type": "Text",
+                          "props": {
+                           "as": "span",
+                           "element": "type--body-small",
+                           "children": "match this case's data",
+                           "emphasis": "quiet"
+                          }
+                         },
+                         {
+                          "type": "Icon",
+                          "props": {
+                           "name": "chevronRight",
+                           "size": "sm"
+                          }
+                         },
+                         {
+                          "type": "Badge",
+                          "props": {
+                           "status": "success",
+                           "scale": "xs",
+                           "children": "3 high"
+                          }
+                         },
+                         {
+                          "type": "Badge",
+                          "props": {
+                           "status": "info",
+                           "scale": "xs",
+                           "children": "2 medium"
+                          }
+                         },
+                         {
+                          "type": "Badge",
+                          "props": {
+                           "emphasis": "secondary",
+                           "scale": "xs",
+                           "children": "1 low"
+                          }
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 8,
+                   "wrap": true
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-extra-small",
+                     "children": "Order by",
+                     "emphasis": "quiet"
+                    }
+                   },
+                   {
+                    "type": "Button",
+                    "props": {
+                     "emphasis": "secondary",
+                     "scale": "sm",
+                     "data-testid": "offers-order-eligibility-btn",
+                     "children": "Eligibility"
+                    }
+                   },
+                   {
+                    "type": "Button",
+                    "props": {
+                     "emphasis": "quiet",
+                     "scale": "sm",
+                     "data-testid": "offers-order-rate-btn",
+                     "children": "Rate"
+                    }
+                   },
+                   {
+                    "type": "Button",
+                    "props": {
+                     "emphasis": "quiet",
+                     "scale": "sm",
+                     "data-testid": "offers-order-monthly-cost-btn",
+                     "children": "Monthly cost"
+                    }
+                   },
+                   {
+                    "type": "Button",
+                    "props": {
+                     "emphasis": "quiet",
+                     "scale": "sm",
+                     "data-testid": "offers-order-total-cost-btn",
+                     "children": "Total cost"
+                    }
+                   },
+                   {
+                    "type": "Button",
+                    "props": {
+                     "emphasis": "quiet",
+                     "scale": "sm",
+                     "data-testid": "offers-order-lender-btn",
+                     "children": "Lender"
+                    }
+                   },
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "size": "fill"
+                    },
+                    "children": []
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-extra-small",
+                     "children": "Within a tier, products are ordered by the selected criterion.",
+                     "emphasis": "quiet"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "row",
+                   "align": "center",
+                   "gap": 8
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "info",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-extra-small",
+                     "children": "Selecting a product starts its application; you can change the selection until the case is submitted.",
+                     "emphasis": "quiet"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 10
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "center",
+                     "gap": 8
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--heading4",
+                       "children": "High fit"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "3 products",
+                       "emphasis": "quiet"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-halifax-btl-75-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "BTL Fixed 2yr 75%"
+                                }
+                               },
+                               {
+                                "type": "Badge",
+                                "props": {
+                                 "status": "info",
+                                 "scale": "xs",
+                                 "children": "Current product"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Halifax \u00b7 HLX-BTL-75F2",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 145%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% within 75%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Limited company SPV accepted"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Portfolio under 4 properties"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+2"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "4.89%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "75%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "3.0%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,223"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Total first-2-year cost est. \u00a335,920 including fees.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-halifax-btl-75-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-kensington-spv-80-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "SPV Fixed 5yr 80%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Kensington \u00b7 KEN-SPV-80F5",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 140%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Experienced landlord"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% within 80%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "warning",
+                                 "size": "sm",
+                                 "status": "warning"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Valuation fee not included"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+3"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "5.14%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "80%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "2.5%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,285"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Total first-5-year cost est. \u00a381,450 including fees.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "primary",
+                             "scale": "sm",
+                             "data-testid": "product-kensington-spv-80-select-btn",
+                             "children": "Select this product"
+                            }
+                           },
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-kensington-spv-80-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-paragon-btl-75-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "BTL Tracker 2yr 75%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Paragon \u00b7 PAR-BTL-75T2",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 150%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% within 75%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Property type standard construction"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Borrower age within range"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+1"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "4.74%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "75%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "2.0%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,185"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Tracker follows base rate +0.65%; no early repayment charge after year 1.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "primary",
+                             "scale": "sm",
+                             "data-testid": "product-paragon-btl-75-select-btn",
+                             "children": "Select this product"
+                            }
+                           },
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-paragon-btl-75-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 10
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "center",
+                     "gap": 8
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--heading4",
+                       "children": "Medium fit"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "2 products",
+                       "emphasis": "quiet"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-aldermore-spv-70-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "SPV Fixed 3yr 70%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Aldermore \u00b7 ALD-SPV-70F3",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 135%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "warning",
+                                 "size": "sm",
+                                 "status": "warning"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% above 70% by 2 points"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Directors guarantee supplied"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Credit history clean"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+2"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "5.29%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "70%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "3.0%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,323"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Needs additional deposit of \u00a38,000 to reach 70% LTV.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "primary",
+                             "scale": "sm",
+                             "data-testid": "product-aldermore-spv-70-select-btn",
+                             "children": "Select this product"
+                            }
+                           },
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-aldermore-spv-70-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-shawbrook-hmo-65-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "HMO Fixed 2yr 65%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Shawbrook \u00b7 SHB-HMO-65F2",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "warning",
+                                 "size": "sm",
+                                 "status": "warning"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Property is not licensed as HMO yet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 130%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "warning",
+                                 "size": "sm",
+                                 "status": "warning"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% above 65%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Experienced landlord"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+4"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "5.65%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "65%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "3.5%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,412"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Subject to HMO licence evidence before offer.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "primary",
+                             "scale": "sm",
+                             "data-testid": "product-shawbrook-hmo-65-select-btn",
+                             "children": "Select this product"
+                            }
+                           },
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-shawbrook-hmo-65-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Stack",
+                  "props": {
+                   "dir": "col",
+                   "gap": 10
+                  },
+                  "children": [
+                   {
+                    "type": "Stack",
+                    "props": {
+                     "dir": "row",
+                     "align": "center",
+                     "gap": 8
+                    },
+                    "children": [
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--heading4",
+                       "children": "Low fit"
+                      }
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "element": "type--body-small",
+                       "children": "1 products",
+                       "emphasis": "quiet"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Card",
+                    "props": {
+                     "data-testid": "product-fleet-btl-60-card"
+                    },
+                    "children": [
+                     {
+                      "type": "CardContent",
+                      "children": [
+                       {
+                        "type": "Stack",
+                        "props": {
+                         "dir": "row",
+                         "gap": 16,
+                         "align": "start",
+                         "wrap": true
+                        },
+                        "children": [
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 12,
+                           "size": "fill"
+                          },
+                          "children": [
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "col",
+                             "gap": 2
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "row",
+                               "align": "center",
+                               "gap": 8
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--heading4",
+                                 "children": "BTL Fixed 5yr 60%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Text",
+                              "props": {
+                               "as": "span",
+                               "element": "type--body-small",
+                               "children": "Fleet Mortgages \u00b7 FLT-BTL-60F5",
+                               "emphasis": "quiet"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 8,
+                             "align": "center",
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "errorCircle",
+                                 "size": "sm",
+                                 "status": "danger"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "LTV 72% exceeds 60%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "warning",
+                                 "size": "sm",
+                                 "status": "warning"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Rental coverage 125% below 130%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "sm"
+                              },
+                              "children": [
+                               {
+                                "type": "Icon",
+                                "props": {
+                                 "name": "check",
+                                 "size": "sm",
+                                 "status": "success"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-small",
+                                 "children": "Limited company accepted"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Badge",
+                              "props": {
+                               "emphasis": "secondary",
+                               "scale": "xs",
+                               "children": "+2"
+                              }
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Stack",
+                            "props": {
+                             "dir": "row",
+                             "gap": 24,
+                             "wrap": true
+                            },
+                            "children": [
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Rate",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "5.89%"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "fixed 2 years",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Max LTV",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "60%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Arrangement fee",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "4.0%"
+                                }
+                               }
+                              ]
+                             },
+                             {
+                              "type": "Stack",
+                              "props": {
+                               "dir": "col",
+                               "gap": 2
+                              },
+                              "children": [
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "Monthly interest",
+                                 "emphasis": "quiet"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--numbers",
+                                 "children": "\u00a31,473"
+                                }
+                               },
+                               {
+                                "type": "Text",
+                                "props": {
+                                 "as": "span",
+                                 "element": "type--body-extra-small",
+                                 "children": "interest-only",
+                                 "emphasis": "quiet"
+                                }
+                               }
+                              ]
+                             }
+                            ]
+                           },
+                           {
+                            "type": "Text",
+                            "props": {
+                             "as": "span",
+                             "element": "type--body-extra-small",
+                             "children": "Indicative only: would require a much larger deposit.",
+                             "emphasis": "quiet"
+                            }
+                           }
+                          ]
+                         },
+                         {
+                          "type": "Stack",
+                          "props": {
+                           "dir": "col",
+                           "gap": 6,
+                           "align": "center",
+                           "size": "hug"
+                          },
+                          "children": [
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "primary",
+                             "scale": "sm",
+                             "data-testid": "product-fleet-btl-60-select-btn",
+                             "children": "Select this product"
+                            }
+                           },
+                           {
+                            "type": "Button",
+                            "props": {
+                             "emphasis": "quiet",
+                             "scale": "sm",
+                             "data-testid": "product-fleet-btl-60-detail-btn",
+                             "children": "View details"
+                            }
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 },
+                 {
+                  "type": "Text",
+                  "props": {
+                   "as": "span",
+                   "element": "type--body-extra-small",
+                   "children": "Figures are indicative and based on lender criteria at the last run; final terms are confirmed at underwriting.",
+                   "emphasis": "quiet"
+                  }
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,171 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "table-simple",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "className": "w-[600px] max-w-full"
+    },
+    "children": [
+     {
+      "type": "Table",
+      "props": {
+       "className": "w-full"
+      },
+      "children": [
+       {
+        "type": "TableHeader",
+        "props": {},
+        "children": [
+         {
+          "type": "TableRow",
+          "props": {},
+          "children": [
+           {
+            "type": "TableHead",
+            "props": {
+             "children": "Invoice"
+            }
+           },
+           {
+            "type": "TableHead",
+            "props": {
+             "children": "Status"
+            }
+           },
+           {
+            "type": "TableHead",
+            "props": {
+             "className": "text-right",
+             "children": "Amount"
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "TableBody",
+        "props": {},
+        "children": [
+         {
+          "type": "TableRow",
+          "props": {},
+          "children": [
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "INV-001"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "Paid"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "className": "text-right",
+             "children": "$250.00"
+            }
+           }
+          ]
+         },
+         {
+          "type": "TableRow",
+          "props": {},
+          "children": [
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "INV-002"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "Pending"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "className": "text-right",
+             "children": "$150.00"
+            }
+           }
+          ]
+         },
+         {
+          "type": "TableRow",
+          "props": {},
+          "children": [
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "INV-003"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "Unpaid"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "className": "text-right",
+             "children": "$350.00"
+            }
+           }
+          ]
+         },
+         {
+          "type": "TableRow",
+          "props": {},
+          "children": [
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "INV-004"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "children": "Paid"
+            }
+           },
+           {
+            "type": "TableCell",
+            "props": {
+             "className": "text-right",
+             "children": "$450.00"
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

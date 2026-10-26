@@ -1,0 +1,117 @@
+<!--
+  EXAMPLE: Settings — Security Subpage
+  Demonstrates v-section stacking cards, and item + h-section inside a card.
+
+  Hierarchy:
+    shell
+      page
+        page-body
+          main
+            main-body
+              v-section              ← stacks all security cards vertically
+                surface--card        ← Connected Accounts card
+                  surface--header
+                  surface--content
+                    item             ← one row per connected account
+                      h-section      ← account info / unlink action
+                        v-section    ← label + date stacked
+                surface--card        ← TOTP card
+                surface--card        ← Change Password card
+                surface--card        ← Delete Account card
+-->
+
+<div layout="shell" class="flex h-screen w-full overflow-hidden">
+
+  <div layout="shell-side-nav" class="flex h-full flex-col overflow-hidden">
+    <!-- sidebar omitted for brevity — see organizations-list.html -->
+  </div>
+
+  <div layout="page" class="flex flex-1 flex-col overflow-hidden">
+    <div layout="page-body" class="flex flex-1 overflow-hidden">
+      <div layout="main" class="flex flex-1 flex-col overflow-hidden">
+        <div layout="main-body" class="flex flex-1 overflow-y-auto">
+
+          <div layout="v-section" class="flex flex-col">
+
+            <!-- Connected Accounts -->
+            <div element="surface--card" class="flex flex-col">
+              <div element="surface--header">
+                <div element="type--heading3">Connected Accounts</div>
+                <div element="type--body-small" emphasis="quiet">Social accounts linked to your profile.</div>
+              </div>
+              <div element="surface--content" class="flex flex-col">
+
+                <div layout="item" class="flex flex-col">
+                  <div layout="h-section" class="flex items-center justify-between">
+                    <div layout="v-section" class="flex flex-col">
+                      <span element="type--body-small">Google</span>
+                      <span element="type--body-extra-small" emphasis="quiet">Connected 01/01/2024</span>
+                    </div>
+                    <button element="control--button" emphasis="secondary" scale="sm">Unlink</button>
+                  </div>
+                </div>
+
+                <div layout="item" class="flex flex-col">
+                  <div layout="h-section" class="flex items-center justify-between">
+                    <div layout="v-section" class="flex flex-col">
+                      <span element="type--body-small">GitHub</span>
+                      <span element="type--body-extra-small" emphasis="quiet">Connected 03/15/2024</span>
+                    </div>
+                    <button element="control--button" emphasis="secondary" scale="sm">Unlink</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- TOTP -->
+            <div element="surface--card" class="flex flex-col">
+              <div element="surface--header">
+                <div element="type--heading3">Two-Factor Authentication</div>
+              </div>
+              <div element="surface--content" class="flex flex-col">
+                <div layout="h-section" class="flex items-center justify-between">
+                  <span element="type--body-small">Authenticator app</span>
+                  <span element="surface--badge" emphasis="primary" status="success" scale="sm">Enabled</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Change Password -->
+            <div element="surface--card" class="flex flex-col">
+              <div element="surface--header">
+                <div element="type--heading3">Change Password</div>
+              </div>
+              <div element="surface--content" class="flex flex-col">
+                <div layout="v-section" class="flex flex-col">
+                  <div element="field--input" scale="md"><input placeholder="Current password" /></div>
+                  <div element="field--input" scale="md"><input placeholder="New password" /></div>
+                  <div element="field--input" scale="md"><input placeholder="Confirm new password" /></div>
+                </div>
+                <div layout="h-section" class="flex">
+                  <button element="control--button" emphasis="primary" scale="md">Update Password</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Delete Account -->
+            <div element="surface--card" class="flex flex-col">
+              <div element="surface--header">
+                <div element="type--heading3">Delete Account</div>
+              </div>
+              <div element="surface--content" class="flex flex-col">
+                <div layout="h-section" class="flex items-center justify-between">
+                  <span element="type--body-small" emphasis="quiet">This action is permanent and cannot be undone.</span>
+                  <button element="control--button" emphasis="primary" status="destructive" scale="md">Delete Account</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

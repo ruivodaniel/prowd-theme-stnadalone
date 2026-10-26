@@ -1,0 +1,408 @@
+{
+  "id": "doc/ui-layouts",
+  "kind": "doc",
+  "title": "Layouts",
+  "status": "converted",
+  "subject": "ui",
+  "tags": [
+    "ui",
+    "consumer"
+  ],
+  "paths": [
+    "shared/libs/ui"
+  ],
+  "summary": "How to compose page structure using shared layout components and compositions.",
+  "docId": "ui-layouts",
+  "doc": {
+    "axioms": [],
+    "purpose": {
+      "intro": "How to compose page structure using shared layout components and compositions."
+    },
+    "reference": [
+      {
+        "topic": "Core principle",
+        "claims": [
+          {
+            "text": "**Columns** (`LeftSidebar`, `RightSidebar`, `ContextPanel`, `Main`) — width is set by the theme (`Main` takes what is left), height grows to the parent's max."
+          },
+          {
+            "text": "**Containers** (`PageBody`, `MainBody`) — flex rows that fill the remaining height after their header sibling. They carry their own structural defaults; you do not need to add sizing classes to them."
+          },
+          {
+            "text": "**`ScrollArea`** — the only element that scrolls. Everything else has `overflow: hidden`. Always place a `ScrollArea` wherever content needs to scroll; never add `overflow: auto/scroll` ad-hoc."
+          }
+        ],
+        "statement": "**Rows** (`PageHeader`, `SecondPageHeader`, `MainHeader`, `SecondMainHeader`) — height is set by the theme, width grows to fill the parent."
+      },
+      {
+        "topic": "The layout vocabulary",
+        "claims": [
+          {
+            "text": "Overlays (Dialog, Sheet) are handled by the component library as `element=\"overlay--*\"` surfaces, not layout regions. They are independent of the page tree."
+          }
+        ],
+        "statement": "Every structural region carries a `layout` attribute. A div is **either** `layout` or `element`, never both. The theme engine styles `layout` regions (background, border, etc.) the same way it styles `element` surfaces — the layout components never emit visual CSS themselves."
+      },
+      {
+        "topic": "Full map",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "shell                          ← outermost viewport frame\n├── shell-side-nav             ← global sidebar (fixed, collapsible)\n├── shell-top-nav              ← global top bar (sticky)\n└── shell-none                 ← no chrome (auth pages, standalone)\n\npage                           ← everything inside the shell content area\n├── page-header                ← full-width page title / action bar\n├── second-page-header         ← optional second full-width row under it (e.g. the tabs)\n└── page-body                  ← flex row: left-sidebar + main + right-sidebar\n    ├── left-sidebar           ← secondary sidebar (contextual, e.g. settings nav)\n    ├── main                   ← primary column, fills remaining space\n    │   ├── main-header        ← full-width region spanning main column (sticky optional)\n    │   ├── second-main-header ← optional second full-width row under main-header\n    │   └── main-body          ← scrollable content below the headers\n    │       ├── container      ← width-constrained content wrapper (width + align props)\n    │       └── context-panel  ← inline aside inside main (e.g. knowledge panel, properties)\n    └── right-sidebar          ← full-height aside beside main (e.g. activity feed)\n\nscroll-area                    ← canonical internal scroll container (use anywhere)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Anatomy diagram › Shells",
+        "claims": [
+          {
+            "text": "**shell-side-nav**"
+          },
+          {
+            "text": "**shell-none**"
+          }
+        ],
+        "statement": "**shell-top-nav**",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "┌─────────────────────────────────────────────────┐\n│  shell-top-nav                                  │\n├─────────────────────────────────────────────────┤\n│                                                 │\n│                                                 │\n│                     PAGE                        │\n│                                                 │\n│                                                 │\n└─────────────────────────────────────────────────┘"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "┌────────┬─────────────────────────────────────────┐\n│        │                                         │\n│        │                                         │\n│  shell-│             PAGE                        │\n│  side- │                                         │\n│  nav   │                                         │\n│        │                                         │\n└────────┴─────────────────────────────────────────┘"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "┌─────────────────────────────────────────────────┐\n│  shell-none                                     │\n│                                                 │\n│                                                 │\n│                     PAGE                        │\n│                                                 │\n│                                                 │\n└─────────────────────────────────────────────────┘"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Anatomy diagram",
+        "claims": [
+          {
+            "text": "MINIMAL PAGE"
+          },
+          {
+            "text": "**Mental model:**"
+          },
+          {
+            "text": "**Cols** (ShellNav, sidebars, ContextPanel, MainBody): `width` set by theme, height fills parent (`align-self: stretch` or `flex: 1`)"
+          },
+          {
+            "text": "**Rows** (Shell, Page, PageBody, Main, MainContent): `height` set by theme or fills parent (`flex: 1`), width is always `100%`"
+          },
+          {
+            "text": "**Fixed edges** (PageHeader, SecondPageHeader, MainHeader, SecondMainHeader, MainFooter): `flex-shrink: 0` — they never shrink; the remaining space goes to MainContent"
+          },
+          {
+            "text": "All structural flex defaults are **engine-hardcoded** — not theme-overridable. Theme controls surfaces, widths, and heights only."
+          },
+          {
+            "text": "The `page` region sits inside the shell content area. `page-body` is the flex row. `second-page-header` and `second-main-header` are optional: a second row under the page header (e.g. the tabs of the page) and under the main header. Use them in order, never alone: no second row without the first. `main-header` spans the full width of the `main` column — it is NOT inside `left-sidebar` or `right-sidebar`."
+          },
+          {
+            "text": "`right-sidebar` and `context-panel` can coexist — the flex layout handles both simultaneously (e.g. activity feed + properties panel)."
+          }
+        ],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "┌────────────────────────────────────────────────────────────────┐\n│  page-header                                                   │\n├────────────────────────────────────────────────────────────────┤\n│  second-page-header                                            │\n├──────────────┬──────────────────────────────────────┬──────────┤\n│              │  main-header                         │          │\n├──────────────├──────────────────────────────────────├──────────┤\n│              │  second-main-header                  │          │\n│  left-       ├──────────────────────────────────────┤  right-  │\n│  sidebar     │  main-content                        │  sidebar │\n│              │  (insvisible row for body & panel)   │          │\n│              ├─────────────────────────┬────────────┤          │\n│              │    main-body            │  context-  │          │\n│              │  ┌─────────────────┐    │  panel     │          │\n│              │  │                 │    │            │          │\n│              │  │                 │    │            │          │\n│              │  │   container     │    │            │          │\n│              │  │                 │    │            │          │\n│              │  │                 │    │            │          │\n│              │  └─────────────────┘    │            │          │\n│              ├─────────────────────────┴────────────┤          │\n│              │  main-footer                         │          │\n└──────────────┴──────────────────────────────────────┴──────────┘"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "Shell (shell-side-nav) --> row\n├── ShellNav  (shell-nav)        --> col   [width: theme, height: stretch]\n└── Page      (page)             --> col   [flex: 1]\n    ├── PageHeader  (page-header)    --> row  [height: theme, width: 100%]\n    ├── SecondPageHeader (second-page-header) --> row [height: theme, width: 100%]  (optional)\n    └── PageBody    (page-body)      --> row  [flex: 1]\n        ├── LeftSidebar  (left-sidebar)    --> col  [width: theme, height: stretch]\n        ├── Main         (main)            --> col  [flex: 1]\n        │   ├── MainHeader   (main-header)   --> row  [height: theme, width: 100%]\n        │   ├── SecondMainHeader (second-main-header) --> row [height: theme, width: 100%]  (optional)\n        │   ├── MainContent  (main-content)  --> row  [flex: 1, invisible]\n        │   │   ├── MainBody      (main-body)      --> col  [flex: 1, overflow-y: auto]\n        │   │   │   └── container (container)      --> col  [max-width: theme, margin: auto]\n        │   │   └── ContextPanel  (context-panel)  --> col  [width: theme, height: stretch]\n        │   └── MainFooter   (main-footer)   --> row  [height: theme, width: 100%]\n        └── RightSidebar (right-sidebar)   --> col  [width: theme, height: stretch]\n\n    <Page>\n      <PageHeader></PageHeader>\n      <SecondPageHeader></SecondPageHeader>\n      <PageBody>\n        <LeftSidebar></LeftSidebar>\n        <Main>\n          <MainHeader></MainHeader>\n          <SecondMainHeader></SecondMainHeader>\n          <MainContent>\n            <MainBody>\n              <Container></Container>\n            </MainBody>\n            <ContextPanel></ContextPanel>\n          </MainContent>\n          <MainFooter></MainFooter>\n        </Main>\n        <RightSidebar></RightSidebar>\n      </PageBody>\n    </Page>\n\n"
+              }
+            ]
+          },
+          {
+            "snippets": [
+              {
+                "code": "Shell (shell-none / shell-top-nav) --> col\n└── Page      (page)          --> col  [flex: 1]\n    └── PageBody (page-body)  --> row  [flex: 1]\n        └── Main (main)       --> col  [flex: 1]\n            └── MainContent (main-content)  --> row  [flex: 1]\n                └── MainBody (main-body)    --> col  [flex: 1, overflow-y: auto]\n                    └── container           --> col  [max-width: theme, margin: auto]\n\n    <Page>\n      <PageBody>\n        <Main>\n          <MainContent>\n            <MainBody>\n              <Container></Container>\n            </MainBody>\n          </MainContent>\n        </Main>\n      </PageBody>\n    </Page>\n\n"
+              }
+            ]
+          }
+        ],
+        "statement": "FULL PAGE"
+      },
+      {
+        "topic": "Container",
+        "claims": [],
+        "statement": "`container` is the only layout region that accepts configuration props:",
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Prop | Values | Default | Notes |\n|------|--------|---------|-------|\n| `scale` | `xs` `sm` `md` `lg` `xl` | `lg` | The reading measure. The theme gives each scale its max-width (`layouts.container` in the theme); the page never writes a number |\n| `align` | `left` `center` `right` | `center` | Where the measure sits inside main-body |\n| `position` | `fill` … | — | As on every region; `fill` = edge to edge, no measure |"
+          }
+        ],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "\n<div layout=\"container\">…</div>\n\n\n<div layout=\"container\" position=\"fill\">…</div>\n\n\n<div layout=\"container\" scale=\"md\" align=\"left\">…</div>",
+                "caption": "html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "ScrollArea",
+        "claims": [
+          {
+            "text": "The structural behaviour it encapsulates (`flex: 1 / min-height: 0 / overflow-y: auto`) is a constant source of broken layouts when reinvented ad-hoc. Using `ScrollArea` everywhere means this is always correct and the theme applies consistent scrollbar styling automatically."
+          },
+          {
+            "text": "The theme controls scrollbar appearance via `[layout=\"scroll-area\"]`."
+          },
+          {
+            "text": "**Constraint:** `ScrollArea` must be inside a flex parent (row or column) to size correctly. `flex-1 min-h-0` only takes effect inside a flex container. All natural parents in the layout tree are flex containers, so this is always satisfied. If you ever place it inside a non-flex container, give it an explicit height instead."
+          }
+        ],
+        "statement": "`scroll-area` is the canonical way to make any container internally scrollable. Use it anywhere a region needs to scroll — inside a card, a sidebar, a dialog, a panel, the main body. It is not tied to the page tree.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// inside a card\n<Card>\n  <CardHeader>…</CardHeader>\n  <ScrollArea>\n    <LongList />\n  </ScrollArea>\n</Card>\n\n// inside a sidebar\n<LeftSidebar>\n  <NavHeader />\n  <ScrollArea>\n    <NavItems />\n  </ScrollArea>\n</LeftSidebar>",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Prop | Values | Default | Notes |\n|------|--------|---------|-------|\n| `axis` | `\"y\"` `\"x\"` `\"both\"` | `\"y\"` | Controls which axis scrolls |"
+          }
+        ]
+      },
+      {
+        "topic": "Stack",
+        "claims": [
+          {
+            "text": "It replaces hand-rolled `flex` markup. Where a developer would write `flex items-center justify-between gap-3` and give a child `flex-1 min-w-0`, they write a Stack and give the child `position=\"fill\"`. The structural rules that break most often when reinvented — the `min-width: 0` overflow fix on a growing child, mixing row and column nesting — are encoded once."
+          },
+          {
+            "text": "Sizing is Figma's vocabulary, set on the child:"
+          },
+          {
+            "text": "A non-Stack child (a Card, a span) takes the same behaviour through its `position` attribute: `position=\"fill\"` to fill, `position=\"hug\"` to hug (markup-dictionary.md § Position). The structural utilities (`flex-1 min-w-0`, `flex-none`) still work and are on their way out."
+          },
+          {
+            "text": "Stack emits `layout=\"stack\"` and `data-dir`. It sets no colour, border, radius or shadow — those belong to the theme and to the content components placed inside. Gap and padding are applied inline because they are arbitrary structural values, not visual ones."
+          },
+          {
+            "text": "`Stack` is the one primitive that takes spacing from markup: `gap` and `pad`, as a number (px) or a CSS length. No other primitive or component takes a spacing or size number; their spacing and dimensions come from the theme. `className` and inline `style` are deprecated and are not used for spacing."
+          },
+          {
+            "text": "**When not to use it:** when cells must align across both axes at once — a bento dashboard where the columns of row 2 line up with those of row 1. Stack is one-dimensional per level; that case is a grid: give the parent `position=\"cols-N\"` and each child `position=\"span-N\"` (markup-dictionary.md § Position). Never the `grid` utilities."
+          }
+        ],
+        "statement": "`stack` is the auto-layout primitive: one box that is a row or a column and owns the gap, the alignment and the padding between its children. Children own only their content. A non-uniform composition — a header over two columns over a footer, a label beside a number beside an action — is nested stacks; a \"cell\" is another Stack. It is usable inside any region and is not tied to the page tree.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "// a card body: a header row, two equal columns, a footer\n<Stack dir=\"col\" gap={16} pad={20}>\n  <Stack dir=\"row\" align=\"center\" justify=\"between\">\n    <Title />                 {/* hugs left */}\n    <Icon name=\"ellipsis\" />  {/* hugs right — the gap fills between */}\n  </Stack>\n  <Stack dir=\"row\" gap={24}>\n    <Stack dir=\"col\" size=\"fill\">…</Stack>              {/* each column grows to half */}\n    <Stack dir=\"col\" size=\"fill\" align=\"end\">…</Stack>\n  </Stack>\n  <Footer />\n</Stack>",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Prop | Values | Default | Notes |\n|------|--------|---------|-------|\n| `dir` | `\"row\"` `\"col\"` | `\"col\"` | Main axis |\n| `gap` | `number` (px) or a CSS length | — | Space between children |\n| `align` | `\"start\"` `\"center\"` `\"end\"` `\"stretch\"` `\"baseline\"` | `stretch` (browser default) | Cross-axis alignment |\n| `justify` | `\"start\"` `\"center\"` `\"end\"` `\"between\"` `\"around\"` | `start` (browser default) | Main-axis distribution |\n| `wrap` | `boolean` | `false` | Children flow onto new lines (a cluster) |\n| `size` | `\"hug\"` `\"fill\"` `\"fixed\"` | `\"hug\"` | How this Stack sizes inside its parent Stack |\n| `pad` | `number` (px) or a CSS length | — | Inner padding |"
+          },
+          {
+            "type": "ascii",
+            "value": "| Size | Behaviour | Flex |\n|------|-----------|------|\n| `hug` | As small as its content | `flex: none` |\n| `fill` | Grows into the leftover space; may shrink below content size | `flex: 1 1 0; min-width/height: 0` |\n| `fixed` | Keeps its own width/height: the theme's (a field, an avatar) or, for a non-Stack child, a `position` width (`w-xs`…`w-xl`) | `flex: none` |"
+          }
+        ]
+      },
+      {
+        "topic": "Position on regions",
+        "claims": [],
+        "statement": "Every region takes `position` like any surface (markup-dictionary.md § Position): `fill`, `hug`, `start` `center` `end` `stretch`, `clip`, `w-xs`…`w-xl`, `cols-N` / `span-N`. The region's own dimension (a sidebar's width, a header's height) stays the theme's; `position` says where it stands in its parent and how much it takes.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "<div layout=\"context-panel\" position=\"w-lg\">…</div>\n<div layout=\"main-body\" position=\"cols-3\">…</div>",
+                "caption": "html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Region props",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Region | Prop | Values | Default | Notes |\n|--------|------|--------|---------|-------|\n| `left-sidebar` | `collapsed` | `boolean` | `false` | Emits `state=\"collapsed\"` on the node; theme styles the collapsed state |\n| `main-header` | `sticky` | `boolean` | `false` | Opt-in sticky positioning |"
+          }
+        ]
+      },
+      {
+        "topic": "Mobile behavior",
+        "claims": [],
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Region | Mobile behavior |\n|--------|----------------|\n| `shell-side-nav` | Collapses to icon rail |\n| `left-sidebar` | Hidden (drawer or gone) |\n| `right-sidebar` | Hidden |\n| `context-panel` | Hidden |\n| `main` | Takes full width |"
+          }
+        ]
+      },
+      {
+        "topic": "Ownership › The app owns the shell",
+        "claims": [
+          {
+            "text": "See `docs/01_reference/frontend-composition.md` § \"App Shell Wiring\" for the full wiring contract."
+          }
+        ],
+        "statement": "Each route file picks a shell variant and wraps the page content. The route MUST use the layout primitives — `Shell`, `ShellSideNav`, `ShellTopNav`, `ShellNone`, `Page` — so the theme engine can target them.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "_protected/route.tsx              _auth/route.tsx\n└── Shell                         └── ShellNone\n    ├── ShellSideNav                  └── Page\n    │   └── AppSidebar                    └── <Outlet />\n    │       ├── header: logo + module widgets\n    │       ├── nav: app-owned items\n    │       └── footer: module widgets\n    └── Page\n        └── <Outlet />"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Ownership › Layout components handle structural behavior only",
+        "claims": [],
+        "statement": "Scroll, overflow, collapse, breakpoints, sticky positioning. They render `layout=\"...\"` attributes. They know nothing about content or visual appearance. The theme engine handles visuals."
+      },
+      {
+        "topic": "Ownership › Modules consume compositions",
+        "claims": [],
+        "statement": "A module page never builds its own shell or makes structural decisions. It imports a shared composition and fills the slots.",
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "import { StandardPage } from '@prowd/ui/layouts';\n\nfunction SettingsPage() {\n  return (\n    <StandardPage\n      header={<SettingsPageHeader />}\n      sidebar={<SettingsNav />}\n      scale=\"md\"\n    >\n      <AccountSettings />\n    </StandardPage>\n  );\n}",
+                "caption": "tsx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Rules",
+        "claims": [
+          {
+            "text": "**`layout` or `element`, never both.** A div is the structural frame OR the morphological surface inside it. Never mix them."
+          },
+          {
+            "text": "**Layout components own all structural decisions.** Scroll, overflow, collapse, breakpoints, sticky. Page authors fill slots — they never write structural CSS."
+          },
+          {
+            "text": "**The theme engine styles layout regions.** `layout=\"left-sidebar\"` gets background, border, width from the theme. The layout component itself emits no visual CSS."
+          },
+          {
+            "text": "**`main-header` spans the full `main` column.** It is not inside `left-sidebar`. It is a full-width region at the top of `main`, sitting above `main-body`."
+          },
+          {
+            "text": "**Modules never build their own shell or navigation.** They consume shared compositions."
+          }
+        ]
+      },
+      {
+        "topic": "Public surface (`@prowd/ui/layouts`)",
+        "claims": [],
+        "statement": "The package exports two levels:"
+      },
+      {
+        "topic": "Public surface (`@prowd/ui/layouts`) › Compositions (recommended for module pages)",
+        "claims": [
+          {
+            "text": "`StandardPage`, `FullPage` and `SplitPage` are not built yet; pages compose the primitives directly until they are."
+          }
+        ],
+        "statement": "Ready-to-use slot-based wrappers. Slots are typed as `React.ReactNode`.",
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Export | Slots | Notes |\n|--------|-------|-------|\n| `AuthPage` | `children` | shell-none + a centered `container` at `scale=\"xs\"` |"
+          }
+        ]
+      },
+      {
+        "topic": "Public surface (`@prowd/ui/layouts`) › Primitives (for app-level shell wiring only)",
+        "claims": [],
+        "statement": "Structural building blocks. Module pages never use these directly.",
+        "imagesAndDiagrams": [
+          {
+            "type": "ascii",
+            "value": "| Export | Emits |\n|--------|-------|\n| `Shell` | `layout=\"shell\"` |\n| `ShellSideNav` | `layout=\"shell-side-nav\"` |\n| `ShellTopNav` | `layout=\"shell-top-nav\"` |\n| `ShellNone` | `layout=\"shell-none\"` |\n| `Page` | `layout=\"page\"` |\n| `PageHeader` | `layout=\"page-header\"` |\n| `PageBody` | `layout=\"page-body\"` |\n| `LeftSidebar` | `layout=\"left-sidebar\"`, accepts `collapsed` |\n| `Main` | `layout=\"main\"` |\n| `MainHeader` | `layout=\"main-header\"`, accepts `sticky` |\n| `MainBody` | `layout=\"main-body\"` |\n| `Container` | `layout=\"container\"`, accepts `scale`, `align`, `position` |\n| `ContextPanel` | `layout=\"context-panel\"` |\n| `RightSidebar` | `layout=\"right-sidebar\"` |\n| `ScrollArea` | `layout=\"scroll-area\"` |\n| `Stack` | `layout=\"stack\"`, accepts `dir`, `gap`, `align`, `justify`, `wrap`, `size`, `pad` — the one primitive pages use directly, inside any region |"
+          }
+        ]
+      },
+      {
+        "topic": "DOM example",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "<div layout=\"shell\">\n\n  <div layout=\"shell-side-nav\">\n    <div element=\"surface--sidebar\">\n      <div element=\"surface--header\">Logo</div>\n      <nav element=\"control-group--navbar\">…</nav>\n      <div element=\"surface--footer\">User menu</div>\n    </div>\n  </div>\n\n  <div layout=\"page\">\n\n    <div layout=\"page-header\">\n      <div element=\"surface--page-header\">Page title + actions</div>\n    </div>\n\n    <div layout=\"page-body\">\n\n      <div layout=\"left-sidebar\">\n        <div element=\"surface--panel\">…</div>\n      </div>\n\n      <div layout=\"main\">\n\n        <div layout=\"main-header\">\n          <div element=\"surface--main-header\">Section title + toolbar</div>\n        </div>\n\n        <div layout=\"main-body\">\n          <div layout=\"container\" width=\"lg\" align=\"center\">\n            Page content\n          </div>\n          <div layout=\"context-panel\">\n            Knowledge panel\n          </div>\n        </div>\n\n      </div>\n\n      <div layout=\"right-sidebar\">\n        Activity feed\n      </div>\n\n    </div>\n\n  </div>\n\n</div>",
+                "caption": "html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "File locations",
+        "claims": [],
+        "examples": [
+          {
+            "snippets": [
+              {
+                "code": "shared/libs/ui/web/layouts/\n├── components/        Structural primitives\n│   ├── Shell/         shell-side-nav | shell-top-nav | shell-none variants\n│   ├── Page/          page, page-header, page-body\n│   ├── Main/          main, main-header, main-body\n│   ├── Sidebars/      left-sidebar, right-sidebar, context-panel\n│   ├── Container/     container (width + align props)\n│   ├── Stack/         stack (auto-layout: dir · gap · align · justify · wrap · size · pad)\n│\n└── compositions/      Ready-to-use combinations\n    ├── StandardPage/  page-header + left-sidebar + main (most pages)\n    ├── FullPage/      page-header + main only (no sidebars)\n    ├── AuthPage/      shell-none + centered card\n    └── SplitPage/     left-sidebar + main + right-sidebar"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "review": {
+      "axioms": {
+        "state": "unreviewed"
+      },
+      "purpose": {
+        "state": "unreviewed"
+      },
+      "reference": {
+        "state": "unreviewed"
+      }
+    },
+    "converted": true
+  }
+}

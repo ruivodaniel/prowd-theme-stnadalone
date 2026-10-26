@@ -1,0 +1,52 @@
+{
+  "name": "theme-standalone",
+  "private": true,
+  "version": "0.0.1",
+  "description": "The design system and the themes of the UI library, for a theme designer. Built by slice-design/scripts/standalone-build.ts; never edited here.",
+  "type": "module",
+  "packageManager": "pnpm@10.11.0",
+  "scripts": {
+    "dev": "concurrently -n server,web \"npm:server\" \"npm:web\"",
+    "server": "tsx watch tool/server.ts",
+    "web": "vite --config tool/web/vite.config.ts",
+    "theme:build": "tsx shared/libs/ui/web/theme-engine/build.ts",
+    "docs": "node docs/engine/serve.mjs",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "0.511.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.6",
+    "tailwindcss": "^4.1.6",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "5.8.3",
+    "vite": "^6.3.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.14",
+      "@types/react-dom": "19.2.3",
+      "zod": "^4.4.3",
+      "@radix-ui/primitive": "catalog:",
+      "@radix-ui/react-collapsible": "catalog:",
+      "@radix-ui/react-context": "catalog:",
+      "@radix-ui/react-dialog": "catalog:",
+      "@radix-ui/react-dismissable-layer": "catalog:",
+      "@radix-ui/react-focus-guards": "catalog:",
+      "@radix-ui/react-popper": "catalog:",
+      "@radix-ui/react-presence": "catalog:",
+      "@radix-ui/react-primitive": "catalog:",
+      "@radix-ui/react-roving-focus": "catalog:",
+      "@radix-ui/react-slot": "catalog:"
+    }
+  }
+}

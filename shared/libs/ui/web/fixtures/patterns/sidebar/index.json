@@ -1,0 +1,894 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "sidebar",
+ "version": 1,
+ "surface": "web",
+ "root": {
+  "type": "Stack",
+  "props": {
+   "dir": "col",
+   "gap": 24,
+   "pad": 24
+  },
+  "children": [
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "shell sidebar — expanded: header (brand · org switcher with avatar), content (toggle item · nav items, one selected, a count), footer (user)"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "className": "h-96 flex"
+        },
+        "children": [
+         {
+          "type": "SidebarProvider",
+          "props": {
+           "open": true,
+           "className": "h-full"
+          },
+          "children": [
+           {
+            "type": "Sidebar",
+            "props": {
+             "collapsible": "icon"
+            },
+            "children": [
+             {
+              "type": "SidebarHeader",
+              "props": {},
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 2
+                },
+                "children": [
+                 {
+                  "type": "Tile",
+                  "props": {
+                   "emphasis": "quiet",
+                   "className": "p-1"
+                  },
+                  "children": [
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body-extra-small",
+                     "emphasis": "quiet",
+                     "children": "Platform logo"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "org-switcher",
+                   "tooltip": "System Admin"
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "sm"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {
+                       "children": "SA"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "System Admin"
+                    }
+                   },
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "chevronDown",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "SidebarContent",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenu",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "sidebar-toggle",
+                       "tooltip": "Collapse"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "panelRight",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Collapse"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Home"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "home",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Home"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Organizations",
+                       "isActive": true
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "users",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Organizations"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Badge",
+                      "props": {
+                       "scale": "xs",
+                       "children": "2"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Legal documents"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "fileText",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Legal documents"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "SidebarFooter",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenu",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuItem",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "SidebarMenuButton",
+                    "props": {
+                     "emphasis": "primary",
+                     "tooltip": "Samantha Reyes"
+                    },
+                    "children": [
+                     {
+                      "type": "Avatar",
+                      "props": {
+                       "scale": "sm"
+                      },
+                      "children": [
+                       {
+                        "type": "AvatarFallback",
+                        "props": {
+                         "children": "SR"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "className": "flex-1 truncate",
+                       "children": "Samantha Reyes"
+                      }
+                     },
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "moreVertical",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "shell sidebar — collapsed to the icon rail (collapsible='icon'): the same markup, state='collapsed'; titles hide, tooltips carry them"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "row",
+         "className": "h-96 flex"
+        },
+        "children": [
+         {
+          "type": "SidebarProvider",
+          "props": {
+           "open": false,
+           "className": "h-full"
+          },
+          "children": [
+           {
+            "type": "Sidebar",
+            "props": {
+             "collapsible": "icon"
+            },
+            "children": [
+             {
+              "type": "SidebarHeader",
+              "props": {},
+              "children": [
+               {
+                "type": "Stack",
+                "props": {
+                 "dir": "col",
+                 "gap": 2
+                },
+                "children": [
+                 {
+                  "type": "Avatar",
+                  "props": {
+                   "scale": "sm"
+                  },
+                  "children": [
+                   {
+                    "type": "AvatarFallback",
+                    "props": {
+                     "children": "PL"
+                    }
+                   }
+                  ]
+                 },
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "emphasis": "primary",
+                   "concept": "org-switcher",
+                   "tooltip": "System Admin"
+                  },
+                  "children": [
+                   {
+                    "type": "Avatar",
+                    "props": {
+                     "scale": "sm"
+                    },
+                    "children": [
+                     {
+                      "type": "AvatarFallback",
+                      "props": {
+                       "children": "SA"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "element": "type--body",
+                     "className": "flex-1 truncate",
+                     "children": "System Admin"
+                    }
+                   },
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "chevronDown",
+                     "size": "sm"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "SidebarContent",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarGroup",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenu",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "sidebar-toggle",
+                       "tooltip": "Expand"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "panelLeft",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Expand"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Home"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "home",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Home"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Organizations",
+                       "isActive": true
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "users",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Organizations"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Badge",
+                      "props": {
+                       "scale": "xs",
+                       "children": "2"
+                      }
+                     }
+                    ]
+                   },
+                   {
+                    "type": "SidebarMenuItem",
+                    "props": {},
+                    "children": [
+                     {
+                      "type": "SidebarMenuButton",
+                      "props": {
+                       "emphasis": "primary",
+                       "concept": "main-nav-item",
+                       "tooltip": "Legal documents"
+                      },
+                      "children": [
+                       {
+                        "type": "Icon",
+                        "props": {
+                         "name": "fileText",
+                         "size": "sm"
+                        }
+                       },
+                       {
+                        "type": "Text",
+                        "props": {
+                         "as": "span",
+                         "className": "flex-1 truncate",
+                         "children": "Legal documents"
+                        }
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "type": "SidebarFooter",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenu",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuItem",
+                  "props": {},
+                  "children": [
+                   {
+                    "type": "SidebarMenuButton",
+                    "props": {
+                     "emphasis": "primary",
+                     "tooltip": "Samantha Reyes"
+                    },
+                    "children": [
+                     {
+                      "type": "Avatar",
+                      "props": {
+                       "scale": "sm"
+                      },
+                      "children": [
+                       {
+                        "type": "AvatarFallback",
+                        "props": {
+                         "children": "SR"
+                        }
+                       }
+                      ]
+                     },
+                     {
+                      "type": "Text",
+                      "props": {
+                       "as": "span",
+                       "className": "flex-1 truncate",
+                       "children": "Samantha Reyes"
+                      }
+                     },
+                     {
+                      "type": "Icon",
+                      "props": {
+                       "name": "moreVertical",
+                       "size": "sm"
+                      }
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "Stack",
+    "props": {
+     "dir": "col",
+     "gap": 12
+    },
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "p",
+       "element": "type--body-extra-small",
+       "emphasis": "quiet",
+       "children": "settings secondary sidebar — a LeftSidebar region holding a labelled menu; one item selected"
+      }
+     },
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 12,
+       "align": "center",
+       "wrap": true
+      },
+      "children": [
+       {
+        "type": "SidebarProvider",
+        "props": {
+         "open": true,
+         "className": "h-96"
+        },
+        "children": [
+         {
+          "type": "LeftSidebar",
+          "props": {
+           "className": "h-96 flex flex-col"
+          },
+          "children": [
+           {
+            "type": "SidebarGroup",
+            "props": {},
+            "children": [
+             {
+              "type": "Text",
+              "props": {
+               "as": "span",
+               "element": "type--body-extra-small",
+               "emphasis": "quiet",
+               "children": "Settings"
+              }
+             },
+             {
+              "type": "SidebarMenu",
+              "props": {},
+              "children": [
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "isActive": true,
+                   "tooltip": "Account"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "mail",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "className": "flex-1 truncate",
+                     "children": "Account"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "tooltip": "Profile"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "user",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "className": "flex-1 truncate",
+                     "children": "Profile"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "tooltip": "Security"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "lock",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "className": "flex-1 truncate",
+                     "children": "Security"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "tooltip": "Legal agreements"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "bookOpen",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "className": "flex-1 truncate",
+                     "children": "Legal agreements"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               },
+               {
+                "type": "SidebarMenuItem",
+                "props": {},
+                "children": [
+                 {
+                  "type": "SidebarMenuButton",
+                  "props": {
+                   "tooltip": "Preferences"
+                  },
+                  "children": [
+                   {
+                    "type": "Icon",
+                    "props": {
+                     "name": "settings",
+                     "size": "sm"
+                    }
+                   },
+                   {
+                    "type": "Text",
+                    "props": {
+                     "as": "span",
+                     "className": "flex-1 truncate",
+                     "children": "Preferences"
+                    }
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

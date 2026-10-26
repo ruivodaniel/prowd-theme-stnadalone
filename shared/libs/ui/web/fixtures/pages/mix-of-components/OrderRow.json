@@ -1,0 +1,235 @@
+{
+ "kind": "component",
+ "schemaVersion": 1,
+ "name": "OrderRow",
+ "version": 1,
+ "surface": "web",
+ "params": [
+  "id",
+  "date",
+  "customer",
+  "email",
+  "items",
+  "channel",
+  "amount",
+  "statusText"
+ ],
+ "root": {
+  "type": "ListItem",
+  "props": {
+   "className": "gap-3"
+  },
+  "children": [
+   {
+    "type": "ListItemContent",
+    "props": {},
+    "children": [
+     {
+      "type": "Stack",
+      "props": {
+       "dir": "row",
+       "gap": 24,
+       "align": "center"
+      },
+      "children": [
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2,
+         "className": "w-36"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--code",
+           "children": {
+            "bind": "id"
+           }
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": {
+            "bind": "date"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2,
+         "size": "fill"
+        },
+        "children": [
+         {
+          "type": "ListItemTitle",
+          "props": {
+           "children": {
+            "bind": "customer"
+           }
+          }
+         },
+         {
+          "type": "ListItemDescription",
+          "props": {
+           "children": {
+            "bind": "email"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2,
+         "className": "w-24"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-small",
+           "children": {
+            "bind": "items"
+           }
+          }
+         },
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--body-extra-small",
+           "emphasis": "quiet",
+           "children": {
+            "bind": "channel"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "type": "Stack",
+        "props": {
+         "dir": "col",
+         "gap": 2,
+         "align": "end",
+         "className": "w-28"
+        },
+        "children": [
+         {
+          "type": "Text",
+          "props": {
+           "as": "span",
+           "element": "type--numbers-small",
+           "children": {
+            "bind": "amount"
+           }
+          }
+         },
+         {
+          "type": "Badge",
+          "props": {
+           "emphasis": "quiet",
+           "status": {
+            "if": [
+             {
+              "eq": [
+               {
+                "bind": "statusText"
+               },
+               "Paid"
+              ]
+             },
+             "success",
+             {
+              "if": [
+               {
+                "eq": [
+                 {
+                  "bind": "statusText"
+                 },
+                 "Pending"
+                ]
+               },
+               "warning",
+               {
+                "if": [
+                 {
+                  "eq": [
+                   {
+                    "bind": "statusText"
+                   },
+                   "Shipped"
+                  ]
+                 },
+                 "info",
+                 {
+                  "if": [
+                   {
+                    "eq": [
+                     {
+                      "bind": "statusText"
+                     },
+                     "Refunded"
+                    ]
+                   },
+                   "error"
+                  ]
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           "scale": "xs",
+           "children": {
+            "bind": "statusText"
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "ListItemAction",
+    "props": {},
+    "children": [
+     {
+      "type": "Text",
+      "props": {
+       "as": "span",
+       "element": "type--body-small",
+       "emphasis": "quiet"
+      },
+      "children": [
+       {
+        "type": "Icon",
+        "props": {
+         "name": "chevronRight",
+         "size": "sm"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
